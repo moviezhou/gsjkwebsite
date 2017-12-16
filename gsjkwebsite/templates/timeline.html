@@ -1,0 +1,97 @@
+{% load static %} {% block timeline %}
+<div class="milestone">
+    <div class="index">
+        <ul>
+            <li><a href="#201512" rel="ps2id">2015.12</a></li>
+            <li><a href="#201602" rel="ps2id">2016.10</a></li>
+            <li><a href="#201604" rel="ps2id">2016.4</a></li>
+        </ul>
+    </div>
+    <div class="detail">
+        <section class="intro">
+            <div class="container">
+                <h1>集团大事记 &darr;</h1>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <ul>
+                <li>
+                    <div id="201512">
+                        <time>2015.12</time> 2015年12月，省政府金融办研究提出组建甘肃金融控股集团有限公司的意见。
+                    </div>
+                </li>
+                <li>
+                    <div id="201602">
+                        <time>2016.2</time> 2016年2月23日第112次省政府常务会议和3月22日省委常委会议审议通过了《甘肃金融控股集团有限公司筹建方案》。
+                    </div>
+                </li>
+                <li>
+                    <div id="201604">
+                        <time>2016.4</time> 2016年4月7日，甘肃省人民政府出具《甘肃省人民政府关于同意组建甘肃金融控股集团有限公司的批复》（甘政发[2016]36号），同意省政府国资委、省财政厅出资组建甘肃金控集团。
+                    </div>
+                </li>
+                <li>
+                    <div id="201610">
+                        <time>2016.10</time> 2016年10月21日，《甘肃省人民政府任免通知》（甘政任字〔2016〕31号）任命李晓安为甘肃金融控股集团有限公司董事长。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2016.11</time> 2016年11月2日，省政府国资委向甘肃省金融控股有限公司出资26.72亿元，甘肃省金融控股有限公司更名为甘肃金融控股集团有限公司。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2016.12</time> 2016年12月14日，甘肃金控集团出资1亿元人民币，持股10%，出资设立甘肃文博投资有限公司。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.5</time> 2017年5月11日，第150次省政府常务会议同意由甘肃金控集团发起设立敦煌人寿保险股份有限公司、甘肃长达金融资产管理股份有限公司，参与光大兴陇信托增资事宜。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.8</time> 2017年8月1日，甘肃长达金融资产管理股份有限公司创立大会成功召开。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.8</time> 2017年8月7日，甘肃金控集团出资300万人民币，持股30%，出资设立兰州新区基金管理有限公司。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.8</time> 2017年8月25日，甘肃长达金融资产管理股份有限公司工商注册成立。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.9</time> 2017年9月18日，省政府金融办同意由甘肃金控集团与大禹节水股份有限公司发起设立甘肃农田水利投资基金。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.11</time> 2017年11月1日，第167次省政府常务会议同意由甘肃金控集团发起设立500亿元甘肃产业发展投资基金。
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2017.11</time> 2017年11月17日，甘肃农田水利投资基金（有限合伙）工商注册成立。
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'js/vender/jquery.malihu.PageScroll2id.min.js' %}"></script>
+    <script>
+        (function ($) {
+            $(window).on("load", function () {
+                $("a[rel='ps2id']").mPageScroll2id();
+            });
+        })(jQuery);
+    </script>
+</div>
+{% endblock %}
