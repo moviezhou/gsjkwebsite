@@ -1,0 +1,83 @@
+{% block topnav3 %} 
+{% load static %}
+<!-- USING BOOTSTRAP 3.0.3 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top stroke" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-main-collapse justify-content-end ">
+                <a href="" class="navbar-brand">
+                    <img src="{% static 'images/logo_small.png' %}" alt="logo">
+                </a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">首页
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">走进金控</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">资讯中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">集团业务</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">党群工作</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">企业文化</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">金控学院</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">联系我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">OA</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <!-- <input id="txtkey" type="text" class="form-control mr-sm-2" placeholder="Enter here" aria-describedby="ddlsearch"> -->
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn">搜索</button>
+                        <i class="icon-search"></i>
+                    </span>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-link dropdown-toggle" id="dropdownPremium" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>
+                                <img src="{% static 'images/menu.png' %}" alt="">
+                            </span>
+                            更多
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownPremium">
+                            <a class="dropdown-item" href="">
+                                企业邮箱
+                            </a>
+                            <a class="dropdown-item" href="" onclick="ga('send','event','Referral','Referral WrapBootstrap Navbar')">
+                                <i class="icon-handbag fa-fw"></i>
+                                OA办公
+                            </a>
+
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#searchModal">
+                            <i class="icon-magnifier"></i>
+                            <span class="d-lg-none">Search</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}

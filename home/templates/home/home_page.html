@@ -1,15 +1,108 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
-{% load static %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags %} 
+{% load static %} 
+{% load wagtailcore_tags wagtailimages_tags %} 
+{% block body_class %}template-homepage{% endblock %} {% block content %}
 
-{% block body_class %}template-homepage{% endblock %}
+{% include 'topnav3.html' %}
 
-{% block content %}
-    <!-- {% image page.banner_image fill-800x600 %}
-    {{ page.body|richtext }} -->
-    <!-- {{ page.body|richtext }} -->
-    <a href="/about">走进金控</a>
-    {% include "timeline.html" %}
-    <!-- <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).</p> -->
+<!-- Intro Header -->
+
+
+<div id="fullpage">
+    <div class="section">
+            {% include 'topbanner.html' %}
+    </div>
+        <div class="section">
+                <section id="about" class="container content-section text-center">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <h2>About Grayscale</h2>
+                                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download
+                                    the template on
+                                    <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
+                                <p>The Jekyll version is brought to you by
+                                    <a href="https://github.com/jeromelachaud">Jerome Lachaud</a>
+                                </p>
+                                <p>This theme features stock photos by
+                                    <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of
+                                    <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
+                                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+        </div>
+        <div class="section" id="page2">Some section</div>
+        <div class="section">
+                <div class="container">
+
+
+                        <div class="text-center">
+                            <h1>Shrinking Bootstrap navbar</h1>
+                            <p class="lead">Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML
+                                document.
+                            </p>
+                            <p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML
+                                document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                                condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                                dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum
+                                at eros.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem
+                                lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent
+                                commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra
+                                augue. Sed posuere consectetur est at lobortis.</p>
+                            <p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML
+                                document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                                condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                                dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum
+                                at eros.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem
+                                lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent
+                                commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra
+                                augue. Sed posuere consectetur est at lobortis.</p>
+                            <p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML
+                                document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                                condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                                dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum
+                                at eros.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem
+                                lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent
+                                commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra
+                                augue. Sed posuere consectetur est at lobortis.</p>
+                            <p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML
+                                document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                                condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                                dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum
+                                at eros.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem
+                                lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent
+                                commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra
+                                augue. Sed posuere consectetur est at lobortis.</p>
+                        </div>
+                        <!-- /.text-center -->
+                    
+                    
+                    </div>
+        </div>
+        <div class="section">Some section</div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    {% include 'footer.html' %}
+</footer>
 {% endblock %}
