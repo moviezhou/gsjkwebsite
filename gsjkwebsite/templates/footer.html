@@ -1,5 +1,44 @@
 {% block footer %}
 <div class="container text-center">
-    <p>Copyright © Your Website 2017</p>
+    <div class="link">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">友情链接</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(82px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="#">链接1</a>
+                <a class="dropdown-item" href="#">链接2</a>
+                <a class="dropdown-item" href="#">链接3</a>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">集团链接</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(82px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="#">链接1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">链接2</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">链接3</a>
+            </div>
+        </div>
+    </div>
+    <hr class="footerhr">
+    <div class="misc">
+        <p><h5>地址: 甘肃省兰州市城关区东岗西路638号</h5></p>
+        <p><h5>电话: 0931-8581204<h5></p>
+        <p><h5>邮编: 730099<h5></p>
+    </div>
+    <p>
+        <span>
+            <h5>Copyright © 甘肃金控集团有限公司 </h5>
+            <h5>陇ICP备170004168号-1 2017</h5>
+        </span>
+    </p>    
 </div>
 {% endblock %}
