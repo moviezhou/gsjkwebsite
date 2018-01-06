@@ -2,77 +2,59 @@
 {% block footer %}
 <div class="footer">
     <div class="container">
-       <div class="row">
+        <div class="row footer-wrap">
             <div class="col">
-                    <div class="row">
-                        <div class="col">友情链接</div>
-                        <div class="col">集团链接</div>
-                    </div>
-                    <div class="row">联系我们</div>
-                    <div class="row">地址:甘肃省兰州市城关区东岗西路638号</div>
-                    <div class="row">电话:0931-8581204  邮编:730000</div>                    
-                </div>
-                <div class="col">
-                    <div class="row logo-footer">
-                        <img src="{% static 'images/logo-footer.png' %}" alt="logo">
-                    </div>
-                    <div class="row">版权所有 &copy 甘肃金融控股集团有限公司</div>
-                    <div class="row">陇ICP备170004168号-1</div>                    
-                </div>
-                <div class="col">
-                    <div class="row"><span>版权声明 | 联系我们 | 网站地图</span></div>
-                    <div class="row wechat-email">
-                        <div class="col">
-                            <img src="{% static 'images/wechat.png' %}" alt="logo">                                
+                <div class="row links">
+                    <div class="col-sm-6">
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="">友情链接</option>
+                                <option value="">link1</option>
+                                <option value="">link2</option>
+                            </select>
                         </div>
-                        <div class="col">
-                            <img src="{% static 'images/email.png' %}" alt="logo">                                
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="">集团链接</option>
+                                <option value="">link1</option>
+                                <option value="">link2</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-       </div>
+                <div class="row">联系我们</div>
+                <div class="row">地址:甘肃省兰州市城关区东岗西路638号</div>
+                <div class="row">电话:0931-8581204 邮编:730000</div>
+            </div>
+            <div class="col logo-section">
+                <div class="row logo-footer">
+                    <img src="{% static 'images/logo-footer.png' %}" alt="logo">
+                </div>
+                <div class="row">版权所有 &copy 甘肃金融控股集团有限公司</div>
+                <div class="row">陇ICP备170004168号-1</div>
+            </div>
+            <div class="col">
+                <div class="row misc">
+                    <span>版权声明 | 联系我们 | 网站地图</span>
+                </div>
+                <div class="row wechat-email">
+                    <div>                        
+                        <img src="{% static 'images/wechat.png' %}" alt="wechat">
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="{% static 'images/email.png' %}" alt="email">
+                        </a>                            
+                    </div>
+                </div>
+                <div class="row we-describe">
+                    <div>微信公众号</div>
+                    <div>企业邮箱</div>                    
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<!-- <div class="container text-center">
-    <div class="link">
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary">友情链接</button>
-            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(82px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
-                <a class="dropdown-item" href="#">链接1</a>
-                <a class="dropdown-item" href="#">链接2</a>
-                <a class="dropdown-item" href="#">链接3</a>
-            </div>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary">集团链接</button>
-            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(82px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
-                <a class="dropdown-item" href="#">链接1</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">链接2</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">链接3</a>
-            </div>
-        </div>
-    </div>
-    <hr class="footerhr">
-    <div class="misc">
-        <p><h5>地址: 甘肃省兰州市城关区东岗西路638号</h5></p>
-        <p><h5>电话: 0931-8581204<h5></p>
-        <p><h5>邮编: 730099<h5></p>
-    </div>
-    <p>
-        <span>
-            <h5>Copyright © 甘肃金控集团有限公司 </h5>
-            <h5>陇ICP备170004168号-1 2017</h5>
-        </span>
-    </p>    
-</div> -->
 {% endblock %}

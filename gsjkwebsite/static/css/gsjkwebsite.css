@@ -97,7 +97,7 @@ nav.fill ul li a:hover:after {
 }
 
 .carousel-caption h1 {
-  font-size: 4em;
+  font-size: 3em;
   letter-spacing: 4px;
 }
 
@@ -125,16 +125,16 @@ nav.fill ul li a:hover:after {
 }
 
 .caption2 {
-	width: 540px;
+	width: 420px;
 }
 
 .caption3 {
-	width: 840px;
+	width: 650px;
 }
 
 .milestone {
   background: url('../images/milestonebg.png') no-repeat center center;
-  background-size: cover; */
+  background-size: cover; 
 }
 
 .newscenter {  
@@ -152,6 +152,101 @@ nav.fill ul li a:hover:after {
   display: flex;
   justify-content: center;
   padding: 10px 10px 0 0;
+}
+
+.news-category a {
+	color: #0b2a6e;
+}
+
+.breaknewsimg img {
+	width: 400px;
+	height: 300px;
+}
+.col1-breaknews {
+	height: 300px;
+	background: #0b2a6e;
+	color: #ffffff;
+	opacity: 0.7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.col1-breaknews hr {
+	border-top: 1px solid #c6ccde;
+}
+
+.col2-news {
+	height: 150px;
+	background: #ffffff;
+	color: #0b2a6e;
+	opacity: 0.9;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.col2-newsimg img {
+	width: 100%;
+	height: 150px;
+}
+
+.col2-summary {
+	font-size: small;
+}
+
+.col3-news {
+	height: 200px;
+	background: #0b2a6e;
+	color: #ffffff;
+	opacity: 0.7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.col3-news hr {
+	border-top: 1px solid #c6ccde;
+}
+
+.col3-summary {
+	font-size: small;	
+}
+
+
+.col3-newsimg img {
+	width: 100%;
+	height: 200px;
+}
+
+.col4-news {
+	height: 200px;
+	background: #ffffff;
+	color: #0b2a6e;
+	opacity: 0.9;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.col4-newsimg img {
+	width:100%;
+	height: 200px;
+}
+
+.col4-summary {
+	font-size: small;	
 }
 
 /* business */
@@ -341,10 +436,96 @@ figure.effect-ming:hover img {
 /* footer */
 .footer {
 	background: #f3f4f8;
+	color: #0058A2;
 	padding: 30px;
 	bottom: 0px;
 	width: 100%;
 	position: absolute;
+}
+
+.footer-wrap {
+	align-items: center;
+	justify-content: center;
+}
+
+.links {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.logo-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+
+.dropdown select{
+  background:transparent;
+   width: 100%;
+   padding: 2px;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:1.2em;
+   font-weight:600;
+   color:#0058A2;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   /*Hides the default arrows for Selects*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+     position: relative;
+  }
+
+
+.dropdown{
+	width: 100%;
+	overflow: hidden;
+	background: no-repeat right #ffffff;
+	-webkit-box-shadow: inset 0 2px 4px rgba(107, 105, 105, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	 -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		  -moz-box-shadow:    0px 8px 3px -9px #000000;
+		  -webkit-box-shadow: 0px 8px 3px -9px #000000;
+		  box-shadow:         0px 8px 3px -9px #000000;  
+
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 8px;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #000000;
+}
+
+.dropdown:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 3px;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #ffffff;
+}
+
+select > option {
+  background: #D3D3D3;
+  color: black;
 }
 
 .logo-footer img {
@@ -354,12 +535,42 @@ figure.effect-ming:hover img {
 	padding-bottom: 50px;
 }
 
+.misc {
+	display: flex;
+	justify-content: center;
+	letter-spacing: 4px;
+}
+
 .wechat-email {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-around;
 }
 
+.we-describe {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+
+/* full page2 style */
+.up-slogan {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #ffffff;
+}
+
+.up-slogan h4 {
+	letter-spacing: 4px;
+}
+
+.up-slogan h1 {
+	letter-spacing: 10px;
+}
+/* end of full page2 style */
 
 /* Timeline for milestone */
 
@@ -432,16 +643,7 @@ Main Components
   height: 100%;
   width: 20px;
 }
-/* .cd-horizontal-timeline .events-wrapper::before {
-  left: 0;
-  background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
-}
-.cd-horizontal-timeline .events-wrapper::after {
-  right: 0;
-  background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
-} */
+
 .cd-horizontal-timeline .events {
   /* this is the grey line/timeline */
   position: absolute;

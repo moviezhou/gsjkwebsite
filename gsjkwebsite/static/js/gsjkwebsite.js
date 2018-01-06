@@ -308,3 +308,9 @@ jQuery(document).ready(function($){
 		return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
 	}
 });
+
+
+$('#myTab a').on('click', function (e) {
+	e.preventDefault()
+	$(this).tab('show')
+  })
