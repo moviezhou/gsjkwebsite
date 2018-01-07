@@ -10,19 +10,19 @@
 
 <div id="fullpage">
     <div class="section">
-        {% include 'topbanner.html' %}
+        {% include 'topbanner_section.html' %}
     </div>
     <div class="section milestone">
-        {% include 'milestone.html' %}
+        {% include 'milestone_section.html' %}
     </div>
     <div class="section newscenter">
-        {% include 'newscenter.html' %}
+        {% include 'newscenter_section.html' %}
     </div>
     <div class="section business">
-        {% include 'business2.html' %}
-        {% include 'footer.html' %}        
+        {% include 'business_section.html' %}
     </div>
-    <!-- <div class="section fp-auto-height footer">
-    </div> -->
+    <div class="section fp-auto-height">
+        {% include 'footer_section.html' %}
+    </div>
 </div>
 {% endblock %}
