@@ -1,0 +1,5 @@
+/* 资讯中心 */
+ul li {
+    border-bottom: 1px dotted;
+    padding: 4px;
+}
