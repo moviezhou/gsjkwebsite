@@ -6,9 +6,9 @@
 {% block content %} 
 {% include 'topnav3.html' %}
 <link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
-<div class="container-fluid">
+<div class="container-fluid topbanner">
     <div class="banner">
-        <img class="img-fluid" src="{% static 'images/newsbanner.png' %}" alt="news">
+        <img class="img-fluid" src="{% static 'images/newsbanner.jpg' %}" alt="news">
     </div>
     <h1>{{ page.title }}</h1>
     <div class="intro">{{ page.intro|richtext }}</div>
@@ -25,17 +25,17 @@
 <div class="row">
     <div class="col-3">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+            <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                 aria-selected="true">集团要闻</a>
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+            <a class="nav-link nav-left" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                 aria-selected="false">企业动态</a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+            <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
                 aria-selected="false">行业资讯</a>
-            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+            <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
                 aria-selected="false">视频中心</a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+            <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
                 aria-selected="false">通知公告</a>
-            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+            <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
                 aria-selected="false">信息披露</a>
         </div>
     </div>
@@ -73,9 +73,4 @@
 </div>
 </div>
 {% include 'footer_section.html' %}
-<style>
-    .footer {
-        position: fixed;
-    }
-</style>
 {% endblock %}

@@ -1,5 +1,46 @@
 /* 资讯中心 */
+
+.topbanner {
+    padding: 0;
+}
+
+.col-3 {
+    text-align: center;
+}
+
 ul li {
     border-bottom: 1px dotted;
     padding: 4px;
+}
+
+.nav-left::before {
+    display: inline-block;
+    content: '';
+    vertical-align: middle;
+    -webkit-border-radius: 0.375rem;
+    border-radius: 0.5;
+    height: 0.3rem;
+    width: 0.3rem;
+    margin-right: 0.6rem;
+    background-color: #000000;
+
+}
+
+.nav-left::after {
+    display: inline-block;
+    content: '';
+    vertical-align: middle;
+    -webkit-border-radius: 0.375rem;
+    border-radius: 0.5;
+    height: 0.3rem;
+    width: 0.3rem;
+    margin-left: 0.6rem;
+    background-color: #000000;
+
+}
+
+.footer {
+    /* position: relative; */
+    position: fixed;
+    background: #cbcfe0;
 }

@@ -79,6 +79,10 @@ nav.fill ul li a:hover:after {
   opacity: 1;
 }
 
+.nav-more {
+  left: auto;
+}
+
 #carouselExampleIndicators {
   margin-top: 10px;
 }
