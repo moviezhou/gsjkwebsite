@@ -1,3 +1,6 @@
+* {
+  font-family: 微软雅黑;
+}
 html {
   font-family: 微软雅黑;
   font-size: 16px;
@@ -9,6 +12,11 @@ body {
 
 ol, ul {
 	list-style: none;
+}
+
+#top-nav-container {
+  display: flex;
+  justify-content: center;
 }
 
 nav {

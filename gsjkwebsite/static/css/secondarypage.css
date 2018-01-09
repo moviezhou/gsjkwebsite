@@ -1,16 +1,29 @@
 /* 资讯中心 */
 
+.main {
+    margin-top: 66px;
+}
+
 .topbanner {
     padding: 0;
+}
+
+.news-container {
+    margin-top: 20px;
+    min-height: 480px;
 }
 
 .col-3 {
     text-align: center;
 }
 
-ul li {
+.tab-pane ul li {
     border-bottom: 1px dotted;
     padding: 4px;
+}
+
+.tab-title {
+    padding-bottom: 20px;
 }
 
 .nav-left::before {
@@ -41,6 +54,6 @@ ul li {
 
 .footer {
     /* position: relative; */
-    position: fixed;
+    position: relative;
     background: #cbcfe0;
 }
