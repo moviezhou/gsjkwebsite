@@ -5,13 +5,14 @@
 <div class="main">
     <div class="container-fluid topbanner">
         <div class="banner">
-            <img class="img-fluid" src="{% static 'images/academybanner.jpg' %}" alt="news">
+            <img class="banner-img" src="{% static 'images/academybanner.jpg' %}" alt="news">
         </div>
 
     </div>
     <div class="container news-container">
         <div class="row">
             <div class="col-3">
+                <div class="tab-title"><h4><strong>金控学院</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                         aria-selected="true">金融研究院</a>
@@ -20,6 +21,20 @@
                 </div>
             </div>
             <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left"><h5>金融研究院</h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="#">金控学院</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">金融研究院</li>
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <ul>

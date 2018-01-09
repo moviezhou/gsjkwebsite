@@ -8,6 +8,11 @@
     padding: 0;
 }
 
+.banner-img {
+    height: auto;
+    width: 100%;
+}
+
 .news-container {
     margin-top: 20px;
     min-height: 480px;
@@ -23,7 +28,21 @@
 }
 
 .tab-title {
+    padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.list-title {
+    align-items: center;
+}
+
+.path-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #3c558c;    
 }
 
 .nav-left::before {
@@ -52,8 +71,29 @@
 
 }
 
+.current-path {
+    display: flex;
+    align-items: center;
+}
+
+.list-title nav {
+    border: none;
+}
+
+nav ol {
+    margin: 10px;
+}
+
+.page-nav-wrapper {
+    justify-content: center;
+}
+
+.page-nav {
+    border: none;
+}
+
 .footer {
     /* position: relative; */
     position: relative;
-    background: #cbcfe0;
+    /* background: #cbcfe0; */
 }

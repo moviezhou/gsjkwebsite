@@ -5,18 +5,11 @@
 <div class="main">
     <div class="container-fluid topbanner">
         <div class="banner">
-            <img class="img-fluid" src="{% static 'images/partybanner.jpg' %}" alt="news">
+            <img class="banner-img" src="{% static 'images/partybanner.jpg' %}" alt="news">
         </div>
 
     </div>
     <div class="container news-container">
-        <!-- <div class="row">
-            <div class="clo-3"><h4>党建工作</h4></div>
-            <div class="col-9">
-                <div>工作动态</div>
-                <div>当前位置</div>
-            </div>
-        </div> -->
         <div class="row">
             <div class="col-3">
                 <div class="tab-title"><h4><strong>党建工作</strong></h4></div>
@@ -32,7 +25,20 @@
                 </div>
             </div>
             <div class="col-9">
-                <div>工作动态</div>
+                <div class="row list-title">
+                    <div class="col-3 text-left"><h5>工作动态</h5></div>
+                    <div class="col-9 path-wrapper">
+                            <nav aria-label="breadcrumb" class="current-path">
+                                <div><h5>当前位置</h5></div>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">首页</a></li>
+                                    <li class="breadcrumb-item"><a href="#">党建工作</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">工作动态</li>
+                                </ol>
+                            </nav>
+                    </div>
+                </div>
+                <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <ul>

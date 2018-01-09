@@ -1,17 +1,21 @@
-{% extends "base.html" %} {% load wagtailcore_tags %} {% load static %} {% block body_class %}template-blogindexpage {% endblock%}
+{% extends "base.html" %} 
+{% load wagtailcore_tags %} 
+{% load static %} 
+{% block body_class %}template-blogindexpage {% endblock%}
 {% block content %} 
 <link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
 {% include 'topnav3.html' %}
 <div class="main">
     <div class="container-fluid topbanner">
         <div class="banner">
-            <img class="img-fluid" src="{% static 'images/newsbanner.jpg' %}" alt="news">
+            <img class="banner-img" src="{% static 'images/newsbanner.jpg' %}" alt="news">
         </div>
 
     </div>
     <div class="container news-container">
         <div class="row">
             <div class="col-3">
+                <div class="tab-title"><h4><strong>资讯中心</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                         aria-selected="true">集团要闻</a>
@@ -28,11 +32,47 @@
                 </div>
             </div>
             <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left"><h5>集团要闻</h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="#">资讯中心</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">集团要闻</li>
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <ul>
-                            <li>111</li>
-                            <li>222</li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="http://via.placeholder.com/190x120" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="news-title"><h5><strong>新闻标题</strong></h5></div>
+                                        <div class="news-caption">新闻摘要</div>
+                                        <div class="news-date text-right"><strong>2018-1-9</strong></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                        <div class="col-3">
+                                            <img src="http://via.placeholder.com/190x120" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                                <div class="news-title"><h5><strong>新闻标题</strong></h5></div>
+                                                <div class="news-caption">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor voluptatibus ipsa ex, esse natus necessitatibus nesciunt harum, aliquam pariatur soluta fugit hic fugiat architecto eum. Dignissimos rerum omnis quasi voluptatibus!</div>
+                                                <div class="news-date text-right"><strong>2018-1-9</strong></div>
+                                        </div>
+                                    </div>
+                            </li>
                             <li>333</li>
                             <li>444</li>
                             <li>555</li>
@@ -57,8 +97,29 @@
                         </ul>
                     </div>
                 </div>
+                <div class="row page-nav-wrapper">
+                    <nav class="page-nav" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
+    {% include 'footer_section.html' %} {% endblock %}
 </div>
-{% include 'footer_section.html' %} {% endblock %}

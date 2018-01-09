@@ -5,13 +5,14 @@
 <div class="main">
     <div class="container-fluid topbanner">
         <div class="banner">
-            <img class="img-fluid" src="{% static 'images/businessbanner.jpg' %}" alt="news">
+            <img class="banner-img" src="{% static 'images/businessbanner.jpg' %}" alt="news">
         </div>
 
     </div>
     <div class="container news-container">
         <div class="row">
             <div class="col-3">
+                <div class="tab-title"><h4><strong>集团业务</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                         aria-selected="true">业务领域</a>
@@ -20,34 +21,43 @@
                 </div>
             </div>
             <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left"><h5>业务领域</h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="#">集团业务</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">业务领域</li>
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <ul>
-                            <li>111</li>
-                            <li>222</li>
-                            <li>333</li>
-                            <li>444</li>
-                            <li>555</li>
-                            <li>666</li>
-                            <li>777</li>
-                            <li>888</li>
-                            <li>999</li>
-                            <li>101010</li>
-                        </ul>
+                       <div class="row">
+                           <div class="col-3">
+                                <img class="" src="{% static 'images/securities.png' %}" alt="securities">
+                           </div>
+                           <div class="col-3">
+                                <img class="" src="{% static 'images/futures.png' %}" alt="futures">
+                           </div>
+                           <div class="col-3">
+                                <img class="" src="{% static 'images/fund.png' %}" alt="futures">
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-3">
+                                <img class="" src="{% static 'images/insurance.png' %}" alt="futures">
+                           </div>
+                           <div class="col-3">
+                                <img class="" src="{% static 'images/futures.png' %}" alt="futures">
+                           </div>
+                       </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">罗密欧</div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">阿尔法</div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <ul>
-                            <li>111</li>
-                            <li>222</li>
-                            <li>333</li>
-                            <li>777</li>
-                            <li>888</li>
-                            <li>999</li>
-                            <li>101010</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
