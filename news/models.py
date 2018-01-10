@@ -73,6 +73,17 @@ class NewsPage(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
+    representative_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    promote_panels = Page.promote_panels + [
+        ImageChooserPanel('representative_image'),
+    ]
 
     search_fields = Page.search_fields + [
         index.SearchField('intro'),

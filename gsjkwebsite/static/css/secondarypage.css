@@ -96,6 +96,18 @@ nav ol {
     border: none;
 }
 
+/* news content style */
+
+
+.title-wrapper {
+    justify-content: center;
+}
+
+.rich-text p {
+    text-indent: 2em;
+    line-height: 2em;
+}
+
 .footer {
     /* position: relative; */
     position: relative;

@@ -1,5 +1,6 @@
 {% extends "base.html" %} 
-{% load wagtailcore_tags %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 {% load static %} 
 {% block body_class %}template-blogindexpage {% endblock%}
 {% block content %} 
@@ -87,13 +88,26 @@
                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">阿尔法</div>
                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                         <ul>
-                            <li>111</li>
-                            <li>222</li>
-                            <li>333</li>
-                            <li>777</li>
-                            <li>888</li>
-                            <li>999</li>
-                            <li>101010</li>
+                            {% for page in self.get_children.specific %}
+                            <li>
+                                <div class="row">
+                                        <div class="col-3">
+                                            {% image page.representative_image width-192 %}                                                
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="news-title">
+                                                <h5>
+                                                    <strong>
+                                                        <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                    </strong>
+                                                </h5>
+                                        </div>
+                                            <div class="news-caption">新闻摘要</div>
+                                            <div class="news-date text-right"><strong>2018-1-9</strong></div>
+                                        </div>
+                                    </div>                               
+                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
