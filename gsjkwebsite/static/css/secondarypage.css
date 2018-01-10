@@ -108,6 +108,12 @@ nav ol {
     line-height: 2em;
 }
 
+.news-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer {
     /* position: relative; */
     position: relative;

@@ -91,8 +91,8 @@
                             {% for page in self.get_children.specific %}
                             <li>
                                 <div class="row">
-                                        <div class="col-3">
-                                            {% image page.representative_image width-192 %}                                                
+                                        <div class="col-3 news-thumbnail">
+                                            {% image page.representative_image fill-192x120 %}                                                
                                         </div>
                                         <div class="col-9">
                                             <div class="news-title">
@@ -102,8 +102,10 @@
                                                     </strong>
                                                 </h5>
                                         </div>
-                                            <div class="news-caption">新闻摘要</div>
-                                            <div class="news-date text-right"><strong>2018-1-9</strong></div>
+                                            <div class="news-caption">
+                                                {{ page.body | richtext | truncatechars_html:100 }}
+                                            </div>
+                                            <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
                                         </div>
                                     </div>                               
                             </li>
