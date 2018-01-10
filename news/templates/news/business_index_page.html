@@ -22,7 +22,7 @@
             </div>
             <div class="col-9">
                 <div class="row list-title">
-                        <div class="col-3 text-left"><h5>业务领域</h5></div>
+                        <div class="col-3 text-left" id="column-title"><h5>业务领域</h5></div>
                         <div class="col-9 path-wrapper">
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>
@@ -37,7 +37,7 @@
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                       <div class="row">
+                       <div class="row category-row">
                            <div class="col-3">
                                 <img class="" src="{% static 'images/securities.png' %}" alt="securities">
                            </div>
@@ -48,12 +48,9 @@
                                 <img class="" src="{% static 'images/fund.png' %}" alt="futures">
                            </div>
                        </div>
-                       <div class="row">
+                       <div class="row category-row">
                            <div class="col-3">
                                 <img class="" src="{% static 'images/insurance.png' %}" alt="futures">
-                           </div>
-                           <div class="col-3">
-                                <img class="" src="{% static 'images/futures.png' %}" alt="futures">
                            </div>
                        </div>
                     </div>

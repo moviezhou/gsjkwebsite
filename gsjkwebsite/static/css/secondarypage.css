@@ -84,6 +84,10 @@ nav ol {
     margin: 10px;
 }
 
+.category-row {
+    margin-top: 30px;
+}
+
 .page-nav-wrapper {
     justify-content: center;
 }

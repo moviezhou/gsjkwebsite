@@ -313,4 +313,11 @@ jQuery(document).ready(function($){
 $('#myTab a').on('click', function (e) {
 	e.preventDefault()
 	$(this).tab('show')
-  })
+  });
+
+
+//   Secondary pages
+
+$('.nav-left').on('click', function(evt){
+	$('#column-title>h5').text(evt.target.text);
+});
