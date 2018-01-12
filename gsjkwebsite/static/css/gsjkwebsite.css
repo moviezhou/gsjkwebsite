@@ -26,7 +26,6 @@ nav {
   color: #000000;
 }
 .nav-link {
-  font-family: 微软雅黑;
   color: #000000;
   font-weight: 500;
   font-size: larger;
@@ -85,6 +84,10 @@ nav.fill ul li a:hover:after {
   -webkit-animation: fill 1s forwards;
   -moz-animation: fill 1s forwards;
   opacity: 1;
+}
+
+.search-wrapper {
+  display: flex;
 }
 
 .nav-more {
@@ -189,14 +192,14 @@ nav.fill ul li a:hover:after {
   width: 20px;
 }
 .cd-horizontal-timeline .events-wrapper::before {
-  left: 0;
+  /* left: 0;
   background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0)); */
 }
 .cd-horizontal-timeline .events-wrapper::after {
-  right: 0;
+  /* right: 0;
   background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0)); */
 }
 .cd-horizontal-timeline .events {
   /* this is the grey line/timeline */
@@ -648,9 +651,18 @@ nav.fill ul li a:hover:after {
 /* business */
 
 .business {
-  background: url('../images/businessbg.png') no-repeat center center;
+  background: url('../images/zhiguolizheng.png') no-repeat center center;
   background-size: cover;
 }
+
+@media (min-width: 576px) {
+  .business {
+    background: url('../images/businessbg.png') no-repeat center center;
+    background-size: cover;
+  }  
+}
+
+
 
 .business-wrapper {
   display: flex;
@@ -681,7 +693,26 @@ nav.fill ul li a:hover:after {
 	color: #ffffff;
 	background: #334b84;
 	opacity: 0.8;
-	height: 64vh;
+	height: 20vh;
+}
+
+@media (min-width: 576px) {
+  .invest-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: #334b84;
+    opacity: 0.8;
+    height: 64vh;
+  }
+}
+
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .well {

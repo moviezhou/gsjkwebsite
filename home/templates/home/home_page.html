@@ -3,7 +3,8 @@
 {% load static %} 
 {% load wagtailcore_tags wagtailimages_tags %} 
 {%block body_class %}template-homepage{% endblock %} 
-{% block content %} {% include 'topnav3.html' %}
+{% block content %} 
+{% include 'topnav3.html' %}
 
 <!-- Intro Header -->
 
@@ -16,7 +17,7 @@
         {% include 'milestone_section.html' %}
     </div>
     <div class="section newscenter">
-        {% include 'newscenter_section.html' %}
+        {% include 'newscenter_section2.html' %}
     </div>
     <div class="section business">
         {% include 'business_section.html' %}

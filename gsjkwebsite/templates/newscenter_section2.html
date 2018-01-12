@@ -1,0 +1,83 @@
+{% load static %} 
+{% block newscenter %}
+<div class="container-fluid center newsboard">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well">
+                <h3>资讯中心</h3>
+                <div class="row news-category">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+                                aria-selected="true">集团要闻</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                aria-selected="false">企业动态</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">行业资讯</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">党建工作</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                        <div id="coverflow" style="display: block;" class="flipster flipster--transform flipster--coverflow flipster--click flipster--active" tabindex="0">
+                                <ul class="flip-items flipster__container" style="height: 366.516px; transform: translateX(33.375px);">
+                                    <li data-flip-title="Red" class="flipster__item  flipster__item--past flipster__item--past-4" style="z-index: 0; margin-right: -180px;"><div class="flipster__item__content">
+                                        <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Razzmatazz" data-flip-category="Purples" class="flipster__item  flipster__item--past flipster__item--past-3" style="z-index: 1; margin-right: -180px;"><div class="flipster__item__content">
+                                        <img src="http://via.placeholder.com/300x300">
+                                     </div></li>
+                                    <li data-flip-title="Deep Lilac" data-flip-category="Purples" class="flipster__item  flipster__item--past flipster__item--past-2" style="z-index: 2; margin-right: -180px;"><div class="flipster__item__content">
+                                        <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Daisy Bush" data-flip-category="Purples" class="flipster__item  flipster__item--past flipster__item--past-1" style="z-index: 3; margin-right: -180px;"><div class="flipster__item__content">
+                                        <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Cerulean Blue" data-flip-category="Blues" class="flipster__item  flipster__item--current" style="z-index: 11; margin-right: -180px;"><div class="flipster__item__content">
+                                       <div style="
+                            width: 300px;
+                            height: 300px;
+                            background: cadetblue;
+                        ">
+                            <ul>
+                                <li>hihihihi</li>
+                                        <li>123</li>
+                        
+                                        <li><a href="#">456</a></li>
+                        
+                            </ul>
+                        </div>
+                                    </div></li>
+                                    <li data-flip-title="Dodger Blue" data-flip-category="Blues" class="flipster__item  flipster__item--future flipster__item--future-1" style="z-index: 5; margin-right: -180px;"><div class="flipster__item__content">
+                                            <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Cyan" data-flip-category="Blues" class="flipster__item  flipster__item--future flipster__item--future-2" style="z-index: 4; margin-right: -180px;"><div class="flipster__item__content">
+                                            <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Robin's Egg" data-flip-category="Blues" class="flipster__item  flipster__item--future flipster__item--future-3" style="z-index: 3; margin-right: -180px;"><div class="flipster__item__content">
+                                            <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Deep Sea" data-flip-category="Greens" class="flipster__item  flipster__item--future flipster__item--future-4" style="z-index: 2; margin-right: -180px;"><div class="flipster__item__content">
+                                            <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                    <li data-flip-title="Apple" data-flip-category="Greens" class="flipster__item  flipster__item--future flipster__item--future-5" style="z-index: 1; margin-right: -180px;"><div class="flipster__item__content">
+                                            <img src="http://via.placeholder.com/300x300">
+                                    </div></li>
+                                </ul>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
