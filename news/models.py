@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.http import JsonResponse
+from django.shortcuts import render
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
@@ -68,6 +69,19 @@ class ContactUsIndexPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
     ]
+
+class ColumnPage(Page):
+    class Meta:
+        verbose_name = "专栏"
+    intro = RichTextField(blank=True)
+
+
+    def get_context(self, request):
+        context = super(ColumnPage, self).get_context(request)
+        return context
+    
+    def serve(self, request):
+        return render(request, 'news/column_page.html', self.get_context(request))
 
 class NewsPage(Page):
     date = models.DateField("Post date")

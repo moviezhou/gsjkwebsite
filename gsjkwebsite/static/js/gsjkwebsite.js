@@ -318,6 +318,24 @@ $('#myTab a').on('click', function (e) {
 
 //   Secondary pages
 
-$('.nav-left').on('click', function(evt){
-	$('#column-title>h5').text(evt.target.text);
-});
+// $('.nav-left').on('click', function(evt){
+// 	$('#column-title>h5').text(evt.target.text);
+// });
+
+$('#v-pills-tab a').on('click', function (e) {
+	// e.preventDefault()
+	// window.location.href = $(this).attr('href');
+	// console.log($(this).attr('href'));
+	// $(this).tab('show')
+  });
+
+
+$("#v-pills-tab a").each(function(){  
+
+		$this = $(this);  
+		if($this[0].href==String(window.location.href)){
+			// $this.siblings().removeClass('active');
+			$this.addClass("active");
+			$('#column-title>h5').text($this[0].text);   
+		}  
+});  

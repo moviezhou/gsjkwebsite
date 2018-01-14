@@ -539,7 +539,30 @@ nav.fill ul li a:hover:after {
   background-size: cover;
 }
 
-.newsboard {
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.highlight-img {
+  width: 285px;
+}
+
+.news-item {
+  display: flex;
+  padding-bottom: 16px;
+}
+
+.highlights-container {
+  margin-top: 20px;
+}
+
+.highlights-container ul {
+  padding: 0;
+}
+
+/* .newsboard {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -646,7 +669,7 @@ nav.fill ul li a:hover:after {
 
 .col4-summary {
 	font-size: small;	
-}
+} */
 
 /* business */
 

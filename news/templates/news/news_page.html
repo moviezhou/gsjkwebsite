@@ -20,18 +20,10 @@
             <div class="col-3">
                 <div class="tab-title"><h4><strong>资讯中心</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                        aria-selected="true">集团要闻</a>
-                    <a class="nav-link nav-left" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">企业动态</a>
-                    <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">行业资讯</a>
-                    <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">视频中心</a>
-                    <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">通知公告</a>
-                    <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">信息披露</a>
+                    {% for column in self.get_parent.get_parent.get_children %}
+                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">{{ column }}</a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-9">
@@ -42,8 +34,8 @@
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="#">资讯中心</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">集团要闻</li>
+                                        <li class="breadcrumb-item"><a href="#">{{ self.get_parent.get_parent }}</a></li>
+                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.get_parent.slug }}">{{ self.get_parent }}</li>
                                     </ol>
                                 </nav>
                         </div>
@@ -67,5 +59,24 @@
         </div>
     </div>
     {% include 'footer_section.html' %} 
+
+    <script src="{% static 'js/vender/jquery.js' %}" ></script>
+    <script>
+        $(document).ready(function(){  
+            
+            $("#v-pills-tab a").each(function(){  
+        
+                $this = $(this);
+                var column = $('#current_column').data('column-slug'); 
+
+                var url = $this[0].href;
+                if(url.slice(url.lastIndexOf('/') + 1) == column){
+                     $this.siblings().removeClass('active');
+                    $this.addClass("active");   
+            };  
+            
+        })
+    });  
+    </script>
 {% endblock %}
 </div>

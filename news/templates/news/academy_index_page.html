@@ -14,10 +14,14 @@
             <div class="col-3">
                 <div class="tab-title"><h4><strong>金控学院</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                    {% for column in self.get_children %}
+                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">{{ column }}</a>
+                    {% endfor %}
+                    {% comment %} <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                         aria-selected="true">金融研究院</a>
                     <a class="nav-link nav-left" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">网络学院</a>
+                        aria-selected="false">网络学院</a> {% endcomment %}
                 </div>
             </div>
             <div class="col-9">
@@ -28,8 +32,8 @@
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="#">金控学院</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">金融研究院</li>
+                                        <li class="breadcrumb-item"><a href="#">{{ self.get_parent.get_parent }}</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{ self.get_parent }}</li>
                                     </ol>
                                 </nav>
                         </div>
