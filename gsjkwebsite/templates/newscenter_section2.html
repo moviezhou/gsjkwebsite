@@ -1,12 +1,12 @@
 {% load static %} 
 {% block newscenter %}
-<div class="container center">
+<div class="container news-container">
     <div class="row">
         <div class="col-md-6">
             <div class="hightlights">
                     <div class="title-wrapper">
-                            <div class="title">
-                                <h4>集团要闻</h4>
+                            <div class="title-highlights">
+                                <h5>集团要闻</h5>
                             </div>
                             <div class="more">
                                 <h6>更多</h6>
@@ -90,21 +90,6 @@
                             </div>
                     </li>
                     <li class="news-item">
-                        <div class="thumbnail">
-                                <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                            </div>
-                            <div class="news-wrapper">
-                                <div class="news-title">
-                                    定西市市委副书记、市长戴超与甘肃金融控股集团和……
-                                </div>
-                                <div class="news-content">
-                                    <p>
-                                        2017年8月17日，……
-                                    </p>
-                                </div>
-                            </div>
-                    </li>
-                    <li class="news-item">
                             <div class="thumbnail">
                                     <img class="" src="{% static 'images/news.png' %}" alt="highlights">
                                 </div>
@@ -123,20 +108,35 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="row title-wrapper">
-                    <div class="title">
-                        <h4>企业动态</h4>
+            <div class="company-latest">
+                <div class="title-wrapper">
+                    <div class="title-company">
+                        <h5>企业动态</h5>
                     </div>
                     <div class="more">
                         <h6>更多</h6>
-                    </div>
-            </div>
-            <hr>            
-            <div class="row">
+                    </div>   
+                </div>
+                <hr>
                 <div class="highlights-container">
-                        <ul>
-                            <li class="news-item">
-                                <div class="thumbnail">
+                    <ul>
+                        <li class="news-item">
+                            <div class="thumbnail">
+                                <img class="" src="{% static 'images/news.png' %}" alt="highlights">
+                            </div>
+                            <div class="news-wrapper">
+                                <div class="news-title">
+                                    定西市市委副书记、市长戴超与甘肃金融控股集团和……
+                                </div>
+                                <div class="news-content">
+                                    <p>
+                                        2017年8月17日，……
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="news-item">
+                            <div class="thumbnail">
                                     <img class="" src="{% static 'images/news.png' %}" alt="highlights">
                                 </div>
                                 <div class="news-wrapper">
@@ -149,57 +149,43 @@
                                         </p>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news.png' %}" alt="highlights">
+                        </li>
+                        <li class="news-item">
+                            <div class="thumbnail">
+                                    <img class="" src="{% static 'images/news.png' %}" alt="highlights">
+                                </div>
+                                <div class="news-wrapper">
+                                    <div class="news-title">
+                                        定西市市委副书记、市长戴超与甘肃金融控股集团和……
                                     </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            定西市市委副书记、市长戴超与甘肃金融控股集团和……
-                                        </div>
-                                        <div class="news-content">
-                                            <p>
-                                                2017年8月17日，……
-                                            </p>
-                                        </div>
+                                    <div class="news-content">
+                                        <p>
+                                            2017年8月17日，……
+                                        </p>
                                     </div>
-                            </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            定西市市委副书记、市长戴超与甘肃金融控股集团和……
-                                        </div>
-                                        <div class="news-content">
-                                            <p>
-                                                2017年8月17日，……
-                                            </p>
-                                        </div>
-                                    </div>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
-            <div class="row">
-                 <div class="row title-wrapper">
-                        <div class="title">
-                            <h4>党建工作</h4>
-                        </div>
-                        <div class="more">
-                            <h6>更多</h6>
-                        </div>
+                                </div>
+                        </li>
+                    </ul>
                 </div>
-                <hr>                
+            </div>
+            
+            <div class="party-building">
+                <div class="title-wrapper">
+                    <div class="title-party">
+                        <h5>党建工作</h5>
+                    </div>
+                    <div class="more">
+                        <h6>更多</h6>
+                    </div>
+                </div>
+                <hr>
                 <div class="row">
                     <div class="col-md-6">
-                            <img class="" src="{% static 'images/buwangchuxin.png' %}" alt="highlights">
-                        </div>
-                        <div class="col-md-6">
-                            <img class="" src="{% static 'images/zaichufa.png' %}" alt="highlights">
-                        </div>
+                        <img class="" src="{% static 'images/buwangchuxin.png' %}" alt="highlights">
+                    </div>
+                    <div class="col-md-6">
+                        <img class="" src="{% static 'images/zaichufa.png' %}" alt="highlights">
+                    </div>
                 </div>
                 <div class="highlights-container">
                         <ul>
@@ -233,23 +219,8 @@
                                         </div>
                                     </div>
                             </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news2.png' %}" alt="highlights">
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            定西市市委副书记、市长戴超与甘肃金融控股集团和……
-                                        </div>
-                                        <div class="news-content">
-                                            <p>
-                                                2017年8月17日，……
-                                            </p>
-                                        </div>
-                                    </div>
-                            </li>
                         </ul>
-                    </div>
+                    </div>         
             </div>
         </div>
     </div>

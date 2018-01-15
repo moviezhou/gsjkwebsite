@@ -539,10 +539,32 @@ nav.fill ul li a:hover:after {
   background-size: cover;
 }
 
+.news-container {
+  height: 70vh;
+}
+
 .title-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.title-highlights {
+  background: #0b2a6e;
+  color: #ffffff;
+  padding: 8px 20px 4px 20px;
+}
+
+.title-company {
+  background: #0061ac;
+  color: #ffffff;
+  padding: 8px 20px 4px 20px;
+}
+
+.title-party {
+  background: red;
+  color: #ffffff;
+  padding: 8px 20px 4px 20px;
 }
 
 .highlight-img {
