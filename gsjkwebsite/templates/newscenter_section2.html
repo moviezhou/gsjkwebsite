@@ -1,4 +1,6 @@
 {% load static %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 {% block newscenter %}
 <div class="container news-container">
     <div class="row">
@@ -34,82 +36,29 @@
             <div class="highlights-container">
                 <div>
                     <ul>
+                        {% for news in news_entries %}
                             <li class="news-item">
                                 <div class="thumbnail">
-                                    <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                </div>
-                                <div class="news-wrapper">
-                                    <div class="news-title">
-                                        <strong>定西市市委副书记、市长戴超与甘肃金融控股集团…</strong>
-                                    </div>
-                                    <div class="news-content">
-                                        <p>
-                                            2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察...
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news.png' %}" alt="highlights">
+                                    <a href="{% pageurl news %}">
+                                        {% image news.representative_image fill-160x100 %}
+                                    </a> 
+                                    <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
                                     </div>
                                     <div class="news-wrapper">
                                         <div class="news-title">
-                                            <strong>定西市市委副书记、市长戴超与甘肃金融控股集团…</strong>
+                                            <strong>
+                                                <a href="{% pageurl news %}">{{ news.title }}</a>
+                                            </strong>
                                         </div>
                                         <div class="news-content">
                                             <p>
-                                                2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
+                                                {{ news.body | richtext | truncatechars_html:55 }}
                                             </p>
                                         </div>
                                     </div>
                             </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                                <strong>定西市市委副书记、市长戴超与甘肃金融控股集团</strong>                                      
-                                        </div>
-                                        <div class="news-content">
-                                            <p>
-                                                2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                            </p>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            <strong>定西市市委副书记、市长戴超与甘肃金融控股集团</strong>
-                                        </div>
-                                        <div class="news-content">
-                                            <p>
-                                                2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                            </p>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="news-item">
-                                    <div class="thumbnail">
-                                            <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                        </div>
-                                        <div class="news-wrapper">
-                                            <div class="news-title">
-                                                <strong>定西市市委副书记、市长戴超与甘肃金融控股…</strong>
-                                            </div>
-                                            <div class="news-content">
-                                                <p>
-                                                    2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                                </p>
-                                            </div>
-                                        </div>
-                                </li>
-                        </ul>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
