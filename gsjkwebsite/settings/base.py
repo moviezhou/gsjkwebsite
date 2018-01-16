@@ -161,7 +161,6 @@ BASE_URL = 'http://example.com'
 WAGTAIL_APPEND_SLASH = False
 
 ALLOWED_HOSTS = [
-    '.gsjkjt.com',
-    '124.152.9.19',
-    'localhost',
+    '127.0.0.1',
+    '*.*',
 ]
