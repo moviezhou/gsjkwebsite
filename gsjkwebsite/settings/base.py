@@ -151,7 +151,7 @@ MEDIA_URL = '/media/'
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "gsjkwebsite"
+WAGTAIL_SITE_NAME = "甘肃金融控股集团有限公司"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
@@ -160,3 +160,8 @@ BASE_URL = 'http://example.com'
 # Remove url trailing slash
 WAGTAIL_APPEND_SLASH = False
 
+ALLOWED_HOSTS = [
+    '.gsjkjt.com',
+    '124.152.9.19',
+    'localhost',
+]
