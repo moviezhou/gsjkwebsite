@@ -3,11 +3,10 @@
 }
 html {
   font-family: 微软雅黑;
-  font-size: 16px;
+  font-size: 14px;
 }
 body {
   font-family: 微软雅黑 tahoma,arial,sans-serif;
-  font-size: 16px;
 }
 
 ol, ul {
@@ -24,6 +23,11 @@ nav {
 }
 .navbar-light .navbar-nav .nav-link {
   color: #000000;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
 }
 .nav-link {
   color: #000000;
@@ -88,6 +92,10 @@ nav.fill ul li a:hover:after {
 
 .search-wrapper {
   display: flex;
+}
+
+.search-input {
+  margin-bottom: 0;
 }
 
 .nav-more {
@@ -539,6 +547,15 @@ nav.fill ul li a:hover:after {
   background-size: cover;
 }
 
+.news-container {
+  height: 76vh;
+}
+
+.news-container .dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+}
+
 .news-left-col {
   background: #ffffff;
   padding: 15px;
@@ -598,6 +615,11 @@ nav.fill ul li a:hover:after {
   color: white;
 }
 
+.highlight-title {
+  color: #0b2a6e;
+  font-size: larger;
+}
+
 .company-latest {
   background: #ffffff;
   padding: 15px;
@@ -621,14 +643,6 @@ nav.fill ul li a:hover:after {
   padding: 8px 20px 4px 20px;
 }
 
-.highlight-img {
-  width: 260px;
-}
-
-.hl-news-wrapper {
-  padding-top: 20px;
-}
-
 .news-item {
   display: flex;
   align-items: center;
@@ -636,11 +650,13 @@ nav.fill ul li a:hover:after {
 
 .news-title {
   color: #0b2a6e;
+  font-size: medium;
 }
 
 .news-wrapper {
   padding: 5px 5px 5px 10px;
 }
+
 
 .highlights-container ul {
   padding: 0;
