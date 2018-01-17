@@ -18,10 +18,6 @@
                         <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">{{ column }}</a>
                     {% endfor %}
-                    {% comment %} <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                        aria-selected="true">业务领域</a>
-                    <a class="nav-link nav-left" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">投资企业</a> {% endcomment %}
                 </div>
             </div>
             <div class="col-9">
@@ -31,9 +27,8 @@
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="#">集团业务</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">业务领域</li>
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li>
                                     </ol>
                                 </nav>
                         </div>
@@ -58,7 +53,36 @@
                            </div>
                        </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">罗密欧</div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            {% for column in self.get_children.specific %}
+                                {% if column.slug == 'invest' %}
+                                {% for page in column.get_children.specific %}
+                                <li>
+                                        <div class="row">
+                                                <div class="col-3 news-thumbnail">
+                                                    {% image page.representative_image fill-192x120 %}                                                
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                </div>
+                                                    <div class="news-caption">
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                            </div>                               
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

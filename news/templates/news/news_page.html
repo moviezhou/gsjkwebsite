@@ -18,7 +18,7 @@
     <div class="container news-container">
         <div class="row">
             <div class="col-3">
-                <div class="tab-title"><h4><strong>资讯中心</strong></h4></div>
+                <div class="tab-title"><h4><strong>{{ self.get_parent }}</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     {% for column in self.get_parent.get_parent.get_children %}
                         <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
@@ -28,7 +28,7 @@
             </div>
             <div class="col-9">
                 <div class="row list-title">
-                        <div class="col-3 text-left" id="column-title"><h5>集团要闻</h5></div>
+                        <div class="col-3 text-left" id="column-title"><h5>{{ self.get_parent }}</h5></div>
                         <div class="col-9 path-wrapper">
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>

@@ -14,16 +14,10 @@
             <div class="col-3">
                 <div class="tab-title"><h4><strong>走进金控</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                        aria-selected="true">公司简介</a>
-                    <a class="nav-link nav-left" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">高层寄语</a>
-                    <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">领导团队</a>
-                    <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">发展战略</a>
-                    <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">大事记</a>
+                    {% for column in self.get_children %}
+                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">{{ column }}</a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-9">
@@ -33,9 +27,8 @@
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="#">走进金控</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">公司简介</li>
+                                            <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                            <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li>
                                     </ol>
                                 </nav>
                         </div>
@@ -44,29 +37,182 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <ul>
-                            <li>111</li>
-                            <li>222</li>
-                            <li>333</li>
-                            <li>444</li>
-                            <li>555</li>
-                            <li>666</li>
-                            <li>777</li>
-                            <li>888</li>
-                            <li>999</li>
-                            <li>101010</li>
+                                {% for column in self.get_children.specific %}
+                                    {% if column.slug == 'intro' %}
+                                    {% for page in column.get_children.specific %}
+                                    <li>
+                                            <div class="row">
+                                                    <div class="col-3 news-thumbnail">
+                                                        {% image page.representative_image fill-192x120 %}                                                
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="news-title">
+                                                            <h5>
+                                                                <strong>
+                                                                    <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                                </strong>
+                                                            </h5>
+                                                    </div>
+                                                        <div class="news-caption">
+                                                            {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                        </div>
+                                                        <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                    </div>
+                                                </div>                               
+                                        </li>
+                                    {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            {% for column in self.get_children.specific %}
+                                {% if column.slug == 'expect' %}
+                                {% for page in column.get_children.specific %}
+                                <li>
+                                        <div class="row">
+                                                <div class="col-3 news-thumbnail">
+                                                    {% image page.representative_image fill-192x120 %}                                                
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                </div>
+                                                    <div class="news-caption">
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                            </div>                               
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                         </ul>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">罗密欧</div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">阿尔法</div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <ul>
-                            <li>111</li>
-                            <li>222</li>
-                            <li>333</li>
-                            <li>777</li>
-                            <li>888</li>
-                            <li>999</li>
-                            <li>101010</li>
+                            {% for column in self.get_children.specific %}
+                                {% if column.slug == 'leader' %}
+                                {% for page in column.get_children.specific %}
+                                <li>
+                                        <div class="row">
+                                                <div class="col-3 news-thumbnail">
+                                                    {% image page.representative_image fill-192x120 %}                                                
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                </div>
+                                                    <div class="news-caption">
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                            </div>                               
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            {% for column in self.get_children.specific %}
+                                {% if column.slug == 'strategy' %}
+                                {% for page in column.get_children.specific %}
+                                <li>
+                                        <div class="row">
+                                                <div class="col-3 news-thumbnail">
+                                                    {% image page.representative_image fill-192x120 %}                                                
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                </div>
+                                                    <div class="news-caption">
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                            </div>                               
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            {% for column in self.get_children.specific %}
+                                {% if column.slug == 'milestone' %}
+                                {% for page in column.get_children.specific %}
+                                <li>
+                                        <div class="row">
+                                                <div class="col-3 news-thumbnail">
+                                                    {% image page.representative_image fill-192x120 %}                                                
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                </div>
+                                                    <div class="news-caption">
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                            </div>                               
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            {% for column in self.get_children.specific %}
+                                {% if column.slug == 'honor' %}
+                                {% for page in column.get_children.specific %}
+                                <li>
+                                        <div class="row">
+                                                <div class="col-3 news-thumbnail">
+                                                    {% image page.representative_image fill-192x120 %}                                                
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                </div>
+                                                    <div class="news-caption">
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                            </div>                               
+                                    </li>
+                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>

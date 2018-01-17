@@ -22,18 +22,6 @@
                         <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">{{ column }}</a>
                     {% endfor %}
-                    {% comment %} <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                        aria-selected="true">集团要闻</a>
-                    <a class="nav-link nav-left" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">企业动态</a>
-                    <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">行业资讯</a>
-                    <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">视频中心</a>
-                    <a class="nav-link nav-left" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">通知公告</a>
-                    <a class="nav-link nav-left" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">信息披露</a> {% endcomment %}
                 </div>
             </div>
             <div class="col-9">
@@ -43,9 +31,8 @@
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="#">资讯中心</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">集团要闻</li>
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li>                                    
                                     </ol>
                                 </nav>
                         </div>
