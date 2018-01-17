@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_bleach',
 ]
 
 MIDDLEWARE = [
@@ -92,27 +94,27 @@ WSGI_APPLICATION = 'gsjkwebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'gsjkwebsite',
-#         'USER': 'gsjkadmin',
-#         'PASSWORD': '00852',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+DATABASES = {
+    'default': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gsjkwebsite',
+        'USER': 'gsjkadmin',
+        'PASSWORD': '00852',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 # Database for Mac 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 
@@ -165,3 +167,9 @@ ALLOWED_HOSTS = [
     '*.*',
     'localhost',
 ]
+
+# Which HTML tags are allowed
+BLEACH_ALLOWED_TAGS = ['p', 'h3', 'h4', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'blockquote']
+# Which HTML attributes are allowed
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'name']
+BLEACH_STRIP_TAGS = True

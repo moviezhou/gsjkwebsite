@@ -162,9 +162,7 @@ jQuery(document).ready(function($){
 
 	function setDatePosition(timelineComponents, min) {
 		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
-		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
-		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
-		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
+		    timelineComponents['timelineEvents'].eq(i).css('left', 150*i+'px');
 		}
 	}
 
@@ -239,27 +237,6 @@ jQuery(document).ready(function($){
 		events.each(function(){
 			var dateComp = $(this).data('date').split('/'),
 				newDate = new Date(dateComp[2], dateComp[1]-1, dateComp[0]);
-			dateArrays.push(newDate);
-		});
-	    return dateArrays;
-	}
-
-	function parseDate2(events) {
-		var dateArrays = [];
-		events.each(function(){
-			var singleDate = $(this),
-				dateComp = singleDate.data('date').split('T');
-			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
-				var dayComp = dateComp[0].split('/'),
-					timeComp = dateComp[1].split(':');
-			} else if( dateComp[0].indexOf(':') >=0 ) { //only time is provide
-				var dayComp = ["2000", "0", "0"],
-					timeComp = dateComp[0].split(':');
-			} else { //only DD/MM/YEAR
-				var dayComp = dateComp[0].split('/'),
-					timeComp = ["0", "0"];
-			}
-			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
 			dateArrays.push(newDate);
 		});
 	    return dateArrays;

@@ -1,7 +1,8 @@
 {% extends "base.html" %} 
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
-{% load static %} 
+{% load bleach_tags %}
+{% load static %}
 {% block body_class %}template-blogindexpage {% endblock%}
 {% block content %} 
 <link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
@@ -57,7 +58,7 @@
                                                         </h5>
                                                 </div>
                                                     <div class="news-caption">
-                                                        {{ page.body | richtext | truncatechars_html:100 }}
+                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
                                                     </div>
                                                     <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
                                                 </div>

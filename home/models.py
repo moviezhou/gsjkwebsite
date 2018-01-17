@@ -30,6 +30,10 @@ class HomePage(Page):
 
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
-
-        context['news_entries'] = self.get_children().get(slug='news').get_children().get(slug='highlights').get_children().specific()
+        news_entries = self.get_children().get(slug='news').get_children().get(slug='highlights').get_children().specific()
+        news_latest = self.get_children().get(slug='news').get_children().get(slug='latest').get_children().specific()
+        partybuilding_news_entries = self.get_children().get(slug='partybuilding').get_children().get(slug='dynamic').get_children().specific()
+        context['news_entries'] = news_entries
+        context['news_latest'] = news_latest
+        context['partybuilding_news_entries'] = partybuilding_news_entries
         return context

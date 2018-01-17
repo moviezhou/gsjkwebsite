@@ -106,6 +106,7 @@ nav ol {
 .rich-text p {
     text-indent: 2em;
     line-height: 2em;
+    font-size: 16px;
 }
 
 .news-thumbnail {

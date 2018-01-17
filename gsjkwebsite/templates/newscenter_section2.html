@@ -1,6 +1,7 @@
 {% load static %} 
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
+{% load bleach_tags %}
 {% block newscenter %}
 <div class="container news-container">
     <div class="row">
@@ -11,7 +12,7 @@
                                 <h5>集团要闻</h5>
                             </div>
                             <div class="more">
-                                <div>更多</div>
+                                <div><a href="/news/highlights">更多</a></div>
                                 <div class="css-circle plus-sign">
                                     &#43;
                                 </div>
@@ -24,7 +25,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="highlight-title">
-                                <strong>甘肃长达金融资产管理股份有限公司成立大会在兰州举行</strong>
+                                <strong>{{ news_entries | first }}</strong>
                             </div>
                             <div class="highlight-content">
                                 2017年8月17日，甘肃省金融控股集团有限公司董事长李晓安带领2017年8月17日，甘肃省金融控股集团有限公司董事长李晓安带领…………
@@ -36,7 +37,7 @@
             <div class="highlights-container">
                 <div>
                     <ul>
-                        {% for news in news_entries %}
+                        {% for news in news_entries|slice:"1:5" %}
                             <li class="news-item">
                                 <div class="thumbnail">
                                     <a href="{% pageurl news %}">
@@ -52,7 +53,7 @@
                                         </div>
                                         <div class="news-content">
                                             <p>
-                                                {{ news.body | richtext | truncatechars_html:55 }}
+                                                {{ news.body | richtext | bleach |truncatechars_html:55 }}
                                             </p>
                                         </div>
                                     </div>
@@ -69,7 +70,9 @@
                         <h5>企业动态</h5>
                     </div>
                     <div class="more">
-                        <div>更多</div>
+                        <div>
+                            <a href="/news/latest">更多</a>
+                        </div>
                         <div class="css-circle plus-sign">
                             &#43;
                         </div>
@@ -78,51 +81,28 @@
                 <hr>
                 <div class="highlights-container">
                     <ul>
-                        <li class="news-item">
-                            <div class="thumbnail">
-                                <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                            </div>
-                            <div class="news-wrapper">
-                                <div class="news-title">
-                                    <strong>定西市市委副书记、市长戴超与甘肃金融控股集团</strong>
-                                </div>
-                                <div class="news-content">
-                                    <p>
-                                        2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="news-item">
-                            <div class="thumbnail">
-                                    <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                </div>
-                                <div class="news-wrapper">
-                                    <div class="news-title">
-                                        <strong>定西市市委副书记、市长戴超与甘肃金融控股集团</strong>
+                        {% for news in news_latest|slice:"0:3" %}
+                            <li class="news-item">
+                                <div class="thumbnail">
+                                    <a href="{% pageurl news %}">
+                                        {% image news.representative_image fill-160x100 %}
+                                    </a> 
+                                    <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
                                     </div>
-                                    <div class="news-content">
-                                        <p>
-                                            2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                        </p>
+                                    <div class="news-wrapper">
+                                        <div class="news-title">
+                                            <strong>
+                                                <a href="{% pageurl news %}">{{ news.title }}</a>
+                                            </strong>
+                                        </div>
+                                        <div class="news-content">
+                                            <p>
+                                                {{ news.body | richtext | bleach |truncatechars_html:55 }}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                        </li>
-                        <li class="news-item">
-                            <div class="thumbnail">
-                                    <img class="" src="{% static 'images/news.png' %}" alt="highlights">
-                                </div>
-                                <div class="news-wrapper">
-                                    <div class="news-title">
-                                        <strong>定西市市委副书记、市长戴超与甘肃金融控股集团</strong>
-                                    </div>
-                                    <div class="news-content">
-                                        <p>
-                                            2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                        </p>
-                                    </div>
-                                </div>
-                        </li>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -149,39 +129,31 @@
                     </div>
                 </div>
                 <div class="highlights-container">
-                        <ul>
+                    <ul>
+                        {% for news in partybuilding_news_entries|slice:"0:2" %}
                             <li class="news-item">
                                 <div class="thumbnail">
-                                    <img class="" src="{% static 'images/news2.png' %}" alt="highlights">
-                                </div>
-                                <div class="news-wrapper">
-                                    <div class="news-title">
-                                        <strong>定西市市委副书记、市长戴超与甘肃金融控股集团</strong>
-                                    </div>
-                                    <div class="news-content">
-                                        <p>
-                                            2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                        <img class="" src="{% static 'images/news2.png' %}" alt="highlights">
+                                    <a href="{% pageurl news %}">
+                                        {% image news.representative_image fill-160x100 %}
+                                    </a> 
+                                    <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
                                     </div>
                                     <div class="news-wrapper">
                                         <div class="news-title">
-                                            <strong>定西市市委副书记、市长戴超与甘肃金融控股集…</strong>
+                                            <strong>
+                                                <a href="{% pageurl news %}">{{ news.title }}</a>
+                                            </strong>
                                         </div>
                                         <div class="news-content">
                                             <p>
-                                                2017年11月22日下午，清华控股有限公司党委副书记、副总裁赵燕来一行8人来国信集团调研考察
+                                                {{ news.body | richtext | bleach |truncatechars_html:55 }}
                                             </p>
                                         </div>
                                     </div>
                             </li>
+                        {% endfor %}
                         </ul>
-                    </div>         
+                </div>         
             </div>
         </div>
     </div>
