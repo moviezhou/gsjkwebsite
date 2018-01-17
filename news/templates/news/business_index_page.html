@@ -1,4 +1,9 @@
-{% extends "base.html" %} {% load wagtailcore_tags %} {% load static %} {% block body_class %}template-blogindexpage {% endblock%}
+{% extends "base.html" %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load bleach_tags %}
+{% load static %} 
+{% block body_class %}template-blogindexpage {% endblock%}
 {% block content %} 
 <link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
 {% include 'topnav3.html' %}
