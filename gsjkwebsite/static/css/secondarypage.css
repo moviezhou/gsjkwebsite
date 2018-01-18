@@ -115,6 +115,14 @@ nav ol {
     align-items: center;
 }
 
+.business-domain {
+    margin-top: 20px;
+}
+
+.busi-desc {
+    text-align: left;
+}
+
 .footer {
     /* position: relative; */
     position: relative;
