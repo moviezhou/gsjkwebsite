@@ -551,9 +551,13 @@ nav.fill ul li a:hover:after {
 /* end of timeline */
 
 
-.newscenter {  
+.newscenter {
   background: url('../images/newsbg.png') no-repeat center center;
   background-size: cover;
+}
+
+.news-container {
+  margin-top: 65px;
 }
 
 .news-container .dl, ol, ul {
