@@ -78,8 +78,12 @@
                                                     <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
                                                 </div>
                                             {% else %}
-                                                <div class="col-9 news-caption">
-                                                    {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                <div class="col-9 news-title">
+                                                    <h5>
+                                                        <strong>
+                                                            <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                        </strong>
+                                                    </h5>
                                                 </div>
                                                 <div class="col-3 news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
                                             {% endif %}
