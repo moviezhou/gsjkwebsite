@@ -23,7 +23,7 @@
 }
 
 .tab-pane ul li {
-    border-bottom: 1px dotted;
+    border-bottom: 1px solid lightgrey;
     padding: 4px;
 }
 
@@ -113,6 +113,11 @@ nav ol {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.col-10 .news-title {
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .business-domain {
