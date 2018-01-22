@@ -78,12 +78,22 @@ class ColumnPage(Page):
 
     def get_context(self, request):
         context = super(ColumnPage, self).get_context(request)
+        # news_items = ColumnPage.objects.live().order_by('-first_published_at')
+        news_items = self.get_children().live().order_by('-date')
+
+
+        print(news_items)
+
         return context
+
     
     def serve(self, request):
         return render(request, 'news/column_page.html', self.get_context(request))
+    
 
 class NewsPage(Page):
+    class Meta:
+        verbose_name = "新闻"
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
@@ -108,4 +118,4 @@ class NewsPage(Page):
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
-    ] 
+    ]

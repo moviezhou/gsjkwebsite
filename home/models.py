@@ -10,6 +10,8 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 class HomePage(Page):
+    class Meta:
+        verbose_name = "首页"
     body = RichTextField(blank=True)
 
     banner_image = models.ForeignKey(
