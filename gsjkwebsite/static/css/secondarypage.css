@@ -115,7 +115,7 @@ nav ol {
     align-items: center;
 }
 
-.col-10 .news-title {
+.row .news-title {
     padding-top: 4px;
     padding-bottom: 4px;
 }
