@@ -48,13 +48,13 @@
                                     <div class="news-wrapper">
                                         <div class="news-title">
                                             <strong>
-                                                <a href="{% pageurl news %}">{{ news.title }}</a>
+                                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
                                             </strong>
                                         </div>
                                         <div class="news-content">
                                             {% spaceless %}
                                                 <p>
-                                                    {{ news.body | richtext | bleach |truncatechars_html:38 }}
+                                                    {{ news.body | richtext | bleach | truncatechars_html:55 }}
                                                 </p>
                                             {% endspaceless %}
                                         </div>
@@ -94,13 +94,13 @@
                                     <div class="news-wrapper">
                                         <div class="news-title">
                                             <strong>
-                                                <a href="{% pageurl news %}">{{ news.title }}</a>
+                                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
                                             </strong>
                                         </div>
                                         <div class="news-content">
                                             {% spaceless %}
                                                 <p>
-                                                    {{ news.body | richtext | bleach |truncatechars_html:38 }}
+                                                    {{ news.body | richtext | bleach |truncatechars_html:55 }}
                                                 </p>
                                             {% endspaceless %}
                                         </div>
@@ -145,13 +145,13 @@
                                     <div class="news-wrapper">
                                         <div class="news-title">
                                             <strong>
-                                                <a href="{% pageurl news %}">{{ news.title }}</a>
+                                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
                                             </strong>
                                         </div>
                                         <div class="news-content">
                                             {% spaceless %}
                                                 <p>
-                                                    {{ news.body | richtext | bleach |truncatechars_html:38 }}
+                                                    {{ news.body | richtext | bleach | truncatechars_html:55 }}
                                                 </p>
                                             {% endspaceless %}
                                         </div>
