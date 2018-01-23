@@ -75,16 +75,15 @@ class ColumnPage(Page):
         verbose_name = "专栏"
     intro = RichTextField(blank=True)
 
+    # def get_context(self, request):
+    #     context = super(ColumnPage, self).get_context(request)
+    #     # news_items = ColumnPage.objects.live().order_by('-first_published_at')
+    #     news_items = self.get_children().live().order_by('-date')
 
-    def get_context(self, request):
-        context = super(ColumnPage, self).get_context(request)
-        # news_items = ColumnPage.objects.live().order_by('-first_published_at')
-        news_items = self.get_children().live().order_by('-date')
 
+    #     print(news_items)
 
-        print(news_items)
-
-        return context
+    #     return context
 
     
     def serve(self, request):
