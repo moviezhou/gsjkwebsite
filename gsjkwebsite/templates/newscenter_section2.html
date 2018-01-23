@@ -54,7 +54,7 @@
                                         <div class="news-content">
                                             {% spaceless %}
                                                 <p>
-                                                    {{ news.body | richtext | bleach | truncatechars_html:55 }}
+                                                    {{ news.body | bleach | richtext | truncatechars_html:55 }}
                                                 </p>
                                             {% endspaceless %}
                                         </div>
