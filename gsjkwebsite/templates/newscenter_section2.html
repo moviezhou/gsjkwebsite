@@ -83,7 +83,7 @@
                 <hr>
                 <div class="highlights-container">
                     <ul>
-                        {% for news in news_latest|slice:"0:3" %}
+                        {% for news in news_latest|slice:"0:2" %}
                             <li class="news-item">
                                 <div class="thumbnail">
                                     <a href="{% pageurl news %}">
@@ -98,11 +98,11 @@
                                             </strong>
                                         </div>
                                         <div class="news-content">
-                                            <!-- {% spaceless %} -->
+                                            {% spaceless %}
                                                 <p>
-                                                    {{ news.body | richtext | bleach |truncatechars_html:55 }}
+                                                    {{ news.body | richtext | bleach |truncatechars_html:50 }}
                                                 </p>
-                                            <!-- {% endspaceless %} -->
+                                            {% endspaceless %}
                                         </div>
                                     </div>
                             </li>
@@ -151,7 +151,7 @@
                                         <div class="news-content">
                                                 <p>
                                                     {% spaceless %}
-                                                        {{ news.body | richtext | bleach | truncatechars_html:55 }}
+                                                        {{ news.body | richtext | bleach | truncatechars_html:50 }}
                                                     {% endspaceless %}
                                                 </p>
                                         </div>
