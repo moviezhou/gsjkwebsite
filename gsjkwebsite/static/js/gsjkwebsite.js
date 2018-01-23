@@ -287,7 +287,7 @@ jQuery(document).ready(function($){
 });
 
 
-$('#v-pills-tab a').on('click', function (evt) {
+$('#pills-tab a').on('click', function (evt) {
 	evt.preventDefault();
 	$('#column-title>h5').text(evt.target.text);
 	$('#current_column').text(evt.target.text);
@@ -301,12 +301,12 @@ $('#v-pills-tab a').on('click', function (evt) {
 // 	$('#column-title>h5').text(evt.target.text);
 // });
 
-$('#v-pills-tab a').on('click', function (e) {
-	// e.preventDefault()
-	// window.location.href = $(this).attr('href');
-	// console.log($(this).attr('href'));
-	// $(this).tab('show')
-  });
+// $('#v-pills-tab a').on('click', function (e) {
+// 	// e.preventDefault()
+// 	// window.location.href = $(this).attr('href');
+// 	// console.log($(this).attr('href'));
+// 	// $(this).tab('show')
+//   });
 
 
 $("#v-pills-tab a").each(function(){  
