@@ -98,11 +98,11 @@
                                             </strong>
                                         </div>
                                         <div class="news-content">
-                                            {% spaceless %}
+                                            <!-- {% spaceless %} -->
                                                 <p>
                                                     {{ news.body | richtext | bleach |truncatechars_html:55 }}
                                                 </p>
-                                            {% endspaceless %}
+                                            <!-- {% endspaceless %} -->
                                         </div>
                                     </div>
                             </li>
