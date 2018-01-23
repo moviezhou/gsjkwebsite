@@ -52,11 +52,11 @@
                                             </strong>
                                         </div>
                                         <div class="news-content">
-                                            {% spaceless %}
                                                 <p>
-                                                    {{ news.body | bleach | richtext | truncatechars_html:55 }}
+                                                    {% spaceless %}
+                                                        {{ news.body | bleach | richtext | truncatechars_html:55 }}
+                                                    {% endspaceless %}
                                                 </p>
-                                            {% endspaceless %}
                                         </div>
                                     </div>
                             </li>
@@ -149,11 +149,11 @@
                                             </strong>
                                         </div>
                                         <div class="news-content">
-                                            {% spaceless %}
                                                 <p>
-                                                    {{ news.body | richtext | bleach | truncatechars_html:55 }}
+                                                    {% spaceless %}
+                                                        {{ news.body | richtext | bleach | truncatechars_html:55 }}
+                                                    {% endspaceless %}
                                                 </p>
-                                            {% endspaceless %}
                                         </div>
                                     </div>
                             </li>
