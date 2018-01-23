@@ -93,7 +93,9 @@
                                                         </h5>
                                                 </div>
                                                     <div class="news-caption">
-                                                        {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                        {% spaceless %}
+                                                            {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                        {% endspaceless %}
                                                     </div>
                                                     <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
                                                 </div>
