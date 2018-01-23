@@ -287,9 +287,11 @@ jQuery(document).ready(function($){
 });
 
 
-$('#myTab a').on('click', function (e) {
-	e.preventDefault()
-	$(this).tab('show')
+$('#v-pills-tab a').on('click', function (evt) {
+	evt.preventDefault();
+	$('#column-title>h5').text(evt.target.text);
+	$('#current_column').text(evt.target.text);
+	$(this).tab('show');
   });
 
 
