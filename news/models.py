@@ -16,6 +16,15 @@ class CompanyIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+    def get_context(self, request):
+        context = super(CompanyIndexPage, self).get_context(request)
+        column_entries = self.get_children() # .get(slug='intro').get_children().specific()
+        for i in column_entries:
+            print(i.get_children().specific())
+        context['column_entries'] = column_entries
+        # print(column_entries)
+        return context
+
 class NewsIndexPage(Page):
     class Meta:
         verbose_name = "资讯中心二级页面"
