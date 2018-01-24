@@ -24,12 +24,14 @@
                                 <img class="img-fluid" src="{% static 'images/highlights.png' %}" alt="highlights">                                
                         </div>
                         <div class="col-md-6">
-                            <div class="highlight-title">
-                                <strong>{{ news_entries | first }}</strong>
-                            </div>
-                            <div class="highlight-content">
-                                2017年8月17日，甘肃省金融控股集团有限公司董事长李晓安带领2017年8月17日，甘肃省金融控股集团有限公司董事长李晓安带领…………
-                            </div>
+                            {% with news_entries|first as news %}
+                                <div class="highlight-title">
+                                    <strong>{{ news.title }}</strong>
+                                </div>
+                                <div class="highlight-content">
+                                    {{ news.body | richtext | bleach |truncatechars_html:80 }}
+                                </div>
+                            {% endwith %}
                         </div>
                     </div>
                 </div>
