@@ -319,7 +319,7 @@ $("#v-pills-tab a").each(function(){
 		}  
 });  
 
-$('.nes-content p').each(function() {
+$('.news-content p').each(function() {
 	if ($(this).text() === '') {
 	  $(this).remove();
 	}
