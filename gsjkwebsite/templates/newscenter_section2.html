@@ -52,11 +52,9 @@
                                             </strong>
                                         </div>
                                         <div class="news-content">
-                                                <p>
-                                                    {% spaceless %}
-                                                        {{ news.body | bleach | richtext | truncatechars_html:55 }}
-                                                    {% endspaceless %}
-                                                </p>
+                                            {% spaceless %}
+                                                {{ news.body | bleach | richtext | truncatechars_html:46 }}
+                                            {% endspaceless %}
                                         </div>
                                     </div>
                             </li>
@@ -99,9 +97,7 @@
                                         </div>
                                         <div class="news-content">
                                             {% spaceless %}
-                                                <p>
-                                                    {{ news.body | richtext | bleach |truncatechars_html:50 }}
-                                                </p>
+                                                {{ news.body | richtext | bleach |truncatechars_html:46 }}
                                             {% endspaceless %}
                                         </div>
                                     </div>
@@ -149,11 +145,9 @@
                                             </strong>
                                         </div>
                                         <div class="news-content">
-                                                <p>
-                                                    {% spaceless %}
-                                                        {{ news.body | richtext | bleach | truncatechars_html:50 }}
-                                                    {% endspaceless %}
-                                                </p>
+                                            {% spaceless %}
+                                                {{ news.body | richtext | bleach | truncatechars_html:46 }}
+                                            {% endspaceless %}
                                         </div>
                                     </div>
                             </li>
