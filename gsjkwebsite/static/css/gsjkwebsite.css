@@ -1,16 +1,14 @@
 * {
   font-family: arial,tahoma,'Microsoft Yahei','\5b8b\4f53',sans-serif;
 }
+
 html {
   font-family: arial,tahoma,'Microsoft Yahei','\5b8b\4f53',sans-serif;
   font-size: 14px;
 }
+
 body {
   font-family: arial,tahoma,'Microsoft Yahei','\5b8b\4f53',sans-serif;
-}
-
-h5 {
-  white-space: nowrap;
 }
 
 ol, ul {
