@@ -318,3 +318,9 @@ $("#v-pills-tab a").each(function(){
 			$('#column-title>h5').text($this[0].text);   
 		}  
 });  
+
+$('.nes-content p').each(function() {
+	if ($(this).text() === '') {
+	  $(this).remove();
+	}
+  });
