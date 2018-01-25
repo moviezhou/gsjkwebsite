@@ -44,6 +44,7 @@
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/">{{ self.get_parent }}</a></li>
                                         <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li>
                                     </ol>
                                 </nav>
@@ -53,14 +54,23 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="domain" role="tabpanel" aria-labelledby="v-pills-home-tab">
                        <div class="row category-row">
-                           <div class="col-3">
+                            {% for column in column_entries %}
+                                {% for business in column.get_children.specific %}
+                                {% image business.business_icon fill-140x140 %}
+                                    <div class="business-domain">
+                                        <h5><strong>{{ business.business_name }}</strong></h5>
+                                        <h6 class="busi-desc">{{ business.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                           {% comment %} <div class="col-3">
                                 <img class="" src="{% static 'images/securities.png' %}" alt="securities">
                                 <div class="business-domain">
                                     <h5><strong>证券</strong></h5>
                                     <h6 class="busi-desc">证券业务包括证券经纪业务，证券投资咨询业务，与证券……</h6>
                                 </div>
-                           </div>
-                           <div class="col-3">
+                           </div> {% endcomment %}
+                           {% comment %} <div class="col-3">
                                 <img class="" src="{% static 'images/futures.png' %}" alt="futures">
                                 <div class="business-domain">
                                     <h5><strong>期货</strong></h5>
@@ -73,9 +83,9 @@
                                     <h5><strong>基金</strong></h5>
                                     <h6 class="busi-desc">通过发行基金单位，集中投资者的资金，由基金托管人（即……</h6>
                                 </div>
-                           </div>
+                           </div> {% endcomment %}
                        </div>
-                       <div class="row category-row">
+                       {% comment %} <div class="row category-row">
                            <div class="col-3">
                                 <img class="" src="{% static 'images/insurance.png' %}" alt="futures">
                                 <div class="business-domain">
@@ -83,7 +93,7 @@
                                     <h6 class="busi-desc">保险业务正在筹建中……</h6>
                                 </div>
                            </div>
-                       </div>
+                       </div> {% endcomment %}
                     </div>
                     <div class="tab-pane fade" id="investment" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <div class="container">
