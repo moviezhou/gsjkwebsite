@@ -40,6 +40,12 @@ class BusinessIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+    def get_context(self, request):
+        context = super(BusinessIndexPage, self).get_context(request)
+        column_entries = self.get_children()
+        context['column_entries'] = column_entries
+        return context
+
 class PartyBuildingIndexPage(Page):
     class Meta:
         verbose_name = "党建工作二级页面"
@@ -99,15 +105,16 @@ class ColumnPage(Page):
 class NewsPage(Page):
     class Meta:
         verbose_name = "新闻"
-    date = models.DateField("Post date")
-    intro = models.CharField(max_length=250)
-    body = RichTextField(blank=True)
+    date = models.DateField(verbose_name="日期")
+    intro = models.CharField(max_length=250, verbose_name="简介")
+    body = RichTextField(blank=True, verbose_name="内容")
     representative_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name='+',
+        verbose_name="缩略图"
     )
 
     promote_panels = Page.promote_panels + [
@@ -123,4 +130,35 @@ class NewsPage(Page):
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
+    ]
+
+class EnterprisePage(Page):
+    class Meta:
+        verbose_name = "企业"
+
+    ENTERPRISE_CATEGORY = (
+        ("全资企业", "全资企业"),
+        ("控股企业", "控股企业"),
+        ("参股企业", "参股企业"),)
+
+    
+    enterprise_category = models.CharField(max_length=10, choices=ENTERPRISE_CATEGORY, default=1, verbose_name="公司类型")   
+    enterprise_name = models.CharField(max_length=60, verbose_name="公司名称")
+    enterprise_intro = RichTextField(blank=True, verbose_name="公司简介")
+    enterprise_logo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="Logo"
+    )
+    enterprise_website = models.CharField(blank=True, max_length=200, verbose_name="网址")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('enterprise_category'),
+        FieldPanel('enterprise_name'),
+        FieldPanel('enterprise_intro'),
+        FieldPanel('enterprise_logo'),
+        FieldPanel('enterprise_website'),
     ]

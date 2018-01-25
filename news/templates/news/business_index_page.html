@@ -18,11 +18,22 @@
         <div class="row">
             <div class="col-3">
                 <div class="tab-title"><h4><strong>集团业务</strong></h4></div>
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     {% for column in self.get_children %}
                         <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">{{ column }}</a>
                     {% endfor %}
+                </div> -->
+                <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
+                        
+                    {% for column in column_entries %}
+                        {% if forloop.first %}
+                            <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
+                        {% else %}
+                            <a class="nav-link nav-left" id="v-pills-{{ column.slug }}-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
+                        {% endif %}
+                    {% endfor %}
+
                 </div>
             </div>
             <div class="col-9">
@@ -40,7 +51,7 @@
                     </div>
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="tab-pane fade show active" id="domain" role="tabpanel" aria-labelledby="v-pills-home-tab">
                        <div class="row category-row">
                            <div class="col-3">
                                 <img class="" src="{% static 'images/securities.png' %}" alt="securities">
@@ -74,37 +85,63 @@
                            </div>
                        </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <ul>
-                            {% for column in self.get_children.specific %}
-                                {% if column.slug == 'invest' %}
-                                {% for page in column.get_children.specific %}
-                                <li>
-                                        <div class="row">
-                                                <div class="col-3 news-thumbnail">
-                                                    {% image  page.representative_image class="fluid" fill-192x120 %}                                                
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="news-title">
+                    <div class="tab-pane fade" id="investment" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="container">
+                            <div class="category-wrapper">
+                                <div class="category">全资企业</div>
+                                <div class="companies-wrapper">
+                                    <ul class="companies">
+                                        {% for column in column_entries %}
+                                            {% for company in column.get_children.specific %}
+                                               {% if company.enterprise_catrgory == "全资企业" %}
+                                                    <li class="company-name">
                                                         <h5>
-                                                            <strong>
-                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
-                                                            </strong>
+                                                            <a href="#{{ column.slug }}">{{company.enterprise_name }}</a>
                                                         </h5>
-                                                </div>
-                                                    <div class="news-caption">
-                                                        {% spaceless %}
-                                                            {{ page.body | richtext | bleach | truncatechars_html:80 }}
-                                                        {% endspaceless %}
-                                                    </div>
-                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
-                                                </div>
-                                            </div>                               
-                                    </li>
-                                {% endfor %}
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
+                                                    </li>
+                                               {% endif %}
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="category-wrapper">
+                                    <div class="category">控股企业</div>
+                                <div class="companies-wrapper">
+                                    <ul class="companies">
+                                            {% for column in column_entries %}
+                                            {% for company in column.get_children.specific %}
+                                               {% if company.enterprise_category == "控股企业" %}
+                                                    <li class="company-name">
+                                                        <h5>
+                                                            <a href="#{{ column.slug }}">{{company.enterprise_name }}</a>
+                                                        </h5>
+                                                    </li>
+                                               {% endif %}
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                               </div>
+                               <div class="category-wrapper">
+                                    <div class="category">参股企业</div>
+                                    <div class="companies-wrapper">
+                                        <ul class="companies">
+                                                {% for column in column_entries %}
+                                                {% for company in column.get_children.specific %}
+                                                   {% if company.enterprise_category == "参股企业" %}
+                                                        <li class="company-name">
+                                                            <h5>
+                                                                <a href="#{{ column.slug }}">{{company.enterprise_name }}</a>
+                                                            </h5>
+                                                        </li>
+                                                   {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
