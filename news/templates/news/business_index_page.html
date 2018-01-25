@@ -96,8 +96,27 @@
                                                {% if company.enterprise_catrgory == "全资企业" %}
                                                     <li class="company-name">
                                                         <h5>
-                                                            <a href="#{{ column.slug }}">{{company.enterprise_name }}</a>
+                                                            <a href="" data-toggle="modal" data-target="#{{ enterprise_name }}">{{company.enterprise_name }}</a>
                                                         </h5>
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="{{ enterprise_name }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">{{ company.enterprise_name }}</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        {{ company.enterprise_intro }}
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
                                                     </li>
                                                {% endif %}
                                             {% endfor %}
@@ -114,8 +133,28 @@
                                                {% if company.enterprise_category == "控股企业" %}
                                                     <li class="company-name">
                                                         <h5>
-                                                            <a href="#{{ column.slug }}">{{company.enterprise_name }}</a>
+                                                            <a href="" data-toggle="modal" data-target="#{{ company.enterprise_name }}">{{company.enterprise_name }}</a>
                                                         </h5>
+                                                            
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="{{ company.enterprise_name }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">{{ company.enterprise_name }}</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        {{ company.enterprise_intro }}
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
                                                     </li>
                                                {% endif %}
                                             {% endfor %}
@@ -132,8 +171,27 @@
                                                    {% if company.enterprise_category == "参股企业" %}
                                                         <li class="company-name">
                                                             <h5>
-                                                                <a href="#{{ column.slug }}">{{company.enterprise_name }}</a>
+                                                                <a href="" data-toggle="modal" data-target="#{{ company.enterprise_name }}">{{company.enterprise_name }}</a>
                                                             </h5>
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="{{ company.enterprise_name }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">{{ company.enterprise_name }}</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            {{ company.enterprise_intro | richtext }}
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
                                                         </li>
                                                    {% endif %}
                                                 {% endfor %}
