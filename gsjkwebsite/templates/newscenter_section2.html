@@ -20,23 +20,23 @@
                     </div>
                     <hr>
                     <div class="row content">
-                        <div class="col-md-6">
-                                <a href="{% pageurl news %}">
-                                    <img class="img-fluid" src="{% static 'images/highlights.png' %}" alt="highlights">
-                                </a>                                
-                        </div>
-                        <div class="col-md-6">
-                            {% with news_entries|first as news %}
-                                <div class="highlight-title">
-                                    <strong>                                                
-                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>
-                                    </strong>
-                                </div>
-                                <div class="highlight-content">
-                                    {{ news.body | richtext | bleach |truncatechars_html:80 }}
-                                </div>
-                            {% endwith %}
-                        </div>
+                        {% with news_entries|first as news %}
+                            <div class="col-md-6">
+                                    <a href="{% pageurl news %}">
+                                        <img class="img-fluid" src="{% static 'images/highlights.png' %}" alt="highlights">
+                                    </a>                                
+                            </div>
+                            <div class="col-md-6">
+                                    <div class="highlight-title">
+                                        <strong>                                                
+                                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>
+                                        </strong>
+                                    </div>
+                                    <div class="highlight-content">
+                                        {{ news.body | richtext | bleach |truncatechars_html:80 }}
+                                    </div>
+                            </div>
+                        {% endwith %}
                     </div>
                 </div>
                 <hr>
