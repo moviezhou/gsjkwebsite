@@ -325,3 +325,8 @@ $('.news-content p').each(function() {
 	  $(this).remove();
 	}
   });
+
+
+function whobuildthis(){
+	console.log("moviezhou@gmail.com");
+}
