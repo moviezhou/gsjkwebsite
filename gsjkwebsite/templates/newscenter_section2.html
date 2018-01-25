@@ -21,7 +21,9 @@
                     <hr>
                     <div class="row content">
                         <div class="col-md-6">
-                                <img class="img-fluid" src="{% static 'images/highlights.png' %}" alt="highlights">                                
+                                <a href="{% pageurl news %}">
+                                    <img class="img-fluid" src="{% static 'images/highlights.png' %}" alt="highlights">
+                                </a>                                
                         </div>
                         <div class="col-md-6">
                             {% with news_entries|first as news %}
