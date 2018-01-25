@@ -913,7 +913,6 @@ select > option {
   height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .up-slogan {
