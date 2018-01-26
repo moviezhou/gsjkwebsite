@@ -17,15 +17,8 @@
     <div class="container news-container">
         <div class="row">
             <div class="col-3">
-                <div class="tab-title"><h4><strong>集团业务</strong></h4></div>
-                <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    {% for column in self.get_children %}
-                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true">{{ column }}</a>
-                    {% endfor %}
-                </div> -->
+                <div class="tab-title"><h4><strong>投资企业</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
-                        
                     {% for column in column_entries %}
                         {% if forloop.first %}
                             <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
@@ -37,14 +30,15 @@
                 </div>
             </div>
             <div class="col-9">
-                <div class="row list-title">
+                <p>hhahisfs</p>
+                <!-- <div class="row list-title">
                         <div class="col-3 text-left" id="column-title"><h5>业务领域</h5></div>
                         <div class="col-9 path-wrapper">
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="{{ self.url }}">{{ self }}</a></li>
+                                        <li class="breadcrumb-item" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li>
                                         <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">业务领域</li> 
                                     </ol>
                                 </nav>
@@ -58,9 +52,7 @@
                                 {% for business in column.get_children.specific %}
                                     {% if business.business_category == "主金融" %}
                                         <div class="business-domain">
-                                            <a href="/business/domain">
-                                                {% image business.business_icon fill-140x140 %}
-                                            </a>
+                                            {% image business.business_icon fill-140x140 %}
                                             <h5 class="busi-name"><strong>{{ business.business_name }}</strong></h5>
                                             <h6 class="busi-desc">{{ business.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
                                         </div>
@@ -117,7 +109,7 @@
                                                {% if company.enterprise_category == "控股企业" %}
                                                     <li class="company-name">
                                                         <h5>
-                                                            <a href="/business/investment" >{{company.enterprise_name }}</a>
+                                                            <a href="" data-toggle="modal" data-target="#{{ company.enterprise_name }}">{{company.enterprise_name }}</a>
                                                         </h5>
                                                             
                                                             <!-- Modal -->
@@ -185,7 +177,7 @@
                                 </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

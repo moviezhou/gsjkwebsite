@@ -98,14 +98,21 @@ class ColumnPage(Page):
     #     # news_items = ColumnPage.objects.live().order_by('-first_published_at')
     #     news_items = self.get_children().live().order_by('-date')
 
-
-    #     print(news_items)
-
-    #     return context
+    def get_context(self, request):
+        context = super(ColumnPage, self).get_context(request)
+        if request.path == '/business/domain' or request.path == '/business/investment':
+            column_entries = self.get_children()
+            context['column_entries'] = column_entries
+        return context
 
     
     def serve(self, request):
-        return render(request, 'news/column_page.html', self.get_context(request))
+        if request.path == '/business/domain':
+            return render(request, 'news/business_domain.html', self.get_context(request))
+        elif request.path == '/business/investment':
+            return render(request, 'news/enterprise_page.html', self.get_context(request))
+        else:
+            return render(request, 'news/column_page.html', self.get_context(request))
     
 
 class NewsPage(Page):
@@ -168,6 +175,13 @@ class EnterprisePage(Page):
         ImageChooserPanel('enterprise_logo'),
         FieldPanel('enterprise_website'),
     ]
+
+    def get_context(self, request):
+        context = super(EnterprisePage, self).get_context(request)
+        column_entries = self.get_children()
+        print(column_entries)
+        context['column_entries'] = column_entries
+        return context
 
 class BusinessDomain(Page):
     class Meta:
