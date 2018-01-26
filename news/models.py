@@ -190,7 +190,8 @@ class BusinessDomain(Page):
     BUSINESS_CATEGORY = (
         ("主金融", "主金融"),
         ("类金融", "类金融"),
-        ("平台类", "平台类"),)
+        ("平台类", "平台类"),
+        ("其他类", "其他类"),)
 
     business_category = models.CharField(max_length=10, choices=BUSINESS_CATEGORY, default=1, verbose_name="业务领域")   
     
