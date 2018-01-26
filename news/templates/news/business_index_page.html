@@ -56,11 +56,13 @@
                        <div class="category-row">
                             {% for column in column_entries %}
                                 {% for business in column.get_children.specific %}
-                                    <div class="business-domain">
-                                        {% image business.business_icon fill-140x140 %}
-                                        <h5 class="busi-name"><strong>{{ business.business_name }}</strong></h5>
-                                        <h6 class="busi-desc">{{ business.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
-                                    </div>
+                                    {% if business.business_category == "主金融" %}
+                                        <div class="business-domain">
+                                            {% image business.business_icon fill-140x140 %}
+                                            <h5 class="busi-name"><strong>{{ business.business_name }}</strong></h5>
+                                            <h6 class="busi-desc">{{ business.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                                        </div>
+                                    {% endif %}
                                 {% endfor %}
                             {% endfor %}
                         </div>
