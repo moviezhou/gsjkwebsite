@@ -46,28 +46,7 @@
                     </div>
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
-                        {% for column in column_entries %}
-                                {% if column.specific.slug == "securities" %}
-                                <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
-                                    {{ column.specific.business_intro | richtext }}
-                                </div>
-                                {% elif column.specific.slug == "futures" %}
-                                    <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
-                                        {{ column.specific.business_intro | richtext }}
-                                    </div>
-                                {% elif column.specific.slug == "fund" %}
-                                <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
-                                    {{ column.specific.business_intro | richtext }}
-                                </div>
-                                {% elif column.specific.slug == "insurance" %}
-                                <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
-                                    {{ column.specific.business_intro | richtext }}
-                                </div>
-                                {% else %}
-                                    <div class="tab-pane fade" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
-                                    </div>
-                                {% endif %}
-                        {% endfor %}
+                       
                     </div>
             </div>
         </div>
