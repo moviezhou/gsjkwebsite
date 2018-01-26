@@ -950,7 +950,7 @@ select > option {
 
 .timeline-title {
   text-align: center;
-  color: #003580;
+  color: #618ece;
 }
 
 .timeline-title h2 {
@@ -1259,6 +1259,12 @@ Main Components
   font-weight: 700;
   line-height: 1.2;
 }
+
+.cd-horizontal-timeline .events ol li a {
+  color: #003580;
+  font-weight: 800;
+}
+
 .cd-horizontal-timeline .events-content em {
   display: block;
   font-style: italic;

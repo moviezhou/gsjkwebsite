@@ -85,7 +85,8 @@ nav ol {
 }
 
 .category-row {
-    margin-top: 30px;
+    display: table;
+    width: 100%;
     justify-content: space-around;
 }
 
@@ -122,6 +123,18 @@ nav ol {
 }
 
 .business-domain {
+    display: inline-table;
+    width: 33%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.business-domain img:hover {
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+}
+
+.busi-name {
     margin-top: 20px;
 }
 
