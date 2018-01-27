@@ -48,8 +48,18 @@ class BusinessIndexPage(Page):
 
     def get_context(self, request):
         context = super(BusinessIndexPage, self).get_context(request)
-        column_entries = self.get_children()
+        column_entries = self.get_children().specific()
         context['column_entries'] = column_entries
+        business = []
+        enterprise = []
+        for col in column_entries:
+            for item in col.get_children().specific():
+                if isinstance(item, BusinessDomain):
+                    business.append(item)
+                elif isinstance(item, EnterprisePage):
+                    enterprise.append(item)
+        context['business'] = business
+        context['enterprise'] = enterprise
         return context
 
 class PartyBuildingIndexPage(Page):
@@ -179,7 +189,6 @@ class EnterprisePage(Page):
     def get_context(self, request):
         context = super(EnterprisePage, self).get_context(request)
         column_entries = self.get_children()
-        print(column_entries)
         context['column_entries'] = column_entries
         return context
 

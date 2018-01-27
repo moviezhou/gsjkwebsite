@@ -54,19 +54,53 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="domain" role="tabpanel" aria-labelledby="v-pills-home-tab">
                        <div class="category-row">
-                            {% for column in column_entries %}
-                                {% for business in column.get_children.specific %}
-                                    {% if business.business_category == "主金融" %}
-                                        <div class="business-domain">
-                                            <a href="/business/domain">
-                                                {% image business.business_icon fill-140x140 %}
-                                            </a>
-                                            <h5 class="busi-name"><strong>{{ business.business_name }}</strong></h5>
-                                            <h6 class="busi-desc">{{ business.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                           <div>
+                                <div class="nav flex-column nav-pills" id="pills-tab" role="tablist">
+                                    {% regroup business|dictsort:'business_category' by business_category as business_list %}
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        {% for business_category in business_list %}
+                                            {% if forloop.first %}
+                                            <li class="nav-item">
+                                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
+                                            </li>
+                                            {% else %}
+                                            <li class="nav-item">
+                                                    <a class="nav-link" id="v-pills-{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="tab-content" id="pills-tabContent">
+                                    {% for business_category in business_list %}
+                                        {% if forloop.first %}
+                                            <div class="tab-pane fade show active" id="{{ business_category.grouper }}" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                {% for busi in business_category.list %}
+                                                    <div class="business-domain">
+                                                            <a href="/business/domain">
+                                                                {% image busi.business_icon fill-140x140 %}
+                                                            </a>
+                                                            <h5 class="busi-name"><strong>{{ busi.business_name }}</strong></h5>
+                                                            <h6 class="busi-desc">{{ busi.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                        <div class="tab-pane fade" id="{{ business_category.grouper }}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            {% for busi in business_category.list %}
+                                                <div class="business-domain">
+                                                    <a href="/business/domain">
+                                                        {% image busi.business_icon fill-140x140 %}
+                                                    </a>
+                                                    <h5 class="busi-name"><strong>{{ busi.business_name }}</strong></h5>
+                                                    <h6 class="busi-desc">{{ busi.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                                                </div>
+                                            {% endfor %}
                                         </div>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                           </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="investment" role="tabpanel" aria-labelledby="v-pills-profile-tab">
