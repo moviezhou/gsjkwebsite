@@ -16,7 +16,7 @@
     </div>
     <div class="container news-container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-4">
                 <div class="tab-title"><h4><strong>投资企业</strong></h4></div>
                 <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
                     {% for column in column_entries %}
@@ -29,17 +29,17 @@
 
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-8">
                 <div class="row list-title">
-                        <div class="col-4 text-left" id="column-title"><h5>{{ self }}</h5></div>
-                        <div class="col-8 path-wrapper">
+                        <div class="col-6 text-left" id="column-title"><h5>{{ self }}</h5></div>
+                        <div class="col-6 path-wrapper">
                                 <nav aria-label="breadcrumb" class="current-path">
                                     <div><h5>当前位置</h5></div>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
                                         <li class="breadcrumb-item"> <a href="{{ self.get_parent.url }}">{{ self.get_parent }}</a></li>
                                         <li class="breadcrumb-item"><a href=""{{ self.url }}"">{{ self }}</a></li> 
-                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}"></li> 
+                                        {% comment %} <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}"></li>  {% endcomment %}
                                     </ol>
                                 </nav>
                         </div>
@@ -47,7 +47,7 @@
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                         {% for column in column_entries %}
-                            {% if column.enterprise_name == "华龙证券" %}
+                            {% if forloop.first %}
                                 <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
                                     {{ column.specific.enterprise_intro | richtext }}
                                 </div>
