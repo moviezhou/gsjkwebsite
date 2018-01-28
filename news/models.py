@@ -37,6 +37,14 @@ class NewsIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+    def get_context(self, request):
+        context = super(NewsIndexPage, self).get_context(request)
+        news_entries = self.get_children().get(slug='highlights').get_children()
+        # news_entries = self.get_children().live().order_by('-date')
+        context['news_entries'] = news_entries
+        print(news_entries)
+        return context
+
 class BusinessIndexPage(Page):
     class Meta:
         verbose_name = "集团业务二级页面"
