@@ -57,7 +57,42 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <ul>
-                            {% for page in self.get_children.specific %}
+                                {% for news in column_entries %}
+                                <li>
+                                    <div class="row">
+                                        {% if news.representative_image %}
+                                            <div class="col-3 news-thumbnail">
+                                                {% image news.representative_image class="fluid" fill-192x120 %}                                              
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="news-title">
+                                                    <h5>
+                                                        <strong>
+                                                            <a href="{{ news.url }}">{{ news.title }}</a>
+                                                        </strong>
+                                                    </h5>
+                                            </div>
+                                                <div class="news-caption">
+                                                    {% spaceless %}
+                                                        {{ news.body | richtext | bleach | truncatechars_html:80 }}
+                                                    {% endspaceless %}
+                                                </div>
+                                                <div class="news-date text-right"><strong>{{  news.date | date:"Y-m-d" }}</strong></div>
+                                            </div>
+                                        {% else %}
+                                            <div class="col-10 news-title">
+                                                <h5>
+                                                    <strong>
+                                                        <a href="{{ news.url }}">{{ news.title | truncatechars_html:38 }}</a>
+                                                    </strong>
+                                                </h5>
+                                            </div>
+                                            <div class="col-2 news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
+                                        {% endif %}
+                                    </div>                               
+                                </li>
+                            {% endfor %}
+                            <!-- {% for page in self.get_children.specific %}
                                 <li>
                                         <div class="row">
                                             {% if page.representative_image %}
@@ -91,7 +126,7 @@
                                             {% endif %}
                                         </div>                               
                                     </li>
-                            {% endfor %}
+                            {% endfor %} -->
                         </ul>
                     </div>
                 </div>

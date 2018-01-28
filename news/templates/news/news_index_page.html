@@ -69,33 +69,9 @@
                             {% endfor %}
                         </ul>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                     <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <ul>
-                            {% for news in latest_entries %}
-                                <li>
-                                    <div class="row">
-                                            <div class="col-3 news-thumbnail">
-                                                {% image news.representative_image class="fluid" fill-192x120 %}                                                
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="news-title">
-                                                    <h5>
-                                                        <strong>
-                                                            <a href="{{ news.url }}">{{ news.title }}</a>
-                                                        </strong>
-                                                    </h5>
-                                            </div>
-                                                <div class="news-caption">
-                                                    {% spaceless %}
-                                                        {{ news.body | richtext | bleach | truncatechars_html:80 }}
-                                                    {% endspaceless %}
-                                                </div>
-                                                <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
-                                            </div>
-                                        </div>                               
-                                </li>
-                            {% endfor %}
-                                <!-- {% for column in self.get_children.specific %}
+                                {% for column in self.get_children.specific %}
                                     {% if column.slug == 'company' %}
                                     {% for page in column.get_children.specific %}
                                     <li>
@@ -122,127 +98,9 @@
                                         </li>
                                     {% endfor %}
                                     {% endif %}
-                                {% endfor %} -->
-                            </ul>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <ul>
-                            {% for news in industry_entries %}
-                                <li>
-                                        <div class="row">
-                                                <div class="col-3 news-thumbnail">
-                                                    {% image news.representative_image class="fluid" fill-192x120 %}                                                
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="news-title">
-                                                        <h5>
-                                                            <strong>
-                                                                <a href="{{ news.url }}">{{ news.title }}</a>
-                                                            </strong>
-                                                        </h5>
-                                                </div>
-                                                    <div class="news-caption">
-                                                        {% spaceless %}
-                                                            {{ news.body | richtext | bleach | truncatechars_html:80 }}
-                                                        {% endspaceless %}
-                                                    </div>
-                                                    <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
-                                                </div>
-                                            </div>                               
-                                    </li>
-                            {% endfor %}
-                            </ul>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <ul>
-                            {% for news in video_entries %}
-                            <li>
-                                <div class="row">
-                                        <div class="col-3 news-thumbnail">
-                                            {% if news.epresentative_image %}
-                                                {% image news.representative_image class="fluid" fill-192x120 %}   
-                                            {% endif %}                           
-                                        </div>
-                                        <div class="col-9">
-                                            <div class="news-title">
-                                                <h5>
-                                                    <strong>
-                                                        <a href="{{ news.url }}">{{ news.title }}</a>
-                                                    </strong>
-                                                </h5>
-                                        </div>
-                                            <div class="news-caption">
-                                                {% spaceless %}
-                                                    {{ news.body | richtext | bleach | truncatechars_html:80 }}
-                                                {% endspaceless %}
-                                            </div>
-                                            <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
-                                        </div>
-                                    </div>                               
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                            <ul>
-                                {% for news in bulletin_entries %}
-                                <li>
-                                    <div class="row">
-                                            <div class="col-3 news-thumbnail">
-                                                {% if news.epresentative_image %}
-                                                    {% image news.representative_image class="fluid" fill-192x120 %}   
-                                                {% endif %}                           
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="news-title">
-                                                    <h5>
-                                                        <strong>
-                                                            <a href="{{ news.url }}">{{ news.title }}</a>
-                                                        </strong>
-                                                    </h5>
-                                            </div>
-                                                <div class="news-caption">
-                                                    {% spaceless %}
-                                                        {{ news.body | richtext | bleach | truncatechars_html:80 }}
-                                                    {% endspaceless %}
-                                                </div>
-                                                <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
-                                            </div>
-                                        </div>                               
-                                </li>
                                 {% endfor %}
                             </ul>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <ul>
-                                    {% for news in reveal_entries %}
-                                    <li>
-                                        <div class="row">
-                                                <div class="col-3 news-thumbnail">
-                                                    {% if news.epresentative_image %}
-                                                        {% image news.representative_image class="fluid" fill-192x120 %}   
-                                                    {% endif %}                           
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="news-title">
-                                                        <h5>
-                                                            <strong>
-                                                                <a href="{{ news.url }}">{{ news.title }}</a>
-                                                            </strong>
-                                                        </h5>
-                                                </div>
-                                                    <div class="news-caption">
-                                                        {% spaceless %}
-                                                            {{ news.body | richtext | bleach | truncatechars_html:80 }}
-                                                        {% endspaceless %}
-                                                    </div>
-                                                    <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
-                                                </div>
-                                            </div>                               
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                    </div> -->
                 </div>
                 <div class="row page-nav-wrapper">
                     <nav class="page-nav" aria-label="Page navigation example">

@@ -37,15 +37,22 @@ class NewsIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
-    # Ordering news by publish date
+    # Ordering news by publish date only when news_index_page rendered
     def get_context(self, request):
         context = super(NewsIndexPage, self).get_context(request)
-        for column in self.get_children():
-            if column.slug:
-                column_page = self.get_children().get(slug=column.slug)
-                news_entries = NewsPage.objects.descendant_of(column_page).live().order_by('-date')
-                context[column.slug + '_entries'] = news_entries
+        first_column = self.get_children()[0]
+        news_entries = NewsPage.objects.descendant_of(first_column).live().order_by('-date')
+        context[first_column.slug + '_entries'] = news_entries
         return context
+
+    # def get_context(self, request):
+    #     context = super(NewsIndexPage, self).get_context(request)
+    #     for column in self.get_children():
+    #         if column.slug:
+    #             column_page = self.get_children().get(slug=column.slug)
+    #             news_entries = NewsPage.objects.descendant_of(column_page).live().order_by('-date')
+    #             context[column.slug + '_entries'] = news_entries
+    #     return context
 
 
 
@@ -115,13 +122,13 @@ class ColumnPage(Page):
         verbose_name = "专栏"
     intro = RichTextField(blank=True)
 
-    # def get_context(self, request):
-    #     context = super(ColumnPage, self).get_context(request)
-    #     # news_items = ColumnPage.objects.live().order_by('-first_published_at')
-    #     news_items = self.get_children().live().order_by('-date')
 
     def get_context(self, request):
         context = super(ColumnPage, self).get_context(request)
+        if self.slug:
+            news_entries = NewsPage.objects.descendant_of(self).live().order_by('-date')
+            context['column_entries'] = news_entries
+
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
