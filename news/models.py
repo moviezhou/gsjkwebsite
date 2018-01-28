@@ -225,3 +225,20 @@ class BusinessDomain(Page):
         FieldPanel('business_name'),
         ImageChooserPanel('business_icon'),
         FieldPanel('business_intro'),]
+
+
+class WebsiteLinkPage(Page):
+    class Meta:
+        verbose_name = "网站链接"
+    LINK_CATEGORY = (
+        ("友情链接", "友情链接"),
+        ("集团链接", "集团链接"),)
+    
+    link_category = models.CharField(max_length=10, choices=LINK_CATEGORY, default=1, verbose_name="链接类型")   
+    site_name = models.CharField(max_length=60, verbose_name="链接名称")
+    link_href = models.CharField(max_length=200, verbose_name="网址")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('link_category'),
+        FieldPanel('site_name'),
+        FieldPanel('link_href'),]

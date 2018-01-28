@@ -7,19 +7,33 @@
                 <div class="row links">
                     <div class="col-sm-6">
                         <div class="dropdown">
-                            <select name="" id="">
+                            <select name="" id="" onchange="if(this.value!='#'&&this.value!='友情链接') window.open(this.value);">
                                 <option value="">友情链接</option>
-                                <option value="">link1</option>
-                                <option value="">link2</option>
+                                {% for i in self.get_children %}
+                                    {% if i.slug == "links" %}
+                                        {% for link in i.get_children.specific %}
+                                            {% if link.link_category == "友情链接" %}
+                                                <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="dropdown">
-                            <select name="" id="">
+                            <select name="" id="" onchange="if(this.value!='#'&&this.value!='集团链接') window.open(this.value);">
                                 <option value="">集团链接</option>
-                                <option value="">link1</option>
-                                <option value="">link2</option>
+                                {% for i in self.get_children %}
+                                    {% if i.slug == "links" %}
+                                        {% for link in i.get_children.specific %}
+                                            {% if link.link_category == "集团链接" %}
+                                                <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
