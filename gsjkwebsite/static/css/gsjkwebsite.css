@@ -950,7 +950,7 @@ select > option {
 
 .timeline-title {
   text-align: center;
-  color: #618ece;
+  color: #0056A2;
 }
 
 .timeline-title h2 {
@@ -1040,7 +1040,7 @@ Main Components
   top: 49px;
   height: 2px;
   /* width will be set using JavaScript */
-  background: #dfdfdf;
+  background: #4f81be;
   -webkit-transition: -webkit-transform 0.4s;
   -moz-transition: -moz-transform 0.4s;
   transition: transform 0.4s;
@@ -1275,7 +1275,7 @@ Main Components
 }
 .cd-horizontal-timeline .events-content p {
   font-size: 1.4rem;
-  color: #ffffff;
+  color: #0a2c6e;
 }
 .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
   line-height: 1.6;
