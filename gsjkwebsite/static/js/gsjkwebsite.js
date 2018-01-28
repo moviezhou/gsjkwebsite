@@ -329,10 +329,7 @@ $('.news-content p').each(function() {
 // active current url anchor
 $('a.nav-left').each(function (){ 
 	if(this.href == window.location.href){
-		$(this).addClass('active');
-	}
-	else{
-		$(this).removeClass('active');				
+		$(this).trigger('click');
 	}
 });
 
