@@ -61,11 +61,11 @@
                                         {% for business_category in business_list %}
                                             {% if forloop.first %}
                                             <li class="nav-item">
-                                                    <a class="nav-link active" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
+                                                    <a class="nav-link nav-sub active" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
                                             </li>
                                             {% else %}
                                             <li class="nav-item">
-                                                    <a class="nav-link" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
+                                                    <a class="nav-link nav-sub" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
                                             </li>
                                             {% endif %}
                                         {% endfor %}

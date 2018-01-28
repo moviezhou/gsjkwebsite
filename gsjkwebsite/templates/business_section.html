@@ -33,16 +33,16 @@
                     </div>
                     <div class="row align-row">
                         <div class="col-md-6">
-                                <div class="grid">
-                                        <figure class="effect-bubba">
-                                            {% comment %} <img src="" alt="img02"/> {% endcomment %}
-                                            <figcaption>
-                                                <h2>华龙证券</h2>
-                                                <p>www.gsjkjt.com</p>
-                                                <a href="#">View more</a>
-                                            </figcaption>			
-                                        </figure>
-                                    </div>
+                            <div class="grid">
+                                <figure class="effect-bubba">
+                                        {% comment %} <img src="" alt="img02"/> {% endcomment %}
+                                        <figcaption>
+                                            <h2>华龙证券</h2>
+                                            <p>www.gsjkjt.com</p>
+                                            <a href="/business/investment#华龙证券股份有限公司">View more</a>
+                                        </figcaption>			
+                                    </figure>       
+                            </div>
                         </div>
                         <div class="col-md-6">
                                 <div class="grid">
@@ -51,7 +51,7 @@
                                         <figcaption>
                                             <h2>华龙期货</h2>
                                             <p>www.gsjkjt.com</p>
-                                            <a href="#">View more</a>
+                                            <a href="/business/investment#华龙期货股份有限公司">View more</a>
                                         </figcaption>			
                                     </figure>
                                 </div>
@@ -64,7 +64,7 @@
                                         <figcaption>
                                             <h2>甘肃股权交易中心</h2>
                                             <p>www.gsjkjt.com</p>
-                                            <a href="#">View more</a>
+                                            <a href="/business/investment#甘肃股权交易中心股份有限公司">View more</a>
                                         </figcaption>			
                                     </figure>
                                 </div>
@@ -75,7 +75,7 @@
                                         <figcaption>
                                             <h2>华商基金</h2>
                                             <p>www.gsjkjt.com</p>
-                                            <a href="#">View more</a>
+                                            <a href="/business/investment#华商基金管理有限公司">View more</a>
                                         </figcaption>			
                                     </figure>
                                 </div>
@@ -88,7 +88,7 @@
                                         <figcaption>
                                             <h2>甘肃长达金融资产</h2>
                                             <p>www.gsjkjt.com</p>
-                                            <a href="#">View more</a>
+                                            <a href="/business/investment#甘肃长达金融资产管理股份有限公司">View more</a>
                                         </figcaption>			
                                     </figure>
                                 </div>
@@ -99,7 +99,7 @@
                                         <figcaption>
                                             <h2>敦煌人寿（筹）</h2>
                                             <p>www.gsjkjt.com</p>
-                                            <a href="#">View more</a>
+                                            <a href="/business/investment#敦煌人寿保险股份有限公司（筹）">View more</a>
                                         </figcaption>			
                                     </figure>
                                 </div>
@@ -118,42 +118,50 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="invest-category">
-                                <div class="icon-wrapper">
-                                    <img class="d-block w-50 h-50" src="{% static 'images/zhujinrong.png' %}" alt="Second slide">
-                                </div>
-                                <h4>主金融</h4>
-                                <h6>证券、基金、期货、保险</h6>
-                            </div>
+                            <a href="/business#主金融">
+                                <div class="invest-category">
+                                        <div class="icon-wrapper">
+                                            <img class="d-block w-50 h-50" src="{% static 'images/zhujinrong.png' %}" alt="Second slide">
+                                        </div>
+                                        <h4>主金融</h4>
+                                        <h6>证券、基金、期货、保险</h6>
+                                    </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="invest-category">
-                                <div class="icon-wrapper">
-                                    <img class="d-block w-50 h-50" src="{% static 'images/leijinrong.png' %}" alt="Second slide">                            
+                            <a href="/business#类金融">
+                                <div class="invest-category">
+                                        <div class="icon-wrapper">
+                                            <img class="d-block w-50 h-50" src="{% static 'images/leijinrong.png' %}" alt="Second slide">                            
+                                        </div>
+                                        <h4>类金融</h4>
+                                        <h6>金融资产管理、股权投资</h6>
                                 </div>
-                                <h4>类金融</h4>
-                                <h6>金融资产管理、股权投资</h6>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
+                           <a href="/business#平台类">
                             <div class="invest-category">
-                                <div class="icon-wrapper">
-                                    <img class="d-block w-50 h-50" src="{% static 'images/pingtailei.png' %}" alt="Second slide"> 
+                                    <div class="icon-wrapper">
+                                        <img class="d-block w-50 h-50" src="{% static 'images/pingtailei.png' %}" alt="Second slide"> 
+                                    </div>
+                                    <h4>平台类</h4>
+                                    <h6>股交中心</h6>
                                 </div>
-                                <h4>平台类</h4>
-                                <h6>股交中心</h6>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="invest-category">
-                                <div class="icon-wrapper">
-                                    <img class="d-block w-50 h-50" src="{% static 'images/pingtailei.png' %}" alt="Second slide"> 
+                            <a href="/business#其他类">
+                                <div class="invest-category">
+                                        <div class="icon-wrapper">
+                                            <img class="d-block w-50 h-50" src="{% static 'images/pingtailei.png' %}" alt="Second slide"> 
+                                        </div>
+                                        <h4>其他类</h4>
+                                        <h6>文化服务</h6>
                                 </div>
-                                <h4>其他类</h4>
-                                <h6>文化服务</h6>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

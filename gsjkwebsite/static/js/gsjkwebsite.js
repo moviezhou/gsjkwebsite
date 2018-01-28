@@ -333,6 +333,13 @@ $('a.nav-left').each(function (){
 	}
 });
 
+$('a.nav-sub').each(function (){ 
+	if(this.href == window.location.href){
+		$(this).trigger('click');
+	}
+});
+
+
 function whobuildthis(){
 	console.log("moviezhou@gmail.com");
 }
