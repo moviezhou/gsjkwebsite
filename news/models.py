@@ -40,9 +40,10 @@ class NewsIndexPage(Page):
     # Ordering news by publish date only when news_index_page rendered
     def get_context(self, request):
         context = super(NewsIndexPage, self).get_context(request)
-        first_column = self.get_children()[0]
-        news_entries = NewsPage.objects.descendant_of(first_column).live().order_by('-date')
-        context[first_column.slug + '_entries'] = news_entries
+        if len(self.get_children()) > 0:
+            first_column = self.get_children()[0]
+            news_entries = NewsPage.objects.descendant_of(first_column).live().order_by('-date')
+            context[first_column.slug + '_entries'] = news_entries
         return context
 
     # def get_context(self, request):
