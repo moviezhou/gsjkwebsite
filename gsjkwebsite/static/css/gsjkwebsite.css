@@ -163,7 +163,7 @@ nav.fill ul li a:hover:after {
 }
 
 .milestone {
-  background: url('../images/milestonebg.png') no-repeat center center;
+  background: url('../images/milestonebg.jpg') no-repeat center center;
   background-size: cover; 
 }
 
@@ -559,7 +559,7 @@ nav.fill ul li a:hover:after {
 
 
 .newscenter {
-  background: url('../images/newsbg.png') no-repeat center center;
+  background: url('../images/newsbg.jpg') no-repeat center center;
   background-size: cover;
 }
 
