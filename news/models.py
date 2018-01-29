@@ -16,6 +16,8 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 class CompanyIndexPage(Page):
     class Meta:
         verbose_name = "走进金控二级页面"
+    
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -31,7 +33,8 @@ class CompanyIndexPage(Page):
 class NewsIndexPage(Page):
     class Meta:
         verbose_name = "资讯中心二级页面"
-
+        
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
@@ -60,6 +63,8 @@ class NewsIndexPage(Page):
 class BusinessIndexPage(Page):
     class Meta:
         verbose_name = "集团业务二级页面"
+
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -85,6 +90,8 @@ class BusinessIndexPage(Page):
 class PartyBuildingIndexPage(Page):
     class Meta:
         verbose_name = "党建工作二级页面"
+        
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -94,6 +101,8 @@ class PartyBuildingIndexPage(Page):
 class EnterpriseCultureIndexPage(Page):
     class Meta:
         verbose_name = "企业文化二级页面"
+
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -103,6 +112,8 @@ class EnterpriseCultureIndexPage(Page):
 class AcademyIndexPage(Page):
     class Meta:
         verbose_name = "金控学院二级页面"
+
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -112,6 +123,8 @@ class AcademyIndexPage(Page):
 class ContactUsIndexPage(Page):
     class Meta:
         verbose_name = "联系我们二级页面"
+
+    subpage_types = ['ColumnPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -121,6 +134,8 @@ class ContactUsIndexPage(Page):
 class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
+        
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage']
     intro = RichTextField(blank=True)
 
 
