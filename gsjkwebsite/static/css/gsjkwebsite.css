@@ -1581,6 +1581,10 @@ figure.effect-sadie:hover p {
 }
 
 .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;  
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -1594,8 +1598,6 @@ figure.effect-sadie:hover p {
 .back-title {
 	font-weight: bold;
 	color: #ffffff;
-	position: absolute;
-	top: 180px;
 	left: 0;
 	right: 0;
 	text-align: center;
@@ -1603,8 +1605,6 @@ figure.effect-sadie:hover p {
 }
 
 .back p {
-	position: absolute;
-	bottom: 10px;
 	left: 0;
 	right: 0;
   text-align: center;
