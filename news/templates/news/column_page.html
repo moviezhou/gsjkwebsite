@@ -56,6 +56,10 @@
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            {% for i in news.object_list %}
+                            <p>{{ i.title }}</p>
+                            {% endfor %}
+                        
                         {% for news in column_entries %}
                         {% if news.news_category == "singlepage" %}
                             <div class="row">

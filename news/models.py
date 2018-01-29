@@ -1,6 +1,7 @@
 from django.db import models
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
@@ -144,10 +145,18 @@ class ColumnPage(Page):
         if self.slug:
             news_entries = NewsPage.objects.descendant_of(self).live().order_by('-date')
             context['column_entries'] = news_entries
+            pages = Paginator(news_entries, 10)
+            # print(p.count)
+            # print(p.num_pages)
+            # p1 = pages.page(1)
+            news = pages.page(1)
+            # print(p1.object_list)
+            # print(news)
 
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
+            context['news'] = news
         return context
 
     
