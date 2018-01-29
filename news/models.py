@@ -163,6 +163,14 @@ class ColumnPage(Page):
 class NewsPage(Page):
     class Meta:
         verbose_name = "新闻"
+
+    NEWS_CATEGORY = (
+        ("thumbnail", "图片内容"),
+        ("textonly", "文本内容"),
+        ("singlepage", "单页内容"),)
+
+    
+    news_category = models.CharField(max_length=10, choices=NEWS_CATEGORY, default=1, verbose_name="内容类型")
     date = models.DateField(verbose_name="日期")
     intro = models.CharField(max_length=250, verbose_name="简介")
     body = RichTextField(blank=True, verbose_name="内容")
@@ -185,6 +193,7 @@ class NewsPage(Page):
     ]
 
     content_panels = Page.content_panels + [
+        FieldPanel('news_category'),
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),

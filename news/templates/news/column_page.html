@@ -56,78 +56,55 @@
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <ul>
-                                {% for news in column_entries %}
-                                <li>
-                                    <div class="row">
-                                        {% if news.representative_image %}
-                                            <div class="col-3 news-thumbnail">
-                                                {% image news.representative_image class="img-fluid" fill-192x120 %}                                              
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="news-title">
-                                                    <h5>
-                                                        <strong>
-                                                            <a href="{{ news.url }}">{{ news.title }}</a>
-                                                        </strong>
-                                                    </h5>
-                                            </div>
-                                                <div class="news-caption">
-                                                    {% spaceless %}
-                                                        {{ news.body | richtext | bleach | truncatechars_html:80 }}
-                                                    {% endspaceless %}
-                                                </div>
-                                                <div class="news-date text-right"><strong>{{  news.date | date:"Y-m-d" }}</strong></div>
-                                            </div>
-                                        {% else %}
-                                            <div class="col-10 news-title">
-                                                <h5>
-                                                    <strong>
-                                                        <a href="{{ news.url }}">{{ news.title | truncatechars_html:38 }}</a>
-                                                    </strong>
-                                                </h5>
-                                            </div>
-                                            <div class="col-2 news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
-                                        {% endif %}
-                                    </div>                               
-                                </li>
-                            {% endfor %}
-                            <!-- {% for page in self.get_children.specific %}
-                                <li>
+                        {% for news in column_entries %}
+                        {% if news.news_category == "singlepage" %}
+                            <div class="row">
+                                {{ news.body | richtext }}
+                            </div>
+                        {% elif news.news_category == "thumbnail" %}
+                            {% if news.representative_image %}
+                                <ul>
+                                    <li>
                                         <div class="row">
-                                            {% if page.representative_image %}
-                                                <div class="col-3 news-thumbnail">
-                                                    {% image page.representative_image class="fluid" fill-192x120 %}                                              
+                                            <div class="col-3 news-thumbnail">
+                                                    {% image news.representative_image class="fluid" fill-192x120 %}                                              
                                                 </div>
                                                 <div class="col-9">
                                                     <div class="news-title">
                                                         <h5>
                                                             <strong>
-                                                                <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                                <a href="{{ news.url }}">{{ news.title }}</a>
                                                             </strong>
                                                         </h5>
-                                                </div>
+                                                    </div>
                                                     <div class="news-caption">
                                                         {% spaceless %}
-                                                            {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                            {{ news.body | richtext | bleach | truncatechars_html:80 }}
                                                         {% endspaceless %}
                                                     </div>
-                                                    <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                    <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
                                                 </div>
-                                            {% else %}
-                                                <div class="col-10 news-title">
+                                        </div>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                        {% elif news.news_category == "textonly" %}
+                            <ul>
+                                <li>
+                                    <div class="row">
+                                            <div class="col-10 news-title">
                                                     <h5>
                                                         <strong>
-                                                            <a href="{% pageurl page %}">{{ page.title | truncatechars_html:38 }}</a>
+                                                            <a href="{{ news.url }}">{{ news.title | truncatechars_html:38 }}</a>
                                                         </strong>
                                                     </h5>
-                                                </div>
-                                                <div class="col-2 news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
-                                            {% endif %}
-                                        </div>                               
-                                    </li>
-                            {% endfor %} -->
-                        </ul>
+                                            </div>
+                                            <div class="col-2 news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        {% endif %} 
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="row page-nav-wrapper">

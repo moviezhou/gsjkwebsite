@@ -49,7 +49,7 @@
                     {% for column in column_entries %}
                         {% if column.get_children.specific %}
                             {% for col in column.get_children.specific %}
-                                {% if column.slug == "intro" %}
+                                {% if forloop.first %}
                                     <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
                                         {{ col.body | richtext }}
                                     </div>
