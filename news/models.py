@@ -136,7 +136,7 @@ class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage', 'VideoPage']
     intro = RichTextField(blank=True)
 
 
@@ -173,6 +173,7 @@ class NewsPage(Page):
     NEWS_CATEGORY = (
         ("thumbnail", "图片内容"),
         ("textonly", "文本内容"),
+        ("video", "视频内容"),
         ("singlepage", "单页内容"),)
 
     
@@ -204,6 +205,18 @@ class NewsPage(Page):
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
     ]
+
+class VideoPage(Page):
+    class Meta:
+        verbose_name = "视频内容"
+    date = models.DateField(verbose_name="日期")
+    video_file_name = models.CharField(max_length=250, verbose_name="视频文件名称")
+    intro = models.CharField(max_length=250, verbose_name="简介")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('date'),
+        FieldPanel('video_file_name'),
+        FieldPanel('intro'),]
 
 class EnterprisePage(Page):
     class Meta:
