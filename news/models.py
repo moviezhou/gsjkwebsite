@@ -146,8 +146,7 @@ class ColumnPage(Page):
             news_entries = NewsPage.objects.descendant_of(self).live().order_by('-date')
             context['column_entries'] = news_entries
             pages = Paginator(news_entries, 10)
-            page = request.GET.get('page')
-
+            page = request.GET.get('page', 1)
             # Should use try catch here
             page_entries = pages.page(int(page))
             context['page_entries'] = page_entries
