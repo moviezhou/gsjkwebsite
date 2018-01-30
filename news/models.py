@@ -149,9 +149,8 @@ class ColumnPage(Page):
             page = request.GET.get('page')
 
             # Should use try catch here
-            if page:
-                page_entries = pages.page(int(page))
-                context['page_entries'] = page_entries
+            page_entries = pages.page(int(page))
+            context['page_entries'] = page_entries
 
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
