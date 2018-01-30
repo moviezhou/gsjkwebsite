@@ -146,17 +146,15 @@ class ColumnPage(Page):
             news_entries = NewsPage.objects.descendant_of(self).live().order_by('-date')
             context['column_entries'] = news_entries
             pages = Paginator(news_entries, 10)
-            # print(p.count)
-            # print(p.num_pages)
-            # p1 = pages.page(1)
-            news = pages.page(1)
-            # print(p1.object_list)
-            # print(news)
+            page = request.GET.get('page')
+
+            # Should use try catch here
+            page_entries = pages.page(int(page))
+            context['page_entries'] = page_entries
 
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
-            context['news'] = news
         return context
 
     
