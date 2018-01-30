@@ -136,7 +136,7 @@ class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage', 'VideoPage']
     intro = RichTextField(blank=True)
 
 
@@ -146,17 +146,14 @@ class ColumnPage(Page):
             news_entries = NewsPage.objects.descendant_of(self).live().order_by('-date')
             context['column_entries'] = news_entries
             pages = Paginator(news_entries, 10)
-            # print(p.count)
-            # print(p.num_pages)
-            # p1 = pages.page(1)
-            news = pages.page(1)
-            # print(p1.object_list)
-            # print(news)
+            page = request.GET.get('page', 1)
+            # Should use try catch here
+            page_entries = pages.page(int(page))
+            context['page_entries'] = page_entries
 
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
-            context['news'] = news
         return context
 
     
@@ -176,6 +173,7 @@ class NewsPage(Page):
     NEWS_CATEGORY = (
         ("thumbnail", "图片内容"),
         ("textonly", "文本内容"),
+        ("video", "视频内容"),
         ("singlepage", "单页内容"),)
 
     
@@ -207,6 +205,18 @@ class NewsPage(Page):
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
     ]
+
+class VideoPage(Page):
+    class Meta:
+        verbose_name = "视频内容"
+    date = models.DateField(verbose_name="日期")
+    video_file_name = models.CharField(max_length=250, verbose_name="视频文件名称")
+    intro = models.CharField(max_length=250, verbose_name="简介")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('date'),
+        FieldPanel('video_file_name'),
+        FieldPanel('intro'),]
 
 class EnterprisePage(Page):
     class Meta:
