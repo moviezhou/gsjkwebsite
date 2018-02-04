@@ -343,3 +343,12 @@ $('a.nav-sub').each(function (){
 function whobuildthis(){
 	console.log("moviezhou@gmail.com");
 }
+
+// auto hide video control when mouse off
+$(".video").hover(function(event) {
+	if(event.type === "mouseenter") {
+		$(this).attr("controls", "");
+	} else if(event.type === "mouseleave") {
+		$(this).removeAttr("controls");
+	}
+});            

@@ -182,6 +182,20 @@ nav ol {
     text-align: right;
 }
 
+.video-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.video-wrapper {
+    margin: 0px 10px;
+}
+
+.video {
+    width: 260px;
+}
+
 .footer {
     /* position: relative; */
     position: relative;

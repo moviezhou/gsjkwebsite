@@ -104,23 +104,23 @@
                                 </li>
                             </ul>
                         {% elif news.news_category == "video" %}
-                           <div class="row">
-                               <div class="col-3">
-                                <video src="{% static 'videos/smaple-video.mp4' %}" controls="controls">
+                           <div class="row video-container">
+                               <div class="video-wrapper">
+                                <video class="video" src="{% static 'videos/smaple-video.mp4' %}">
                                     Sorry, your browser doesn't support embedded videos, 
                                     but don't worry, you can <a href="sample-video.mp4">download it</a>
                                     and watch it with your favorite video player!
                                 </video>
                                </div>
-                               <div class="col-3">
-                                <video src="{% static 'videos/smaple-video.mp4' %}" controls="controls">
+                               <div class="video-wrapper">
+                                <video class="video" src="{% static 'videos/smaple-video.mp4' %}">
                                     Sorry, your browser doesn't support embedded videos, 
                                     but don't worry, you can <a href="sample-video.mp4">download it</a>
                                     and watch it with your favorite video player!
                                 </video>
                                </div>
-                               <div class="col-3">
-                                <video src="{% static 'videos/big-buck-bunny_trailer.webm' %}" controls="controls">
+                               <div class="video-wrapper">
+                                <video class="video" src="{% static 'videos/smaple-video.mp4' %}">
                                     Sorry, your browser doesn't support embedded videos, 
                                     but don't worry, you can <a href="videofile.webm">download it</a>
                                     and watch it with your favorite video player!
