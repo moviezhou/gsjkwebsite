@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-newspage{% endblock %}
+
+{% load static %} 
+{% block content %} 
+<link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
+{% include 'topnav3.html' %}
+<div class="main">
+    <div class="container-fluid topbanner">
+        <div class="banner">
+            <img class="banner-img" src="{% static 'images/newsbanner.jpg' %}" alt="news">
+        </div>
+
+    </div>
+    <div class="container news-container">
+        <div class="row">
+            <div class="col-3">
+                <div class="tab-title"><h4><strong>{{ self.get_parent }}</strong></h4></div>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {% for column in self.get_parent.get_parent.get_children %}
+                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">{{ column }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left" id="column-title"><h5>{{ self.get_parent }}</h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="#">{{ self.get_parent.get_parent }}</a></li>
+                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.get_parent.slug }}">{{ self.get_parent }}</li>
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container content-container">
+                            <div class="row title-wrapper">
+                                <h3>{{ page.title }}</h3>
+                            </div>
+                            <hr>
+                            <p class="meta">发布时间：{{ page.date | date:"Y-m-d" }}</p>
+                            <hr>
+                        
+                            {% comment %} <div class="intro">{{ page.intro }}</div> {% endcomment %}
+                        
+                            {{ page.body | richtext }}
+                        
+                            <p class="back2news-list"><a href="{{ page.get_parent.url }}">&larr; 返回新闻列表</a></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer_section.html' %} 
+
+    <script src="{% static 'js/vender/jquery.js' %}" ></script>
+    <script>
+        $(document).ready(function(){  
+            
+            $("#v-pills-tab a").each(function(){  
+        
+                $this = $(this);
+                var column = $('#current_column').data('column-slug'); 
+
+                var url = $this[0].href;
+                if(url.slice(url.lastIndexOf('/') + 1) == column){
+                     $this.siblings().removeClass('active');
+                    $this.addClass("active");   
+            };  
+            
+        })
+    });  
+    </script>
+{% endblock %}
+</div>

@@ -1,0 +1,130 @@
+{% extends "base.html" %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load bleach_tags %}
+{% load static %} 
+<!-- {% block body_class %}template-blogindexpage {% endblock%} -->
+{% block content %} 
+<link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
+{% include 'topnav3.html' %}
+<div class="main">
+    <div class="container-fluid topbanner">
+        <div class="banner">
+            <img class="banner-img" src="{% static 'images/newsbanner.jpg' %}" alt="news">
+        </div>
+    </div>
+    <div class="container news-container">
+        <div class="row">
+            <div class="col-3">
+                <div class="tab-title"><h4><strong>资讯中心</strong></h4></div>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {% for column in self.get_children %}
+                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">{{ column }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left" id="column-title"><h5>集团要闻</h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ self.url }}">{{ self }}</a></li>
+                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li>                                    
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <ul>
+                            {% for news in highlights_entries %}
+                                <li>
+                                    <div class="row">
+                                            <div class="col-3 news-thumbnail">
+                                                {% image news.representative_image class="fluid" fill-192x120 %}                                                
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="news-title">
+                                                    <h5>
+                                                        <strong>
+                                                            <!-- {% pageurl page %}-->
+                                                            <a href="{{ news.url }}">{{ news.title }}</a>
+                                                        </strong>
+                                                    </h5>
+                                            </div>
+                                                <div class="news-caption">
+                                                    {% spaceless %}
+                                                        {{ news.body | richtext | bleach | truncatechars_html:80 }}
+                                                    {% endspaceless %}
+                                                </div>
+                                                <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
+                                            </div>
+                                        </div>                               
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                     <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                                {% for column in self.get_children.specific %}
+                                    {% if column.slug == 'company' %}
+                                    {% for page in column.get_children.specific %}
+                                    <li>
+                                            <div class="row">
+                                                    <div class="col-3 news-thumbnail">
+                                                        {% image page.representative_image class="fluid" fill-192x120 %}                                                
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="news-title">
+                                                            <h5>
+                                                                <strong>
+                                                                    <a href="{% pageurl page %}">{{ page.title }}</a>
+                                                                </strong>
+                                                            </h5>
+                                                    </div>
+                                                        <div class="news-caption">
+                                                            {% spaceless %}
+                                                                {{ page.body | richtext | bleach | truncatechars_html:80 }}
+                                                            {% endspaceless %}
+                                                        </div>
+                                                        <div class="news-date text-right"><strong>{{ page.date | date:"Y-m-d" }}</strong></div>
+                                                    </div>
+                                                </div>                               
+                                        </li>
+                                    {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                    </div> -->
+                </div>
+                <div class="row page-nav-wrapper">
+                    <nav class="page-nav" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer_section.html' %} {% endblock %}
+</div>

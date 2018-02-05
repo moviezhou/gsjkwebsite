@@ -1,0 +1,203 @@
+/* 资讯中心 */
+
+.main {
+    margin-top: 66px;
+}
+
+.topbanner {
+    padding: 0;
+}
+
+.banner-img {
+    height: auto;
+    width: 100%;
+}
+
+.news-container {
+    margin-top: 20px;
+    min-height: 480px;
+}
+
+.col-3 {
+    text-align: center;
+}
+
+.tab-pane ul li {
+    border-bottom: 1px solid lightgrey;
+    padding: 4px;
+}
+
+.tab-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.list-title {
+    align-items: center;
+}
+
+.path-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #3c558c;    
+}
+
+.nav-left::before {
+    display: inline-block;
+    content: '';
+    vertical-align: middle;
+    -webkit-border-radius: 0.375rem;
+    border-radius: 0.5;
+    height: 0.3rem;
+    width: 0.3rem;
+    margin-right: 0.6rem;
+    background-color: #000000;
+
+}
+
+.nav-left::after {
+    display: inline-block;
+    content: '';
+    vertical-align: middle;
+    -webkit-border-radius: 0.375rem;
+    border-radius: 0.5;
+    height: 0.3rem;
+    width: 0.3rem;
+    margin-left: 0.6rem;
+    background-color: #000000;
+
+}
+
+.current-path {
+    display: flex;
+    align-items: center;
+}
+
+.list-title nav {
+    border: none;
+}
+
+nav ol {
+    margin: 10px;
+}
+
+.category-row {
+    display: table;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.page-nav-wrapper {
+    justify-content: center;
+}
+
+.page-nav {
+    border: none;
+}
+
+/* news content style */
+
+
+.title-wrapper {
+    justify-content: center;
+}
+
+.rich-text p {
+    text-indent: 2em;
+    line-height: 2em;
+    font-size: 16px;
+}
+
+.news-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .news-title {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.business-domain {
+    display: inline-table;
+    width: 33%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.business-domain img:hover {
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+}
+
+.busi-name {
+    margin-top: 20px;
+}
+
+.busi-desc {
+    text-align: left;
+}
+
+.category-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category {
+    background: #3c558c;
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: large;
+}
+
+.companies-wrapper {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.companies {
+    display: table;
+    width: 100%;
+}
+
+.tab-pane .container ul li {
+    border: none;
+}
+
+.company-name {
+    display: inline-table;
+    width: 50%;
+}
+
+.meta {
+    text-align: center;
+}
+
+.back2news-list {
+    text-align: right;
+}
+
+.video-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.video-wrapper {
+    margin: 0px 10px;
+}
+
+.video {
+    width: 260px;
+}
+
+.footer {
+    /* position: relative; */
+    position: relative;
+    /* background: #cbcfe0; */
+}

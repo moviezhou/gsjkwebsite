@@ -1,0 +1,66 @@
+{% block topnav3 %} 
+{% load static %}
+<!-- USING BOOTSTRAP 3.0.3 -->
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top stroke" role="navigation">
+    <div class="container" id="top-nav-container">
+        <a href="/" class="navbar-brand">
+            <img src="{% static 'images/logo_small.png' %}" alt="logo">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">首页
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about#intro">走进金控</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news/highlights">资讯中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/business">集团业务</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/partybuilding/dynamic">党建工作</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/culture/vi">企业文化</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/academy">金控学院</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contactus">联系我们</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" size="10" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-link dropdown-toggle" id="dropdownPremium" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>
+                                <img src="{% static 'images/menu.png' %}" alt="">
+                            </span>
+                            更多
+                        </div>
+                        <div class="dropdown-menu nav-more" aria-labelledby="dropdownPremium">
+                            <a class="dropdown-item" href="">
+                                企业邮箱
+                            </a>
+                            <a class="dropdown-item" href="" onclick="ga('send','event','Referral','Referral WrapBootstrap Navbar')">
+                                <i class="icon-handbag fa-fw"></i>
+                                OA办公
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</nav>
+{% endblock %}

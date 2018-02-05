@@ -1,0 +1,61 @@
+{% load static %} 
+{% block topnav %}
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-main-collapse justify-content-end">
+                <a href="" class="navbar-brand">
+                    <img src="{% static 'images/logo_small.png' %}" alt="logo">
+                </a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">首页
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">走进金控</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">资讯中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">集团业务</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">党群工作</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">企业文化</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">金控学院</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">联系我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">OA</a>
+                    </li>
+                </ul>
+                <input id="txtkey" type="text" class="form-control" placeholder="Enter here" aria-describedby="ddlsearch">
+                <span class="input-group-btn">
+                        <button type="submit" class="btn"><i class="icon-search"></i></button>
+
+                </span>
+
+                <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" size="10">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                </form> -->
+                <ul class="navbar-right">more</ul>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}

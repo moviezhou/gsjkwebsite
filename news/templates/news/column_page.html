@@ -1,0 +1,163 @@
+{% extends "base.html" %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load bleach_tags %}
+{% load static %}
+{% block body_class %}template-blogindexpage {% endblock%}
+{% block content %} 
+<link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
+{% include 'topnav3.html' %}
+<div class="main">
+    <div class="container-fluid topbanner">
+        <div class="banner">
+            {% if self.get_parent.slug == "about" %}
+                <img class="banner-img" src="{% static 'images/culturebanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "news" %}
+                <img class="banner-img" src="{% static 'images/newsbanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "business" %}
+                <img class="banner-img" src="{% static 'images/businessbanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "partybuilding" %}
+                <img class="banner-img" src="{% static 'images/partybanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "culture" %}
+                <img class="banner-img" src="{% static 'images/culturebanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "academy" %}
+                <img class="banner-img" src="{% static 'images/academybanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "contactus" %}
+                <img class="banner-img" src="{% static 'images/contactbanner.jpg' %}" alt="news">
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="container news-container">
+        <div class="row">
+            <div class="col-3">
+                <div class="tab-title"><h4><strong>{{ page.get_parent }}</strong></h4></div>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {% for column in self.get_parent.get_children %}
+                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">{{ column }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left" id="column-title"><h5></h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ self.get_parent.url }}">{{ self.get_parent }}</a></li>
+                                        <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">{{ self }}</li> 
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">         
+                        {% for news in page_entries.object_list %}
+                        {% if news.news_category == "singlepage" %}
+                            <div class="row">
+                                {{ news.body | richtext }}
+                            </div>
+                        {% elif news.news_category == "thumbnail" %}
+                            {% if news.representative_image %}
+                                <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-3 news-thumbnail">
+                                                    {% image news.representative_image class="img-fluid" fill-192x120 %}                                              
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{{ news.url }}">{{ news.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="news-caption">
+                                                        {% spaceless %}
+                                                            {{ news.body | richtext | bleach | truncatechars_html:80 }}
+                                                        {% endspaceless %}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                        {% elif news.news_category == "textonly" %}
+                            <ul>
+                                <li>
+                                    <div class="row">
+                                            <div class="col-10 news-title">
+                                                    <h5>
+                                                        <strong>
+                                                            <a href="{{ news.url }}">{{ news.title | truncatechars_html:38 }}</a>
+                                                        </strong>
+                                                    </h5>
+                                            </div>
+                                            <div class="col-2 news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        {% elif news.news_category == "video" %}
+                           <div class="row">
+                               <div class="">
+                                <video src="{% static 'videos/dun_huang_ren_shou.m4v' %}" type="video/mp4" width="270px" controls="controls">
+                                    Sorry, your browser doesn't support embedded videos, 
+                                    but don't worry, you can <a href="dun_huang_ren_shou.mp4">download it</a>
+                                    and watch it with your favorite video player!
+                                </video>
+                               </div>
+                               <!-- <div class="">
+                                <video src="{% static 'videos/dun_huang_ren_shou.m4v' %}" type="video/mp4" width="270px" controls="controls">
+                                    Sorry, your browser doesn't support embedded videos, 
+                                    but don't worry, you can <a href="sample-video.mp4">download it</a>
+                                    and watch it with your favorite video player!
+                                </video>
+                               </div>
+                               <div class="">
+                                <video src="{% static 'videos/dun_huang_ren_shou.m4v' %}" type="video/mp4" width="270px" controls="controls">
+                                    Sorry, your browser doesn't support embedded videos, 
+                                    but don't worry, you can <a href="videofile.webm">download it</a>
+                                    and watch it with your favorite video player!
+                                </video>
+                               </div> -->
+                           </div>
+                        {% endif %} 
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row page-nav-wrapper">
+                    <nav class="page-nav" aria-label="Page navigation example">
+                                {% if page_entries.has_other_pages %}
+                                <ul class="pagination">
+                                  {% if page_entries.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_entries.previous_page_number }}">&laquo;</a></li>
+                                  {% else %}
+                                    <li class="page-item disabled"><a class="page-link" href=""><span>&laquo;</span></a></li>
+                                  {% endif %}
+                                  {% for i in page_entries.paginator.page_range %}
+                                    {% if page_entries.number == i %}
+                                      <li class="page-item active"><a class="page-link" href=""><span>{{ i }} <span class="sr-only">(current)</span></span></a></li>
+                                    {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                  {% endfor %}
+                                  {% if page_entries.has_next %}
+                                    <li  class="page-item"><a class="page-link" href="?page={{ page_entries.next_page_number }}">&raquo;</a></li>
+                                  {% else %}
+                                    <li class="page-item disabled"><a class="page-link" href=""><span>&raquo;</span></a></li>
+                                  {% endif %}
+                                </ul>
+                              {% endif %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer_section.html' %} {% endblock %}
+</div>

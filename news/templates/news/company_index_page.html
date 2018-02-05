@@ -1,0 +1,72 @@
+{% extends "base.html" %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load bleach_tags %}
+{% load static %} 
+{% block body_class %}template-blogindexpage {% endblock%}
+{% block content %} 
+<link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
+{% include 'topnav3.html' %}
+<div class="main">
+    <div class="container-fluid topbanner">
+        <div class="banner">
+            <img class="banner-img" src="{% static 'images/companybanner.jpg' %}" alt="news">
+        </div>
+
+    </div>
+    <div class="container news-container">
+        <div class="row">
+            <div class="col-3">
+                <div class="tab-title"><h4><strong>走进金控</strong></h4></div>
+                    <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
+                        
+                        {% for column in column_entries %}
+                            {% if forloop.first %}
+                                <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
+                            {% else %}
+                                <a class="nav-link nav-left" id="v-pills-{{ column.slug }}-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+            </div>
+            <div class="col-9">
+                <div class="row list-title">
+                        <div class="col-3 text-left" id="column-title"><h5>公司简介</h5></div>
+                        <div class="col-9 path-wrapper">
+                                <nav aria-label="breadcrumb" class="current-path">
+                                    <div><h5>当前位置</h5></div>
+                                    <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                            <li class="breadcrumb-item" ><a href=""{{ self.url }}""> {{ self }}</a></li>
+                                            <li class="breadcrumb-item active" id="current_column" aria-current="page">集团简介</li> 
+                                    </ol>
+                                </nav>
+                        </div>
+                    </div>
+                    <hr>
+                <div class="tab-content" id="v-pills-tabContent">
+                    {% for column in column_entries %}
+                        {% if column.get_children.specific %}
+                            {% for col in column.get_children.specific %}
+                                {% if column.slug == "intro" %}
+                                    <div class="tab-pane show active" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
+                                        {{ col.body | richtext }}
+                                    </div>
+                                {% else %}
+                                    <div class="tab-pane fade" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
+                                        {{ col.body | richtext }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}         
+                        {% else %}
+                        <div class="tab-pane fade" id="{{ column.slug }}" role="tabpanel" aria-labelledby="home-tab">
+                        </div>
+                        {% endif %}   
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer_section.html' %} {% endblock %}

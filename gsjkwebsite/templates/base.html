@@ -1,0 +1,62 @@
+{% load static wagtailuserbar %}
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="baidu-site-verification" content="qra9ruAAAQ" />
+        <meta name="360-site-verification" content="7a6580d5f705d1d657fbee0854481f10" />
+        <meta name="sogou_site_verification" content="lCGSwQRUcK"/>
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="甘肃金融控股集团有限公司, 甘肃金控集团官方网站，打造专业一流国有金融资本投资运营管理中心" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}" sizes="16x16" />
+
+         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery.fullpage.min.css' %}">
+
+        {# Global stylesheets #}
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/gsjkwebsite.css' %}">
+
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body id="page-top"class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+
+        {% block content %}{% endblock %}
+
+        {# Global javascript #}
+
+        {% block extra_js %}
+         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+         <script src="{% static 'js/vender/jquery.js' %}" ></script>
+         <script src="{% static 'js/vender/popper.js' %}" ></script>
+        <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'js/vender/bootstrap.min.js' %}" ></script>
+        <script src="{% static 'js/vender/jquery.fullpage.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/gsjkwebsite.js' %}"></script>
+        <!-- <script type="text/javascript" src="{% static 'js/grayscale.js' %}"></script> -->
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+{% block footer %}
+<div class="footer">
+    <div class="container">
+        <div class="row footer-wrap">
+            <div class="col">
+                <div class="row links">
+                    <div class="col-sm-6">
+                        <div class="dropdown">
+                            <select name="" id="" onchange="if(this.value!='#'&&this.value!='友情链接') window.open(this.value);">
+                                <option value="">友情链接</option>
+                                {% for i in self.get_children %}
+                                    {% if i.slug == "links" %}
+                                        {% for link in i.get_children.specific %}
+                                            {% if link.link_category == "友情链接" %}
+                                                <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="dropdown">
+                            <select name="" id="" onchange="if(this.value!='#'&&this.value!='集团链接') window.open(this.value);">
+                                <option value="">集团链接</option>
+                                {% for i in self.get_children %}
+                                    {% if i.slug == "links" %}
+                                        {% for link in i.get_children.specific %}
+                                            {% if link.link_category == "集团链接" %}
+                                                <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">联系我们</div>
+                <div class="row">地址:甘肃省兰州市城关区东岗西路638号</div>
+                <div class="row">电话:0931-8581204 邮编:730000</div>
+            </div>
+            <div class="col logo-section">
+                <div class="row logo-footer">
+                    <img src="{% static 'images/logo-footer.png' %}" alt="logo">
+                </div>
+                <div class="row">版权所有 &copy 甘肃金融控股集团有限公司</div>
+                <div class="row">陇ICP备170004168号-1</div>
+            </div>
+            <div class="col">
+                <div class="row misc">
+                    <span>版权声明 | 联系我们 | 网站地图</span>
+                </div>
+                <div class="row wechat-email">
+                    <div>                        
+                        <img src="{% static 'images/wechat.png' %}" alt="wechat">
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="{% static 'images/email.png' %}" alt="email">
+                        </a>                            
+                    </div>
+                </div>
+                <div class="row we-describe">
+                    <div>微信公众号</div>
+                    <div>企业邮箱</div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
