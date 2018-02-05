@@ -1,12 +1,8 @@
 // milestone timeline 
 $(document).ready(function() {
-<<<<<<< HEAD
 	if(screen && screen.width > 768){
 		$('#fullpage').fullpage();
 	}
-=======
-	$('#fullpage').fullpage();
->>>>>>> e3ac1d858e40636517e435cefb5580ab0320899b
 });
 
 $('.carousel').carousel();
