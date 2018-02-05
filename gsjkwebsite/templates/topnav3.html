@@ -1,6 +1,7 @@
 {% block topnav3 %} 
 {% load static %}
 <!-- USING BOOTSTRAP 3.0.3 -->
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top stroke" role="navigation">
     <div class="container" id="top-nav-container">
         <a href="/" class="navbar-brand">
@@ -13,6 +14,22 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="/">首页
+=======
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top stroke" role="navigation">
+    <div class="container-fluid" id="top-nav-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-main-collapse justify-content-end ">
+                <a href="" class="navbar-brand">
+                    <img src="{% static 'images/logo_small.png' %}" alt="logo">
+                </a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">首页
+                            <span class="sr-only">(current)</span>
+>>>>>>> e3ac1d858e40636517e435cefb5580ab0320899b
                         </a>
                     </li>
                     <li class="nav-item">
@@ -36,11 +53,30 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/contactus">联系我们</a>
                     </li>
+<<<<<<< HEAD
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" size="10" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
                 </form>
+=======
+                    <li class="nav-item">
+                        <a class="nav-link oa" href="#">
+                            <img src="{% static 'images/oa2.png' %}" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item search-wrapper"> 
+                        <form class="form-inline my-2 my-lg-0">
+                           <div class="input-group">
+                                <input class="form-control input-sm mr-sm-2" size=6 type="text" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                                </div>
+                           </div>
+                        </form>
+                    </li>
+                </ul>
+>>>>>>> e3ac1d858e40636517e435cefb5580ab0320899b
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <div class="nav-link dropdown-toggle" id="dropdownPremium" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,10 +93,26 @@
                                 <i class="icon-handbag fa-fw"></i>
                                 OA办公
                             </a>
+<<<<<<< HEAD
                         </div>
                     </li>
                 </ul>
             </div>
+=======
+
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#searchModal">
+                            <i class="icon-magnifier"></i>
+                            <span class="d-lg-none">Search</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+>>>>>>> e3ac1d858e40636517e435cefb5580ab0320899b
     </div>
 </nav>
 {% endblock %}
