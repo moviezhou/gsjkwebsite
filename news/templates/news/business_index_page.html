@@ -18,13 +18,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="tab-title"><h4><strong>集团业务</strong></h4></div>
-                <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    {% for column in self.get_children %}
-                        <a class="nav-link nav-left" id="v-pills-home-tab"  href="{% pageurl column %}" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true">{{ column }}</a>
-                    {% endfor %}
-                </div> -->
-                <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="nav flex-column nav-pills sidenav" id="colSideNav" role="tablist" aria-orientation="vertical">
                         
                     {% for column in column_entries %}
                         {% if forloop.first %}
@@ -36,7 +30,7 @@
 
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-sm-9" id="newsList">
                 <div class="row list-title">
                         <div class="col-3 text-left" id="column-title"><h5>业务领域</h5></div>
                         <div class="col-9 path-wrapper">
@@ -50,6 +44,7 @@
                                 </nav>
                         </div>
                     </div>
+                    <span id="sideNavToggle" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="domain" role="tabpanel" aria-labelledby="v-pills-home-tab">

@@ -88,6 +88,10 @@
         display: none;
     }
 
+    .text-left {
+        display: none;
+    }
+
     .list-title {
         display: none;
     }
@@ -100,8 +104,13 @@
         padding: 0;
     }
 
-    .tab-pane img {
+    .news-thumbnail img {
         width: 100%;
+    }
+
+    .rich-text img {
+        width: 50%;
+        height: 50%;
     }
 }
 
