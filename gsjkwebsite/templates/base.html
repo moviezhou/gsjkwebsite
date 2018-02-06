@@ -34,6 +34,7 @@
         {# Global stylesheets #}
         <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/gsjkwebsite.css' %}">
+        <link href="{% static 'css/pink.flag/css/jplayer.pink.flag.css' %}" rel="stylesheet" type="text/css" />  
 
 
         {% block extra_css %}
@@ -50,7 +51,7 @@
 
         {% block extra_js %}
          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-         <script src="{% static 'js/vender/jquery.js' %}" ></script>
+         <script src="{% static 'js/vender/jquery-3.3.1.min.js' %}" ></script>
          <script src="{% static 'js/vender/popper.js' %}" ></script>
         <script src="{% static 'js/jquery.easing.min.js' %}"></script>
         <script src="{% static 'js/vender/bootstrap.min.js' %}" ></script>
