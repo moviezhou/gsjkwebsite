@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="tab-title"><h4><strong>走进金控</strong></h4></div>
-                    <div class="nav flex-column nav-pills sidenav" id="tablist" role="tablist" aria-orientation="vertical">        
+                    <div class="nav flex-column nav-pills sidenav" id="colSideNav" role="tablist" aria-orientation="vertical">        
                         {% for column in column_entries %}
                             {% if forloop.first %}
                                 <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
