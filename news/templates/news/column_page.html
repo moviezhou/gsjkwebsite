@@ -88,6 +88,31 @@
                                         </div>
                                     </li>
                                 </ul>
+                            {% else %}
+                            <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-sm-3 hidden-xs news-thumbnail">
+                                                    <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">                                              
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="news-title">
+                                                        <h5>
+                                                            <strong>
+                                                                <a href="{{ news.url }}">{{ news.title }}</a>
+                                                            </strong>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="news-caption">
+                                                        {% spaceless %}
+                                                            {{ news.body | richtext | bleach | truncatechars_html:80 }}
+                                                        {% endspaceless %}
+                                                    </div>
+                                                    <div class="news-date text-right"><strong>{{ news.date | date:"Y-m-d" }}</strong></div>
+                                                </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             {% endif %}
                         {% elif news.news_category == "textonly" %}
                             <ul>
