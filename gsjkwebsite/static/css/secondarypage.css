@@ -117,15 +117,15 @@
         height: 100%;
     }
 
-    /* #pills-tab-wrapper {
+    #pills-tab-wrapper {
         display: flex;
         align-items: center;
     }
 
-    .tab-content>.active {
+    #domain .tab-content>.active {
         display: flex;
         justify-content: space-evenly;
-    } */
+    } 
 
     .video-wrapper {
         width: 100%;
