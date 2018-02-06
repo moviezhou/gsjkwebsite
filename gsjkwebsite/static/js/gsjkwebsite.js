@@ -311,7 +311,7 @@ $('#pills-tab a').on('click', function (evt) {
 //   });
 
 
-$("#v-pills-tab a").each(function(){  
+$("#colSideNav a").each(function(){  
 
 	$this = $(this);  
 	if($this[0].href==String(window.location.href)){
@@ -353,4 +353,32 @@ $(".video").hover(function(event) {
 	} else if(event.type === "mouseleave") {
 		$(this).removeAttr("controls");
 	}
-});            
+});
+
+
+var status = 0;
+function openNav() {
+
+	var colSideNav =  document.getElementById("colSideNav");
+	var newsList =  document.getElementById("newsList");
+
+    if(status == 1){
+    closeNav();
+    }
+    else{
+		colSideNav.style.width = "250px";
+	//   document.getElementById("newsList").style.marginLeft = "250px";
+		newsList.style.transition="-webkit-transform 500ms ease-out";
+
+		newsList.style.transform = "translate(250px,0)"
+      status = 1;
+    }
+}
+
+function closeNav() {
+    
+    colSideNav.style.width = "0";
+	newsList.style.transition="-webkit-transform 500ms ease-out";
+	newsList.style.transform = "translate(0px,0)"
+    status = 0;
+}
