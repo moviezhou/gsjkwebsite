@@ -122,11 +122,6 @@
         align-items: center;
     }
 
-    #domain .tab-content>.active {
-        display: flex;
-        justify-content: space-evenly;
-    } 
-
     .video-wrapper {
         width: 100%;
     }
