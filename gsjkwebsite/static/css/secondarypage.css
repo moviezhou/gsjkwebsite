@@ -45,7 +45,11 @@
     .path-wrapper {
         display: flex;
         justify-content: flex-end;
-    }   
+    }
+    
+    .video {
+        width: 260px;
+    }    
 }
 
 @media (max-width: 720px) {
@@ -112,6 +116,10 @@
         width: 100%;
         height: 100%;
     }
+
+    .video {
+        width: 100%;
+    }    
 }
 
 @media screen and (max-height: 450px) {
@@ -270,9 +278,6 @@ nav ol {
     margin: 0px 10px;
 }
 
-.video {
-    width: 260px;
-}
 
 .footer {
     /* position: relative; */
