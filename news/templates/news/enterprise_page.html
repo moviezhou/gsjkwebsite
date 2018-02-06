@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="tab-title"><h4><strong>投资企业</strong></h4></div>
-                <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="nav flex-column nav-pills sidenav" id="colSideNav" role="tablist" aria-orientation="vertical">
                     {% for column in column_entries %}
                         {% if forloop.first %}
                             <a class="nav-link nav-left active" id="v-pills-home-tab" data-toggle="pill" href="#{{ column.slug }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ column }}</a>
@@ -29,7 +29,7 @@
 
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-sm-8" id="newsList">
                 <div class="row list-title">
                         <div class="col-6 text-left" id="column-title"><h5>{{ self }}</h5></div>
                         <div class="col-6 path-wrapper">
@@ -44,6 +44,7 @@
                                 </nav>
                         </div>
                     </div>
+                    <span id="sideNavToggle" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
                         {% for column in column_entries %}
