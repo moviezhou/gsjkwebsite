@@ -50,7 +50,7 @@
                     <div class="tab-pane fade show active" id="domain" role="tabpanel" aria-labelledby="v-pills-home-tab">
                        <div class="category-row">
                            <div>
-                                <div class="nav flex-column nav-pills" id="pills-tab" role="tablist">
+                                <div class="nav flex-column nav-pills" id="pills-tab-wrapper" role="tablist">
                                     {% regroup business|dictsort:'business_category' by business_category as business_list %}
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         {% for business_category in business_list %}
