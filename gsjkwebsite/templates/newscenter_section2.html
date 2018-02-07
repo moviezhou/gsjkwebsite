@@ -54,7 +54,7 @@
                                         {% if news.representative_image %}
                                             {% image news.representative_image class="img-fluid" fill-160x100 %}
                                         {% else %}
-                                            <img class="img-fluid" src="{% static 'images/img-default.png' %}" alt="news">
+                                            <img src="{% static 'images/img-default.png' %}" alt="news">
                                         {% endif %}
                                     </a> 
                                     <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
@@ -100,7 +100,7 @@
                                 <div class="thumbnail">
                                     <a href="{% pageurl news %}">
                                         {% if news.representative_image %}
-                                        {% image news.representative_image class="img-fluid" fill-160x100 %}
+                                        {% image news.representative_image fill-160x100 %}
                                         {% else %}
                                             <img class="img-fluid" src="{% static 'images/img-default.png' %}" alt="news">
                                         {% endif %}
@@ -153,9 +153,9 @@
                                 <div class="thumbnail">
                                     <a href="{% pageurl news %}">
                                         {% if news.representative_image %}
-                                            {% image news.representative_image class="img-fluid" fill-160x100 %}
+                                            {% image news.representative_image fill-160x100 %}
                                         {% else %}
-                                            <img class="img-fluid" src="{% static 'images/img-default.png' %}" alt="news">
+                                            <img src="{% static 'images/img-default.png' %}" alt="news">
                                         {% endif %}
                                     </a> 
                                     <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
