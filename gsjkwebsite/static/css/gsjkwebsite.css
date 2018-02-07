@@ -662,6 +662,10 @@ Main Components
       height: 100px;
   }
 
+  .company-news {
+    margin-bottom: 40px;
+  }
+
   .business {
     background: url('../images/businessbg.jpg') no-repeat center center;
     background-size: cover;
@@ -834,6 +838,10 @@ Main Components
 
   .news-item .news-content {
     display: none;
+  }
+
+  .topic {
+    margin-bottom: 20px;
   }
 
   .topic .col-md-6 {
