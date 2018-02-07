@@ -647,6 +647,15 @@ Main Components
     background-size: cover;
   }
 
+  .topic {
+    margin-bottom: 20px;
+  }
+
+  .topic .col-md-6 {
+    margin-top: 10px;
+  }
+
+
   .banner-img {
     width: 255px;
     height: 153px;
@@ -838,14 +847,6 @@ Main Components
 
   .news-item .news-content {
     display: none;
-  }
-
-  .topic {
-    margin-bottom: 20px;
-  }
-
-  .topic .col-md-6 {
-    margin-top: 10px;
   }
 
   .business {
