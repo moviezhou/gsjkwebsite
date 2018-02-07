@@ -647,7 +647,16 @@ Main Components
     background-size: cover;
   }
   
+  img.thumbnail-img {
+    width: 160px;
+    height: 100px;
+  }
 
+  .thumbnail-img {
+      width: 160px;
+      height: 100px;
+  }
+  
   .business {
     background: url('../images/businessbg.jpg') no-repeat center center;
     background-size: cover;
@@ -781,11 +790,16 @@ Main Components
     background: #A1B0C7;
   }
 
-  .thumbnail>a>img {
+  img.thumbnail-img {
     width: 160px;
     height: 100px;
   }
-  
+
+  .thumbnail-img {
+      width: 160px;
+      height: 100px;
+  }
+
   .cd-horizontal-timeline .events-content p {
     color: #ffffff;
   }
