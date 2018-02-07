@@ -646,6 +646,11 @@ Main Components
     background: url('../images/newsbg.jpg') no-repeat center center;
     background-size: cover;
   }
+
+  .banner-img {
+    width: 255px;
+    height: 153px;
+  }
   
   img.thumbnail-img {
     width: 160px;
