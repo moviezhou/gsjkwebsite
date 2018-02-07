@@ -656,10 +656,14 @@ Main Components
       width: 160px;
       height: 100px;
   }
-  
+
   .business {
     background: url('../images/businessbg.jpg') no-repeat center center;
     background-size: cover;
+  }
+
+  figure.effect-sadie h2 {
+    font-size: 1.7rem;
   }
 }
 
