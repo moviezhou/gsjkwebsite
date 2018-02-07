@@ -2,7 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 
-from news.models import NewsPage
+from news.models import *
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
@@ -32,9 +32,10 @@ class HomePage(Page):
 
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
-        news_entries = self.get_children().get(slug='news').get_children().get(slug='highlights').get_children().specific()
-        news_latest = self.get_children().get(slug='news').get_children().get(slug='latest').get_children().specific()
-        partybuilding_news_entries = self.get_children().get(slug='partybuilding').get_children().get(slug='dynamic').get_children().specific()
+        # news_entries = self.get_children().get(slug='news').get_children().get(slug='highlights').get_children().specific()
+        news_entries = NewsPage.objects.descendant_of(self.get_children().get(slug='news').get_children().get(slug='highlights')).live().order_by('-date') #ColumnPage.objects.filter(slug="highlights").specific()
+        news_latest = NewsPage.objects.descendant_of(self.get_children().get(slug='news').get_children().get(slug='latest')).live().order_by('-date')
+        partybuilding_news_entries = NewsPage.objects.descendant_of(self.get_children().get(slug='partybuilding').get_children().get(slug='dynamic')).live().order_by('-date')
         context['news_entries'] = news_entries
         context['news_latest'] = news_latest
         context['partybuilding_news_entries'] = partybuilding_news_entries
