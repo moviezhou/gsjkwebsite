@@ -23,7 +23,11 @@
                         {% with news_entries|first as news %}
                             <div class="col-md-6">
                                     <a href="{% pageurl news %}">
-                                        <img class="img-fluid" src="{% static 'images/highlights.png' %}" alt="highlights">
+                                        {% if news.representative_image %}
+                                            {% image news.representative_image class="img-fluid" fill-255x153 %}
+                                        {% else %}
+                                            <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
+                                        {% endif %}
                                     </a>                                
                             </div>
                             <div class="col-md-6">

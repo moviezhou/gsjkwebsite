@@ -107,7 +107,7 @@ DATABASES = {
     }
 }
 
-# Database for Mac
+# Database for Mac 
 
 # DATABASES = {
 #     'default': {
