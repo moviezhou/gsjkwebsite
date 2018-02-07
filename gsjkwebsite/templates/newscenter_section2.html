@@ -54,7 +54,7 @@
                                         {% if news.representative_image %}
                                             {% image news.representative_image fill-160x100 %}
                                         {% else %}
-                                            <img src="{% static 'images/img-default.png' %}" alt="news">
+                                            <img src="{% static 'images/img-default.png' class="thumbnail-img" %}" alt="news">
                                         {% endif %}
                                     </a> 
                                     <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
@@ -102,7 +102,7 @@
                                         {% if news.representative_image %}
                                         {% image news.representative_image fill-160x100 %}
                                         {% else %}
-                                            <img class="img-fluid" src="{% static 'images/img-default.png' %}" alt="news">
+                                            <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" alt="news">
                                         {% endif %}
                                     </a> 
                                     <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
@@ -155,7 +155,7 @@
                                         {% if news.representative_image %}
                                             {% image news.representative_image fill-160x100 %}
                                         {% else %}
-                                            <img src="{% static 'images/img-default.png' %}" alt="news">
+                                            <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" alt="news">
                                         {% endif %}
                                     </a> 
                                     <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->

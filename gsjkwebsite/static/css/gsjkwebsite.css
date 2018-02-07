@@ -780,6 +780,11 @@ Main Components
   .newscenter {
     background: #A1B0C7;
   }
+
+  .thumbnail-img {
+    width: 160px;
+    height: 100px;
+  }
   
   .cd-horizontal-timeline .events-content p {
     color: #ffffff;
