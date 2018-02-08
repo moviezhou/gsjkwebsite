@@ -4,7 +4,13 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from modelcluster.fields import ParentalKey
+from wagtail.wagtailadmin.edit_handlers import (
+    FieldPanel, FieldRowPanel,
+    InlinePanel, MultiFieldPanel
+    )
+from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
+from wagtail.wagtailforms.edit_handlers import FormSubmissionsPanel
 
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
@@ -136,7 +142,7 @@ class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage', 'VideoPage']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage', 'VideoPage', 'FormPage']
     intro = RichTextField(blank=True)
 
 
@@ -154,6 +160,10 @@ class ColumnPage(Page):
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
+        elif request.path == '/partybuilding/petition':
+            form_entry = self.get_children()[0]
+            # print(form_entry.formpage.get_form())
+            context['form_entry'] = form_entry.formpage
         return context
 
     
@@ -305,3 +315,30 @@ class WebsiteLinkPage(Page):
         FieldPanel('link_category'),
         FieldPanel('site_name'),
         FieldPanel('link_href'),]
+
+
+class FormField(AbstractFormField):
+    page = ParentalKey('FormPage', related_name='form_fields')
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FormSubmissionsPanel(),
+        FieldPanel('intro', classname="full"),
+    ]
+
+
+class FormPage(AbstractEmailForm):
+    intro = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('intro', classname="full"),
+        InlinePanel('form_fields', label="Form fields"),
+        FieldPanel('thank_you_text', classname="full"),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel('subject'),
+        ], "Email"),
+    ]
