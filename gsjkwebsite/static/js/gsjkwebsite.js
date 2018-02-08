@@ -308,8 +308,8 @@ $("#colSideNav a").each(function(){
 
 	$this = $(this);  
 	if($this[0].href==String(window.location.href)){
-		// $this.siblings().removeClass('active');
-		// $this.addClass("active");
+		$this.siblings().removeClass('active');
+		$this.addClass("active");
 		$(this).trigger('click');
 		$('#column-title>h5').text($this[0].text);   
 	}  
@@ -321,7 +321,7 @@ $('.highlight-content p').each(function() {
 	  $(this).remove();
 	}
   });
-  
+
 $('.news-content p').each(function() {
 	if ($(this).text() === '') {
 	  $(this).remove();
