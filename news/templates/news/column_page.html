@@ -56,6 +56,15 @@
                     <span id="sideNavToggle" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
                     <hr>
                 <div class="tab-content" id="v-pills-tabContent">
+                    <div>
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">         
                         {% for news in page_entries.object_list %}
                         {% if news.news_category == "singlepage" %}
@@ -157,14 +166,16 @@
                         {% endfor %}
                         {% if form_entry %}
                             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                <h1>{{ form_entry.title }}</h1>
-                                {{ form_entry.intro|richtext }}
-                                <form action="{% pageurl form_entry %}" method="POST">
+                                <!-- {{ form_entry.intro|richtext }} -->
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">感谢您对我们工作的支持</h4>
+                                    <p>{{ form_entry.thank_you_text|richtext }}</p>
+                                </div>
+                                <form action="{% pageurl self %}" method="POST">
                                     {% csrf_token %}
                                     {{ form_entry.get_form.as_p }}
-                                    <input type="submit">
+                                    <input class="btn btn-primary" type="submit" value="提交">
                                 </form>
-                                {{ form_entry.thank_you_text|richtext }}
                             </div>
                         {% endif %}
                     </div>

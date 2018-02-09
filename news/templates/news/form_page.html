@@ -11,12 +11,11 @@
                 <img class="banner-img" src="{% static 'images/partybanner.jpg' %}" alt="news">
         </div>
     </div>
-    <h1>{{ page.title }}</h1>
     {{ page.intro|richtext }}
     <form action="{% pageurl page %}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit">
+        <input type="submit" value="提交">
     </form>
     {{ page.thank_you_text|richtext }}
 </div>

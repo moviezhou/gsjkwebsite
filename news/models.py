@@ -1,5 +1,5 @@
 from django.db import models
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from wagtail.wagtailcore.models import Page
@@ -11,6 +11,7 @@ from wagtail.wagtailadmin.edit_handlers import (
     )
 from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
 from wagtail.wagtailforms.edit_handlers import FormSubmissionsPanel
+from django.contrib import messages
 
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
@@ -173,6 +174,15 @@ class ColumnPage(Page):
             return render(request, 'news/business_domain.html', self.get_context(request))
         elif request.path == '/business/investment':
             return render(request, 'news/enterprise_page.html', self.get_context(request))
+        elif request.path == '/partybuilding/petition' and request.method == 'POST':
+            # form_def = get_form_instance_from_request(request)
+            print(request.POST.get('xing-ming'))
+            # form_def.process_form_submission(form)
+            self.process_form_submission(form)
+            del request.session[session_key_data]
+            messages.success(request, 'Your password was updated successfully!') 
+            return render(request, 'news/column_page.html', self.get_context(request))
+            # return HttpResponse("message", content_type='text/plain')
         else:
             return render(request, 'news/column_page.html', self.get_context(request))
     
