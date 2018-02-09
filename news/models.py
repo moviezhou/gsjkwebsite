@@ -161,9 +161,10 @@ class ColumnPage(Page):
             column_entries = self.get_children()
             context['column_entries'] = column_entries
         elif request.path == '/partybuilding/petition':
-            form_entry = self.get_children()[0]
-            # print(form_entry.formpage.get_form())
-            context['form_entry'] = form_entry.formpage
+            if len(self.get_children()) > 0:
+                form_entry = self.get_children()[0]
+                # print(form_entry.formpage.get_form())
+                context['form_entry'] = form_entry.formpage
         return context
 
     

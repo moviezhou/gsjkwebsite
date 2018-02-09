@@ -289,28 +289,20 @@ jQuery(document).ready(function($){
 });
 
 
-$('#pills-tab a').on('click', function (evt) {
-	evt.preventDefault();
-	$('#column-title>h5').text(evt.target.text);
-	$('#current_column').text(evt.target.text);
-	$(this).tab('show');
-  });
-
-
-
 //   Secondary pages
 
 $('.nav-left').on('click', function(evt){
 	$('#column-title>h5').text(evt.target.text);
+	$('#current_column').text(evt.target.text);
 });
 
 $("#colSideNav a").each(function(){  
 
 	$this = $(this);  
 	if($this[0].href==String(window.location.href)){
+		$(this).trigger('click');
 		$this.siblings().removeClass('active');
 		$this.addClass("active");
-		$(this).trigger('click');
 		$('#column-title>h5').text($this[0].text);   
 	}  
 });  
@@ -328,13 +320,6 @@ $('.news-content p').each(function() {
 	}
   });
 
-
-// active current url anchor
-$('a.nav-left').each(function (){ 
-	if(this.href == window.location.href){
-		$(this).trigger('click');
-	}
-});
 
 $('a.nav-sub').each(function (){ 
 	if(this.href == window.location.href){
