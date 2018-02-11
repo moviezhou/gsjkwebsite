@@ -116,6 +116,30 @@ nav.fill ul li a:hover:after {
 		
 }
 
+.notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 60px;
+  background: #2d47ab;
+  z-index: 100;
+  opacity: 0.8;
+  min-height: 50px;
+}
+
+.notify-wrapper {
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+  width: 70%;
+  padding-top: 10px;
+}
+
+.notify-title {
+  margin-left: 4%;
+}
+
 /* Timeline for milestone */
 
 /* -------------------------------- 

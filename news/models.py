@@ -9,10 +9,9 @@ from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, FieldRowPanel,
     InlinePanel, MultiFieldPanel
     )
-from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
+from wagtail.wagtailforms.models import AbstractForm, AbstractFormField
 from wagtail.wagtailforms.edit_handlers import FormSubmissionsPanel
 from django.contrib import messages
-
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
 # from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
@@ -99,7 +98,7 @@ class PartyBuildingIndexPage(Page):
     class Meta:
         verbose_name = "党建工作二级页面"
         
-    subpage_types = ['ColumnPage']
+    subpage_types = ['ColumnPage', 'FormPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -161,11 +160,6 @@ class ColumnPage(Page):
         if request.path == '/business/domain' or request.path == '/business/investment':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
-        elif request.path == '/partybuilding/petition':
-            if len(self.get_children()) > 0:
-                form_entry = self.get_children()[0]
-                # print(form_entry.formpage.get_form())
-                context['form_entry'] = form_entry.formpage
         return context
 
     
@@ -174,15 +168,6 @@ class ColumnPage(Page):
             return render(request, 'news/business_domain.html', self.get_context(request))
         elif request.path == '/business/investment':
             return render(request, 'news/enterprise_page.html', self.get_context(request))
-        elif request.path == '/partybuilding/petition' and request.method == 'POST':
-            # form_def = get_form_instance_from_request(request)
-            print(request.POST.get('xing-ming'))
-            # form_def.process_form_submission(form)
-            self.process_form_submission(form)
-            del request.session[session_key_data]
-            messages.success(request, 'Your password was updated successfully!') 
-            return render(request, 'news/column_page.html', self.get_context(request))
-            # return HttpResponse("message", content_type='text/plain')
         else:
             return render(request, 'news/column_page.html', self.get_context(request))
     
@@ -331,25 +316,34 @@ class WebsiteLinkPage(Page):
 class FormField(AbstractFormField):
     page = ParentalKey('FormPage', related_name='form_fields')
 
-    content_panels = AbstractEmailForm.content_panels + [
+    content_panels = AbstractForm.content_panels + [
         FormSubmissionsPanel(),
         FieldPanel('intro', classname="full"),
     ]
 
 
-class FormPage(AbstractEmailForm):
+class FormPage(AbstractForm):
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
-    content_panels = AbstractEmailForm.content_panels + [
+    content_panels = AbstractForm.content_panels + [
         FieldPanel('intro', classname="full"),
         InlinePanel('form_fields', label="Form fields"),
-        FieldPanel('thank_you_text', classname="full"),
-        MultiFieldPanel([
-            FieldRowPanel([
-                FieldPanel('from_address', classname="col6"),
-                FieldPanel('to_address', classname="col6"),
-            ]),
-            FieldPanel('subject'),
-        ], "Email"),
+        FieldPanel('thank_you_text', classname="full")
     ]
+
+    def get_context(self, request):
+        context = super(FormPage, self).get_context(request)
+        context['form_entry'] = self
+        return context
+
+    def serve(self, request):
+        if request.method == 'GET':
+            return render(request, 'news/column_page.html', self.get_context(request))
+
+        if request.method == 'POST':
+            form = self.get_form(request.POST, page=self, user=request.user)
+            if form.is_valid():
+                self.process_form_submission(form)
+                messages.success(request, '您的信函投递成功!')
+            return render(request, 'news/column_page.html', self.get_context(request))

@@ -5,6 +5,21 @@ $(document).ready(function() {
 	}
 });
 
+$('#news').slideDown({
+	duration: 1000, 
+	easing: 'easeInBounce', 
+	complete: function(){}});
+
+$('.notification').hover(
+	function(){
+		$('#news1').slideUp({
+			duration: 500, 
+			easing: 'easeInBounce', 
+			complete: function(){}});
+	}
+);
+
+
 $('.carousel').carousel();
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
