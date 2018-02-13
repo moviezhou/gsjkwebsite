@@ -117,7 +117,7 @@ nav.fill ul li a:hover:after {
 }
 
 .notification {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -138,6 +138,18 @@ nav.fill ul li a:hover:after {
 
 .notify-title {
   margin-left: 4%;
+}
+
+.notify-item {
+  display: none;
+  /* transform: translateY(-20px); */
+}
+
+.noti-active {
+  display: block;
+  transition: margin 1000ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+
+  /* transform: translateY(20px); */
 }
 
 /* Timeline for milestone */
@@ -542,7 +554,7 @@ Main Components
   }
 
   .slide1 {
-    background: url('../images/huanghejiuqu.jpg') no-repeat center center;
+    background: url('../images/huanghejiuqu2.jpg') no-repeat center center;
     background-size: cover; 
   }
 
@@ -667,7 +679,7 @@ Main Components
   }
 
   .newscenter {
-    background: url('../images/newsbg.jpg') no-repeat center center;
+    background: url('../images/newsbg2.jpg') no-repeat center center;
     background-size: cover;
   }
 
@@ -700,7 +712,7 @@ Main Components
   }
 
   .business {
-    background: url('../images/businessbg.jpg') no-repeat center center;
+    background: url('../images/businessbg2.jpg') no-repeat center center;
     background-size: cover;
   }
 

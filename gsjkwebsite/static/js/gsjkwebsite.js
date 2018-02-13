@@ -368,11 +368,11 @@ function openNav() {
     }
     else{
 		colSideNav.style.width = "250px";
-	//   document.getElementById("newsList").style.marginLeft = "250px";
+		//  document.getElementById("newsList").style.marginLeft = "250px";
 		newsList.style.transition="-webkit-transform 500ms ease-out";
 
 		newsList.style.transform = "translate(250px,0)"
-      status = 1;
+    	status = 1;
     }
 }
 
@@ -383,3 +383,61 @@ function closeNav() {
 	newsList.style.transform = "translate(0px,0)"
     status = 0;
 }
+
+
+// $('#notifications>li').each(function(){
+// 	var self = $(this)
+// 	setTimeout(function(){
+// 		// $(this).addClass('active');
+// 		console.log(self.text());
+// 	}, 2000);
+	// $(this).animate({
+	// 	width: "toggle",
+	// 	height: "toggle"
+	//   }, {
+	// 	duration: 2000,
+	// 	specialEasing: {
+	// 	  width: "linear",
+	// 	  height: "easeInBounce"
+	// 	},
+	// 	complete: function() {
+	// 		setTimeout(function(){
+	// 			$(this).removeClass('active');
+	// 			console.log($(this).text())
+	// 		}, 2000)
+	// 	}
+	//   });
+// });
+// setInterval(function(){ 
+// 	var lists = $('#notifications li');
+// 	for(var i=0; i<lists.length; i++){
+// 		setDelay(lists[i])
+// 	}
+//  }, 3000);
+
+// var lists = $('#notifications li');
+// 	for(var i=0; i<lists.length; i++){
+// 		setDelay(lists[i])
+// 	}
+
+//   function setDelay(i) {
+// 	setTimeout(function(){
+// 	  console.log(i);
+// 	}, 1000);
+//   }
+
+// function start(counter){
+// 	var list =  $('#notifications li');
+
+// 	if(counter <  list.length){
+// 	  setTimeout(function(){
+// 		list[counter].className += " noti-active";
+// 		if(counter > 0){
+// 			list[counter-1].classList.remove("noti-active");
+// 		}
+// 		counter++;
+// 		start(counter);
+// 	  }, 3000);
+// 	}
+//   }
+//   start(0);
