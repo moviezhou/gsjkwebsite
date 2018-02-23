@@ -1,4 +1,5 @@
 {% load static %}
+{% load wagtailcore_tags %}
 {% block footer %}
 <div class="footer">
     <div class="container">
@@ -9,15 +10,29 @@
                         <div class="dropdown">
                             <select name="" id="" onchange="if(this.value!='#'&&this.value!='友情链接') window.open(this.value);">
                                 <option value="">友情链接</option>
-                                {% for i in self.get_children %}
-                                    {% if i.slug == "links" %}
-                                        {% for link in i.get_children.specific %}
-                                            {% if link.link_category == "友情链接" %}
-                                                <option value="{{ link.link_href }}">{{ link.site_name }}</option>
-                                            {% endif %}
+                                {% with self.get_ancestors.1 as home %}{{ home }}
+                                    {% if self.slug == 'home' %}
+                                        {% for i in self.get_children %}
+                                        {% if i.slug == "links" %}
+                                            {% for link in i.get_children.specific %}
+                                                {% if link.link_category == "友情链接" %}
+                                                    <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
                                         {% endfor %}
+                                    {% else %}
+                                    {% for i in home.get_children %}
+                                        {% if i.slug == "links" %}
+                                            {% for link in i.get_children.specific %}
+                                                {% if link.link_category == "友情链接" %}
+                                                    <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
                                     {% endif %}
-                                {% endfor %}
+                                {% endwith %}
                             </select>
                         </div>
                     </div>
@@ -25,15 +40,29 @@
                         <div class="dropdown">
                             <select name="" id="" onchange="if(this.value!='#'&&this.value!='集团链接') window.open(this.value);">
                                 <option value="">集团链接</option>
-                                {% for i in self.get_children %}
-                                    {% if i.slug == "links" %}
-                                        {% for link in i.get_children.specific %}
-                                            {% if link.link_category == "集团链接" %}
-                                                <option value="{{ link.link_href }}">{{ link.site_name }}</option>
-                                            {% endif %}
+                                {% with self.get_ancestors.1 as home %}{{ home }}
+                                   {% if self.slug == 'home' %}
+                                        {% for i in self.get_children %}
+                                        {% if i.slug == "links" %}
+                                            {% for link in i.get_children.specific %}
+                                                {% if link.link_category == "集团链接" %}
+                                                    <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
                                         {% endfor %}
-                                    {% endif %}
-                                {% endfor %}
+                                   {% else %}
+                                        {% for i in home.get_children %}
+                                        {% if i.slug == "links" %}
+                                            {% for link in i.get_children.specific %}
+                                                {% if link.link_category == "集团链接" %}
+                                                    <option value="{{ link.link_href }}">{{ link.site_name }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                   {% endif %}
+                                {% endwith %}
                             </select>
                         </div>
                     </div>
