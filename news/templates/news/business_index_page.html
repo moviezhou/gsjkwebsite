@@ -12,7 +12,6 @@
         <div class="banner">
             <img class="banner-img" src="{% static 'images/businessbanner.jpg' %}" alt="news">
         </div>
-
     </div>
     <div class="container news-container">
         <div class="row">
@@ -56,11 +55,11 @@
                                         {% for business_category in business_list %}
                                             {% if forloop.first %}
                                             <li class="nav-item">
-                                                    <a class="nav-link nav-sub active" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
+                                                    <a class="nav-link nav-sub active" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper|slice:"1:" }}</a>
                                             </li>
                                             {% else %}
                                             <li class="nav-item">
-                                                    <a class="nav-link nav-sub" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper }}</a>
+                                                    <a class="nav-link nav-sub" id="{{ column.slug }}-tab" data-toggle="pill" href="#{{ business_category.grouper }}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{ business_category.grouper|slice:"1:" }}</a>
                                             </li>
                                             {% endif %}
                                         {% endfor %}
