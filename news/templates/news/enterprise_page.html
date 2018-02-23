@@ -38,8 +38,7 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
                                         <li class="breadcrumb-item"> <a href="{{ self.get_parent.url }}">{{ self.get_parent }}</a></li>
-                                        <li class="breadcrumb-item"><a href=""{{ self.url }}"">{{ self }}</a></li> 
-                                        {% comment %} <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}"></li>  {% endcomment %}
+                                        <li class="breadcrumb-item"><a href="{{ self.get_parent.url }}#investment">{{ self }}</a></li> 
                                     </ol>
                                 </nav>
                         </div>

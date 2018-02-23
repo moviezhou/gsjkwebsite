@@ -12,6 +12,7 @@
         <div class="banner">
             <img class="banner-img" src="{% static 'images/businessbanner.jpg' %}" alt="news">
         </div>
+
     </div>
     <div class="container news-container">
         <div class="row">
@@ -37,7 +38,7 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
                                         <li class="breadcrumb-item"> <a href="{{ self.get_parent.url }}">{{ self.get_parent }}</a></li>
-                                        <li class="breadcrumb-item"><a href=""{{ self.url }}"">{{ self }}</a></li> 
+                                        <li class="breadcrumb-item"><a href="{{ self.get_parent.url }}#domain">{{ self }}</a></li> 
                                         <li class="breadcrumb-item active" id="current_column" aria-current="page" data-column-slug="{{ self.slug }}">证券</li> 
                                     </ol>
                                 </nav>
