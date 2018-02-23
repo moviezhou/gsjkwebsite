@@ -54,7 +54,7 @@
                                         {% if news.representative_image %}
                                             {% image news.representative_image fill-160x100 %}
                                         {% else %}
-                                            <img src="{% static 'images/img-default.png' class="thumbnail-img" %}" alt="news">
+                                            <img src="{% static 'images/img-default.png' class="thumbnail-img" %}" width="160" height="100" alt="news">
                                         {% endif %}
                                     </a> 
                                     <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
