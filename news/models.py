@@ -142,7 +142,7 @@ class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'WebsiteLinkPage', 'VideoPage', 'FormPage']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'WebsiteLinkPage', 'VideoPage', 'FormPage']
     intro = RichTextField(blank=True)
 
 
@@ -157,7 +157,7 @@ class ColumnPage(Page):
             page_entries = pages.page(int(page))
             context['page_entries'] = page_entries
 
-        if request.path == '/business/domain' or request.path == '/business/investment':
+        if request.path == '/business/domain' or request.path == '/business/investment' or request.path == '/business/fund':
             column_entries = self.get_children()
             context['column_entries'] = column_entries
         return context
@@ -168,6 +168,8 @@ class ColumnPage(Page):
             return render(request, 'news/business_domain.html', self.get_context(request))
         elif request.path == '/business/investment':
             return render(request, 'news/enterprise_page.html', self.get_context(request))
+        elif request.path == '/business/fund':
+            return render(request, 'news/fund_page.html', self.get_context(request))
         else:
             return render(request, 'news/column_page.html', self.get_context(request))
     
@@ -257,6 +259,42 @@ class EnterprisePage(Page):
 
     def get_context(self, request):
         context = super(EnterprisePage, self).get_context(request)
+        column_entries = self.get_children()
+        context['column_entries'] = column_entries
+        return context
+
+class FundPage(Page):
+    class Meta:
+        verbose_name = "基金管理"
+
+    ENTERPRISE_CATEGORY = (
+        ("产业基金", "产业基金"),
+        ("其他基金", "其他基金"),)
+
+    
+    fund_category = models.CharField(max_length=10, choices=ENTERPRISE_CATEGORY, default=1, verbose_name="基金类型")   
+    fund_name = models.CharField(max_length=60, verbose_name="基金名称")
+    fund_intro = RichTextField(blank=True, verbose_name="基金简介")
+    fund_logo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="Logo"
+    )
+    fund_website = models.CharField(blank=True, max_length=200, verbose_name="网址")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('fund_category'),
+        FieldPanel('fund_name'),
+        FieldPanel('fund_intro'),
+        ImageChooserPanel('fund_logo'),
+        FieldPanel('fund_website'),
+    ]
+
+    def get_context(self, request):
+        context = super(FundPage, self).get_context(request)
         column_entries = self.get_children()
         context['column_entries'] = column_entries
         return context

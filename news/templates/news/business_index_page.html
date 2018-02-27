@@ -105,7 +105,7 @@
                                     <ul class="companies">
                                         {% for column in column_entries %}
                                             {% for company in column.get_children.specific %}
-                                               {% if company.enterprise_catrgory == "全资企业" %}
+                                               {% if company.enterprise_category == "全资企业" %}
                                                     <li class="company-name">
                                                         <h5>
                                                             <a href="/business/investment#{{ company.slug }}">{{company.enterprise_name }}</a>
@@ -153,6 +153,46 @@
                                         </ul>
                                     </div>
                                 </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fund" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="container">
+                            <div class="category-wrapper">
+                                <div class="category">产业基金</div>
+                                <div class="companies-wrapper">
+                                    <ul class="companies">
+                                        {% for column in column_entries %}
+                                            {% for fund in column.get_children.specific %}
+                                               {% if fund.fund_category == "产业基金" %}
+                                                    <li class="company-name">
+                                                        <h5>
+                                                            <a href="/business/fund#{{ fund.slug }}">{{fund.fund_name }}</a>
+                                                        </h5>
+                                                    </li>
+                                               {% endif %}
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="category-wrapper">
+                                <div class="category">其他基金</div>
+                                <div class="companies-wrapper">
+                                    <ul class="companies">
+                                        {% for column in column_entries %}
+                                            {% for fund in column.get_children.specific %}
+                                               {% if fund.fund_category == "其他基金" %}
+                                                    <li class="company-name">
+                                                        <h5>
+                                                            <a href="/business/fund#{{ fund.slug }}" >{{fund.fund_name }}</a>
+                                                        </h5>
+                                                    </li>
+                                               {% endif %}
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                               </div>
                         </div>
                     </div>
                 </div>
