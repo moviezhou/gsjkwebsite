@@ -84,6 +84,49 @@ nav.fill ul li a:hover:after {
   opacity: 1;
 }
 
+/* Navbar sub menu style */
+
+.subnav {
+  padding-left: 0;
+  font-size: larger;
+  /* background: #00589E; */
+  background:#344B81;
+}
+
+.submenu a {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  text-decoration: none;
+}
+
+.navbar-collapse ul > li:hover ul li {
+  height: 36px;
+}
+.navbar-collapse li ul {
+  position: absolute;
+  top: 60px;
+  z-index: 999;
+}
+
+.navbar-collapse li ul a {
+  color: #ffffff;
+}
+
+.navbar-collapse li ul a:hover {
+  background: #ffffff;
+}
+
+.navbar-collapse li ul li {
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: height 300ms ease-in;
+  -moz-transition: height 300ms ease-in;
+  -o-transition: height 300ms ease-in;
+  transition: height 300ms ease-in;
+}
+
+/* End Navbar sub menu style */
+
 
 .search-input {
   margin-bottom: 0;
@@ -1004,6 +1047,14 @@ Main Components
 
 .topic-banner {
   width: 100%;
+}
+
+.topic-left {
+  padding-right: 3px;
+}
+
+.topic-right {
+  padding-left: 3px;
 }
 
 .news-category {
