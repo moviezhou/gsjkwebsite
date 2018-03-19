@@ -89,8 +89,7 @@ nav.fill ul li a:hover:after {
 .subnav {
   padding-left: 0;
   font-size: larger;
-  /* background: #00589E; */
-  background:#344B81;
+  background: #00589E;
 }
 
 .submenu a {
@@ -106,6 +105,16 @@ nav.fill ul li a:hover:after {
   position: absolute;
   top: 60px;
   z-index: 999;
+}
+
+.navbar-collapse li ul {
+  color: #ffffff;
+}
+
+.navbar-collapse li ul {
+  background: #00589E; 
+  opacity: 0.8;
+  color: #ffffff;
 }
 
 .navbar-collapse li ul a {
@@ -734,6 +743,14 @@ Main Components
     margin-top: 10px;
   }
 
+  .topic-left {
+    padding-right: 3px;
+  }
+  
+  .topic-right {
+    padding-left: 3px;
+  }
+
 
   .banner-img {
     width: 255px;
@@ -1047,14 +1064,6 @@ Main Components
 
 .topic-banner {
   width: 100%;
-}
-
-.topic-left {
-  padding-right: 3px;
-}
-
-.topic-right {
-  padding-left: 3px;
 }
 
 .news-category {

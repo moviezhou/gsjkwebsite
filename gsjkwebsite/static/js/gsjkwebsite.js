@@ -304,6 +304,21 @@ jQuery(document).ready(function($){
 });
 
 
+$(".submenu a").on('click', function(evt){
+	window.location.href = evt.target.href;
+	$("#colSideNav a").each(function(){  
+
+		$this = $(this);  
+		if(this.href==String(window.location.href)){
+			$(this).trigger('click');
+			$this.siblings().removeClass('active');
+			$this.addClass("active");
+			$('#column-title>h5').text($this[0].text);   
+		}  
+	});  	
+});
+
+
 //   Secondary pages
 
 $('.nav-left').on('click', function(evt){
@@ -350,6 +365,8 @@ $(".video").hover(function(event) {
 		$(this).removeAttr("controls");
 	}
 });
+
+
 
 
 var status = 0;
