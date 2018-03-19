@@ -2,23 +2,23 @@ from django.db import models
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField
 from modelcluster.fields import ParentalKey
-from wagtail.wagtailadmin.edit_handlers import (
+from wagtail.admin.edit_handlers import (
     FieldPanel, FieldRowPanel,
     InlinePanel, MultiFieldPanel
     )
-from wagtail.wagtailforms.models import AbstractForm, AbstractFormField
-from wagtail.wagtailforms.edit_handlers import FormSubmissionsPanel
+from wagtail.contrib.forms.models import AbstractForm, AbstractFormField
+from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 from django.contrib import messages
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
 # from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 # from wagtail.wagtailimages.blocks import ImageChooserBlock
 
-from wagtail.wagtailsearch import index
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+from wagtail.search import index
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 class CompanyIndexPage(Page):
     class Meta:

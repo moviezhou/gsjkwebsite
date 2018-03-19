@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.wagtailcore.fields
+import wagtail.core.fields
 
 
 class Migration(migrations.Migration):
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
                 ('enterprise_category', models.IntegerField(choices=[(1, '全资企业'), (2, '控股企业'), (3, '参股企业')], default=1)),
                 ('enterprise_name', models.CharField(max_length=60)),
-                ('enterprise_intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('enterprise_intro', wagtail.core.fields.RichTextField(blank=True)),
                 ('enterprise_website', models.CharField(blank=True, max_length=200)),
                 ('enterprise_logo', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],
