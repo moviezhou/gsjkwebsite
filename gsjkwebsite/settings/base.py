@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_bleach',
+    'django_bleach',pytho
 ]
 
 MIDDLEWARE = [
