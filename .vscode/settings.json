@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "F:\\dev\\django-dev\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false
 }
