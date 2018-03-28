@@ -1154,7 +1154,7 @@ figure.effect-sadie:hover p {
 .fund-elem {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: inherit;
   align-items: center;
   width: 142px;
   height: 162px;
