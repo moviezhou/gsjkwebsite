@@ -1130,3 +1130,39 @@ figure.effect-sadie:hover p {
   font-size: 1.1em;
   line-height: 2em;
 }
+
+
+
+/* New homepage style */
+
+.fund-wrapper {
+  margin-top: 40px;
+}
+
+.fund-wrapper .title {
+  text-align: center;
+  color: #0062a8;
+}
+
+.fund-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.fund-elem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 142px;
+  height: 162px;
+  background: #0062a8;
+  color: #ffffff;
+}
+
+.fund-category {
+  text-align: center;
+  margin-top: 20px;
+}
