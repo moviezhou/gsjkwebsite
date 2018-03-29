@@ -155,7 +155,7 @@ nav.fill ul li a:hover:after {
 }
 
 .carousel-item {
-	height: 100vh;
+	height: 70vh;
 	min-height: 300px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -298,7 +298,7 @@ nav.fill ul li a:hover:after {
   }
 
   .slide2 {
-    background: url('../images/shenanqiao.jpg') no-repeat center center;
+    background: url('../images/shenanqiao.png') no-repeat center center;
     background-size: cover; 
   }
 
