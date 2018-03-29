@@ -7,176 +7,156 @@
     <div class="row">
         <div class="col-md-6 news-col">
             <div class="hightlights">
-                    <div class="title-wrapper">
-                            <div class="title-highlights">
-                                <h5>集团要闻</h5>
+                    {% with news_entries|first as news %}
+                    <a href="{% pageurl news %}">
+                            {% if news.representative_image %}
+                                {% image news.representative_image class="img-fluid" fill-510x306 %}
+                            {% else %}
+                                <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
+                            {% endif %}
+                        </a>       
+                {% endwith %}
+            </div>
+        </div>
+        <div class="col-md-6 news-col">
+                <div class="highlights-container">
+                        <div class="title-wrapper">
+                                <div class="title-highlights">
+                                    <h5>集团要闻</h5>
+                                </div>
+                                <div class="more">
+                                    <div><a href="/news/highlights">更多</a></div>
+                                    <div class="css-circle plus-sign">
+                                        &#43;
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row content">
+                            {% with news_entries|first as news %}
+                            <div class="highlight-title">
+                                <h3>
+                                    <strong>
+                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>       
+                                    </strong>
+                                </h3>    
+                                </div>
+                                <div class="highlight-content">
+                                    {{ news.body | richtext | bleach |truncatechars_html:82 }}
+                                </div>
+                            {% endwith %}
+                        </div>
+                <div class="highlights-container">
+                    <ul>
+                        {% for news in news_entries|slice:"1:5" %}
+                            <li class="news-item">
+                                    <div class="news-title">
+                                        <strong>
+                                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                        </strong>
+                                    </div>
+                                    <div class="news-date">
+                                            {{ news.date | date:"Y-m-d" }}
+                                    </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+                <div class="company-news">
+                        <div class="title-wrapper">
+                            <div class="title-company">
+                                <h5>企业动态</h5>
                             </div>
                             <div class="more">
-                                <div><a href="/news/highlights">更多</a></div>
+                                <div>
+                                    <a href="/news/latest">更多</a>
+                                </div>
+                                <div class="css-circle plus-sign">
+                                    &#43;
+                                </div>
+                            </div>   
+                        </div>
+                        <hr>
+                        <div class="highlights-container">
+                            <ul>
+                                {% for news in news_latest|slice:"0:2" %}
+                                    <li class="news-item">
+                                        <!-- <div class="thumbnail">
+                                            <a href="{% pageurl news %}">
+                                                {% if news.representative_image %}
+                                                {% image news.representative_image fill-160x100 %}
+                                                {% else %}
+                                                    <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" width="160" height="100" alt="news">
+                                                {% endif %}
+                                            </a> 
+                                            </div> -->
+                                            <div class="news-title">
+                                                    <strong>
+                                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                                    </strong>
+                                                </div>
+                                                <div class="news-date">
+                                                    {{ news.date | date:"Y-m-d" }}
+                                                </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+        </div>
+        <div class="col-md-6">
+                <div>
+                        <div class="title-wrapper">
+                            <div class="title-party">
+                                <h5>党建工作</h5>
+                            </div>
+                            <div class="more">
+                                <div><a href="/partybuilding/dynamic">更多</a></div>
                                 <div class="css-circle plus-sign">
                                     &#43;
                                 </div>
                             </div>
-                    </div>
-                    <hr>
-                    <div class="row content">
-                        {% with news_entries|first as news %}
-                            <div class="col-md-6">
-                                    <a href="{% pageurl news %}">
-                                        {% if news.representative_image %}
-                                            {% image news.representative_image class="img-fluid" fill-255x153 %}
-                                        {% else %}
-                                            <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
-                                        {% endif %}
-                                    </a>                                
+                        </div>
+                        <hr>
+                        <div class="row topic">
+                            <div class="col-md-6 topic-left">
+                                <img class="topic-banner" src="{% static 'images/buwangchuxin.png' %}" alt="highlights">
                             </div>
-                            <div class="col-md-6">
-                                    <div class="highlight-title">
-                                        <strong>                                                
-                                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>
-                                        </strong>
-                                    </div>
-                                    <div class="highlight-content">
-                                        {{ news.body | richtext | bleach |truncatechars_html:70 }}
-                                    </div>
+                            <div class="col-md-6 topic-right">
+                                <img class="topic-banner" src="{% static 'images/zaichufa.png' %}" alt="highlights">
                             </div>
-                        {% endwith %}
-                    </div>
-                </div>
-                <hr>
-            <div class="highlights-container">
-                <div>
-                    <ul>
-                        {% for news in news_entries|slice:"1:5" %}
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                    <a href="{% pageurl news %}">
-                                        {% if news.representative_image %}
-                                            {% image news.representative_image fill-160x100 %}
-                                        {% else %}
-                                            <img src="{% static 'images/img-default.png' class="thumbnail-img" %}" width="160" height="100" alt="news">
-                                        {% endif %}
-                                    </a> 
-                                    <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            <strong>
-                                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                            </strong>
-                                        </div>
-                                        <div class="news-content">
-                                            {% spaceless %}
-                                                {{ news.body | richtext | bleach |truncatechars_html:50 }}
-                                            {% endspaceless %}
-                                        </div>
-                                    </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 news-col">
-            <div class="company-news">
-                <div class="title-wrapper">
-                    <div class="title-company">
-                        <h5>企业动态</h5>
-                    </div>
-                    <div class="more">
-                        <div>
-                            <a href="/news/latest">更多</a>
                         </div>
-                        <div class="css-circle plus-sign">
-                            &#43;
-                        </div>
-                    </div>   
-                </div>
-                <hr>
-                <div class="highlights-container">
-                    <ul>
-                        {% for news in news_latest|slice:"0:2" %}
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                    <a href="{% pageurl news %}">
-                                        {% if news.representative_image %}
-                                        {% image news.representative_image fill-160x100 %}
-                                        {% else %}
-                                            <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" width="160" height="100" alt="news">
-                                        {% endif %}
-                                    </a> 
-                                    <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            <strong>
-                                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                            </strong>
-                                        </div>
-                                        <div class="news-content">
-                                            {% spaceless %}
-                                                {{ news.body | richtext | bleach |truncatechars_html:50 }}
-                                            {% endspaceless %}
-                                        </div>
-                                    </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            
-            <div>
-                <div class="title-wrapper">
-                    <div class="title-party">
-                        <h5>党建工作</h5>
+                        <div class="highlights-container">
+                            <ul>
+                                {% for news in partybuilding_news_entries|slice:"0:2" %}
+                                    <li class="news-item">
+                                        <!-- <div class="thumbnail">
+                                            <a href="{% pageurl news %}">
+                                                {% if news.representative_image %}
+                                                    {% image news.representative_image fill-160x100 %}
+                                                {% else %}
+                                                    <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" alt="news">
+                                                {% endif %}
+                                            </a> 
+                                            </div> -->
+                                            <div class="news-title">
+                                                    <strong>
+                                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                                    </strong>
+                                                </div>
+                                                <div class="news-date">
+                                                        {{ news.date | date:"Y-m-d" }}
+                                                    </div>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                        </div>         
                     </div>
-                    <div class="more">
-                        <div><a href="/partybuilding/dynamic">更多</a></div>
-                        <div class="css-circle plus-sign">
-                            &#43;
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row topic">
-                    <div class="col-md-6 topic-left">
-                        <img class="topic-banner" src="{% static 'images/buwangchuxin.png' %}" alt="highlights">
-                    </div>
-                    <div class="col-md-6 topic-right">
-                        <img class="topic-banner" src="{% static 'images/zaichufa.png' %}" alt="highlights">
-                    </div>
-                </div>
-                <div class="highlights-container">
-                    <ul>
-                        {% for news in partybuilding_news_entries|slice:"0:2" %}
-                            <li class="news-item">
-                                <div class="thumbnail">
-                                    <a href="{% pageurl news %}">
-                                        {% if news.representative_image %}
-                                            {% image news.representative_image fill-160x100 %}
-                                        {% else %}
-                                            <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" alt="news">
-                                        {% endif %}
-                                    </a> 
-                                    <!-- <img class="" src="{% static 'images/news.png' %}" alt="highlights"> -->
-                                    </div>
-                                    <div class="news-wrapper">
-                                        <div class="news-title">
-                                            <strong>
-                                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                            </strong>
-                                        </div>
-                                        <div class="news-content">
-                                            {% spaceless %}
-                                                {{ news.body | richtext | bleach | truncatechars_html:50 }}
-                                            {% endspaceless %}
-                                        </div>
-                                    </div>
-                            </li>
-                        {% endfor %}
-                        </ul>
-                </div>         
-            </div>
         </div>
     </div>
 </div>

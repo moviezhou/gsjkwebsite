@@ -399,8 +399,7 @@ nav.fill ul li a:hover:after {
   }
 
   .newscenter {
-    background: url('../images/newsbg2.jpg') no-repeat center center;
-    background-size: cover;
+    
   }
 
   .topic {
@@ -436,11 +435,12 @@ nav.fill ul li a:hover:after {
   }
 
   .company-news {
+    min-height: 300px;
     margin-bottom: 40px;
   }
 
   .business {
-    background: url('../images/businessbg2.jpg') no-repeat center center;
+    background: url('../images/businessbg.png') no-repeat center center;
     background-size: cover;
   }
 
@@ -490,25 +490,6 @@ nav.fill ul li a:hover:after {
     width: 100%;
   }
 
-  .milestone {
-    background: #303f9f;
-  }
-
-  .milestone-wrapper {
-    padding-top: 40px;
-    padding-bottom: 20px;
-  }
-
-  .up-slogan {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0px 4px;
-    color: #ffffff;
-    border-bottom: 1px solid;
-  }
-
   .company-sign {
     text-align: center;
     color: #ffffff;
@@ -520,23 +501,7 @@ nav.fill ul li a:hover:after {
     letter-spacing: 3px;
   }
 
-  .timeline-title {
-    text-align: center;
-    color: #ffffff;
-  }
 
-  .timeline-title h2 {
-    font-size: 2em;
-    letter-spacing: 10px;
-  }
-
-  .slogan-item h1 {
-    font-size: 20px;
-  }
-
-  .events-content {
-    padding-bottom: 30px;
-  }
 
   .news-container {
     margin-top: 0;
@@ -676,16 +641,16 @@ nav.fill ul li a:hover:after {
 .news-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .news-title {
+  width: 80%;
   color: #0b2a6e;
   font-size: medium;
+  padding: 4px 0px 4px 0px;
 }
 
-.news-wrapper {
-  padding: 5px 5px 5px 10px;
-}
 
 .highlights-container ul {
   padding: 0;
@@ -1053,7 +1018,7 @@ figure.effect-sadie:hover p {
 
 .flip-container, .front, .back {
 	width: 100%;
-  height: 30vh;
+  height: 22vh;
   margin-bottom: 2.4vh;
 }
 
@@ -1135,17 +1100,13 @@ figure.effect-sadie:hover p {
 
 /* New homepage style */
 
-.fund-wrapper {
-  margin-top: 40px;
-}
-
-.fund-wrapper .title {
+.section-title {
+  padding: 40px 0;
   text-align: center;
   color: #0062a8;
 }
 
 .fund-container {
-  margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
