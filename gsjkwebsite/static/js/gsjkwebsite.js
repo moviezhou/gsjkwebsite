@@ -107,7 +107,21 @@ $('.news-content p').each(function() {
 	if ($(this).text() === '') {
 	  $(this).remove();
 	}
-  });
+	});
+	
+
+var paragraphs = $('.highlight-content h5 p');
+var synthesize = '';
+if(paragraphs.length > 1) {
+	for(var i=0; i < paragraphs.length ; i++) {
+		synthesize += paragraphs[i].innerText;
+		paragraphs[i].remove();
+	}
+
+	var p = document.createElement('p');
+	p.innerText = synthesize;
+	$('.highlight-content h5').append(p);
+}
 
 
 $('a.nav-sub').each(function (){ 
