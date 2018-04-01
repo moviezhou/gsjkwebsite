@@ -35,8 +35,12 @@ class HomePage(Page):
         # news_entries = self.get_children().get(slug='news').get_children().get(slug='highlights').get_children().specific()
         news_entries = NewsPage.objects.descendant_of(self.get_children().get(slug='news').get_children().get(slug='highlights')).live().order_by('-date') #ColumnPage.objects.filter(slug="highlights").specific()
         news_latest = NewsPage.objects.descendant_of(self.get_children().get(slug='news').get_children().get(slug='latest')).live().order_by('-date')
+        news_industry = NewsPage.objects.descendant_of(self.get_children().get(slug='news').get_children().get(slug='industry')).live().order_by('-date')
+        news_policy = NewsPage.objects.descendant_of(self.get_children().get(slug='news').get_children().get(slug='policy')).live().order_by('-date')
         partybuilding_news_entries = NewsPage.objects.descendant_of(self.get_children().get(slug='partybuilding').get_children().get(slug='dynamic')).live().order_by('-date')
         context['news_entries'] = news_entries
         context['news_latest'] = news_latest
+        context['news_industry'] = news_industry
+        context['news_policy'] = news_policy
         context['partybuilding_news_entries'] = partybuilding_news_entries
         return context

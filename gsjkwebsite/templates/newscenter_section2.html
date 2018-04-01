@@ -8,31 +8,22 @@
         <div class="col-md-6 news-col">
             <div class="hightlights">
                     {% with news_entries|first as news %}
-                    <a href="{% pageurl news %}">
-                            {% if news.representative_image %}
-                                <!-- {% image news.representative_image class="img-fluid" fill-510x306 %} -->
-                            <div class="grid">
-                                <figure class="effect-sarah">
-                                    <img src="https://tympanus.net/Development/HoverEffectIdeas/img/13.jpg" alt="img13"/>
-                                    <figcaption>
-                                        <h2>Free <span>Sarah</span></h2>
-                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
-                                        <a href="#">View more</a>
-                                    </figcaption>			
-                                </figure>
-                                <figure class="effect-sarah">
-                                    <img src="https://tympanus.net/Development/HoverEffectIdeas/img/20.jpg" alt="img20"/>
-                                    <figcaption>
-                                        <h2>Free <span>Sarah</span></h2>
-                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
-                                        <a href="#">View more</a>
-                                    </figcaption>			
-                                </figure>
-                            </div>
-                            {% else %}
-                                <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
-                            {% endif %}
-                        </a>       
+                    <div class="grid">
+                            <figure class="effect-sarah">
+                                {% if news.representative_image %}
+                                    {% image news.representative_image class="img-fluid" fill-510x306 %}
+                                {% else %}
+                                    <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
+                                {% endif %}
+                                <figcaption>
+                                    <h2>图片新闻</h2>
+                                    {% with news_entries|first as news %}
+                                        <p>{{ news.title | truncatechars_html:50 }}</p>
+                                    {% endwith %}
+                                    <a href="{% pageurl news %}">View more</a>
+                                </figcaption>			
+                            </figure>
+                        </div>
                 {% endwith %}
             </div>
         </div>
@@ -61,7 +52,9 @@
                                 </h3>    
                                 </div>
                                 <div class="highlight-content">
-                                    {{ news.body | richtext | bleach |truncatechars_html:82 }}
+                                    <h5>
+                                        {{ news.body | richtext | bleach |truncatechars_html:66 }}
+                                    </h5>
                                 </div>
                             {% endwith %}
                         </div>
@@ -87,14 +80,16 @@
         <div class="col-md-6">
                 <div class="company-news">
                         <div class="title-wrapper">
-                            <div class="title-company">
-                                企业动态
-                            </div>
-                            <div class="title-company">
-                                <h5>行业资讯</h5>
-                            </div>
-                            <div class="title-company">
-                                <h5>政策法规</h5>
+                            <div class="news-tabs">
+                                <div class="title-company focus" id="qydt">
+                                        企业动态
+                                    </div>
+                                    <div class="title-company" id="hyzx">
+                                        行业资讯
+                                    </div>
+                                    <div class="title-company" id="zcfg">
+                                        政策法规
+                                    </div>
                             </div>
                             <div class="more">
                                 <div>
@@ -107,52 +102,50 @@
                         </div>
                         <hr>
                         <div class="highlights-container">
-                            <ul>
-                                {% for news in news_latest|slice:"0:2" %}
-                                    <li class="news-item">
-                                        <!-- <div class="thumbnail">
-                                            <a href="{% pageurl news %}">
-                                                {% if news.representative_image %}
-                                                {% image news.representative_image fill-160x100 %}
-                                                {% else %}
-                                                    <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" width="160" height="100" alt="news">
-                                                {% endif %}
-                                            </a> 
-                                            </div> -->
-                                            <div class="news-title">
-                                                    <strong>
-                                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                                    </strong>
-                                                </div>
-                                                <div class="news-date">
-                                                    {{ news.date | date:"Y-m-d" }}
-                                                </div>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                            <ul>
-                                    {% for news in news_latest|slice:"0:2" %}
+                            <div class="news-list">
+                                <ul data-category="qydt">
+                                    {% for news in news_latest|slice:"0:4" %}
                                         <li class="news-item">
-                                            <!-- <div class="thumbnail">
-                                                <a href="{% pageurl news %}">
-                                                    {% if news.representative_image %}
-                                                    {% image news.representative_image fill-160x100 %}
-                                                    {% else %}
-                                                        <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" width="160" height="100" alt="news">
-                                                    {% endif %}
-                                                </a> 
-                                                </div> -->
-                                                <div class="news-title">
-                                                        <strong>
-                                                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                                        </strong>
-                                                    </div>
-                                                    <div class="news-date">
-                                                        {{ news.date | date:"Y-m-d" }}
-                                                    </div>
+                                            <div class="news-title">
+                                                <strong>
+                                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                                </strong>
+                                            </div>
+                                            <div class="news-date">
+                                                {{ news.date | date:"Y-m-d" }}
+                                            </div>
                                         </li>
                                     {% endfor %}
                                 </ul>
+                                <ul data-category="hyzx" style="display:none">
+                                    {% for news in news_industry|slice:"0:4" %}
+                                        <li class="news-item">
+                                            <div class="news-title">
+                                                <strong>
+                                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                                </strong>
+                                            </div>
+                                            <div class="news-date">
+                                                {{ news.date | date:"Y-m-d" }}
+                                                </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <ul data-category="zcfg" style="display:none">
+                                    {% for news in news_policy|slice:"0:4" %}
+                                        <li class="news-item">
+                                            <div class="news-title">
+                                                <strong>
+                                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                                </strong>
+                                            </div>
+                                            <div class="news-date">
+                                                {{ news.date | date:"Y-m-d" }}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
         </div>

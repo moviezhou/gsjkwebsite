@@ -36,6 +36,27 @@ $(function() {
   });
 });
 
+
+// news-tab mouse over effect
+$('.title-company').mouseover(function(e){
+	$(this).addClass('focus');
+	$(this).siblings().each(function(){
+		$(this).removeClass('focus');
+	});
+
+	// e.target.id
+	$('.news-list').children().each(function(){
+		if($(this)[0].dataset.category === e.target.id) {
+			$(this)[0].style.display = 'block'; 
+			$(this).siblings().each(function(){
+				// console.log($(this));
+				$(this)[0].style.display = 'none';
+			});
+		}
+	});
+
+});
+
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
   $('.navbar-toggle:visible').click();
@@ -119,7 +140,7 @@ function openNav() {
 		//  document.getElementById("newsList").style.marginLeft = "250px";
 		newsList.style.transition="-webkit-transform 500ms ease-out";
 
-		newsList.style.transform = "translate(250px,0)"
+		newsList.style.transform = "translate(250px,0)";
     	status = 1;
     }
 }
@@ -128,6 +149,6 @@ function closeNav() {
     
     colSideNav.style.width = "0";
 	newsList.style.transition="-webkit-transform 500ms ease-out";
-	newsList.style.transform = "translate(0px,0)"
+	newsList.style.transform = "translate(0px,0)";
     status = 0;
 }

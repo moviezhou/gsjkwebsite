@@ -392,14 +392,24 @@ nav.fill ul li a:hover:after {
     letter-spacing: 6px;
   }
 
+  .highlight-title a {
+    color: #0062a8;
+    text-decoration: none;
+  }
+
+  .highlight-title:hover a {
+    color: cornflowerblue;
+  }
+  
+  .highlight-content p {
+    text-indent: 2em;
+    /* color: rgb(59, 115, 218); */
+  }
+
   /* end of full page2 style */
 
   .news-container {
     margin-top: 65px;
-  }
-
-  .newscenter {
-    
   }
 
   .topic {
@@ -523,8 +533,12 @@ nav.fill ul li a:hover:after {
     width: 100%;
   }
 
-  .highlight-content {
+  /* .highlight-content {
     display: none;
+  } */
+
+  .highlight-content p {
+    text-indent: 2em;
   }
 
   .news-item {
@@ -620,18 +634,21 @@ nav.fill ul li a:hover:after {
   color: white;
 }
 
-.highlight-title {
-  color: #0b2a6e;
-  font-size: larger;
-}
-
 .title-company {
-  background: #0061ac;
-  color: #ffffff;
+  color: #000000;
   padding: 6px 16px;
   font-size: 1.4em;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.focus{
+  background: #0061ac;
+  color: #ffffff;
+}
+
+.news-tabs {
+  display: flex;
 }
 
 .title-party {
@@ -649,11 +666,27 @@ nav.fill ul li a:hover:after {
   justify-content: space-between;
 }
 
+.news-item:hover .news-date {
+  color: #0b2a6e;
+  font-weight: 600;
+}
+
 .news-title {
   width: 80%;
   color: #0b2a6e;
   font-size: medium;
   padding: 4px 0px 4px 0px;
+}
+
+.news-title a {
+  color: black;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.news-item:hover  a{
+  color: rgb(59, 115, 218);
+  font-weight: 600;
 }
 
 
@@ -868,7 +901,6 @@ select > option {
 	max-width: 100%;
 	list-style: none;
   text-align: center;
-  padding: 20px 0;
 }
 
 /* Common style */
@@ -1005,9 +1037,9 @@ figure.effect-sadie:hover p {
 /***** Sarah *****/
 /*---------------*/
 
-figure.effect-sarah {
-	background: #42b078;
-}
+/* figure.effect-sarah {
+	background: #42413f;
+} */
 
 figure.effect-sarah img {
 	max-width: none;
@@ -1058,7 +1090,8 @@ figure.effect-sarah:hover h2::after {
 
 figure.effect-sarah p {
 	padding: 1em 0;
-	opacity: 0;
+  opacity: 0;
+  font-size: 1.2em;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(100%,0,0);
@@ -1206,16 +1239,10 @@ figure.effect-sarah:hover p {
 	display: none;
 }
 
-.fund-elem:hover .fund-icon {
-	/* background: rgba(255,255,255,1);
-  color: #702fa8; */
-
-}
-
 .fund-elem:hover .fund-category h4 {
-  -webkit-animation: zoom .5s ease-out;
-	-moz-animation: zoom .5s ease-out;
-	animation: zoom .5s ease-out;
+  -webkit-animation: zoom .3s ease-out;
+	-moz-animation: zoom .3s ease-out;
+	animation: zoom .3s ease-out;
 }
 
 
@@ -1267,9 +1294,9 @@ figure.effect-sarah:hover p {
     opacity: 1;
 
   }
-  100% {
+  /* 100% {
     filter: invert(1);
-  }
+  } */
 }
 @-moz-keyframes toTopFromBottom {
 	49% {
@@ -1282,9 +1309,9 @@ figure.effect-sarah:hover p {
 	51% {
 		opacity: 1;
   }
-  100% {
+  /* 100% {
     filter: invert(1);
-  }
+  } */
 }
 @keyframes toTopFromBottom {
 	49% {
@@ -1297,15 +1324,22 @@ figure.effect-sarah:hover p {
 	51% {
 		opacity: 1;
   }
-  100% {
+  /* 100% {
     filter: invert(1);
-  }
+  } */
 }
 
 .invest-companys {
   padding: 20px 0;
 }
 
+.company-grid {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
 .invest-companys .col-md-3:hover {
   background: gainsboro;
+  opacity: 0.8;
 }
