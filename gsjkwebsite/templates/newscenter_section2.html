@@ -72,6 +72,12 @@
                             <div class="title-company">
                                 <h5>企业动态</h5>
                             </div>
+                            <div class="title-company">
+                                <h5>行业资讯</h5>
+                            </div>
+                            <div class="title-company">
+                                <h5>政策法规</h5>
+                            </div>
                             <div class="more">
                                 <div>
                                     <a href="/news/latest">更多</a>
@@ -106,6 +112,29 @@
                                     </li>
                                 {% endfor %}
                             </ul>
+                            <ul>
+                                    {% for news in news_latest|slice:"0:2" %}
+                                        <li class="news-item">
+                                            <!-- <div class="thumbnail">
+                                                <a href="{% pageurl news %}">
+                                                    {% if news.representative_image %}
+                                                    {% image news.representative_image fill-160x100 %}
+                                                    {% else %}
+                                                        <img src="{% static 'images/img-default.png' %}" class="thumbnail-img" width="160" height="100" alt="news">
+                                                    {% endif %}
+                                                </a> 
+                                                </div> -->
+                                                <div class="news-title">
+                                                        <strong>
+                                                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
+                                                        </strong>
+                                                    </div>
+                                                    <div class="news-date">
+                                                        {{ news.date | date:"Y-m-d" }}
+                                                    </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                         </div>
                     </div>
         </div>
