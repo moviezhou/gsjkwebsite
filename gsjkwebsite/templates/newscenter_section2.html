@@ -10,7 +10,25 @@
                     {% with news_entries|first as news %}
                     <a href="{% pageurl news %}">
                             {% if news.representative_image %}
-                                {% image news.representative_image class="img-fluid" fill-510x306 %}
+                                <!-- {% image news.representative_image class="img-fluid" fill-510x306 %} -->
+                            <div class="grid">
+                                <figure class="effect-sarah">
+                                    <img src="https://tympanus.net/Development/HoverEffectIdeas/img/13.jpg" alt="img13"/>
+                                    <figcaption>
+                                        <h2>Free <span>Sarah</span></h2>
+                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>			
+                                </figure>
+                                <figure class="effect-sarah">
+                                    <img src="https://tympanus.net/Development/HoverEffectIdeas/img/20.jpg" alt="img20"/>
+                                    <figcaption>
+                                        <h2>Free <span>Sarah</span></h2>
+                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>			
+                                </figure>
+                            </div>
                             {% else %}
                                 <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
                             {% endif %}
@@ -22,7 +40,7 @@
                 <div class="highlights-container">
                         <div class="title-wrapper">
                                 <div class="title-highlights">
-                                    <h5>集团要闻</h5>
+                                    集团要闻
                                 </div>
                                 <div class="more">
                                     <div><a href="/news/highlights">更多</a></div>
@@ -70,7 +88,7 @@
                 <div class="company-news">
                         <div class="title-wrapper">
                             <div class="title-company">
-                                <h5>企业动态</h5>
+                                企业动态
                             </div>
                             <div class="more">
                                 <div>
@@ -113,7 +131,7 @@
                 <div>
                         <div class="title-wrapper">
                             <div class="title-party">
-                                <h5>党建工作</h5>
+                                党建工作
                             </div>
                             <div class="more">
                                 <div><a href="/partybuilding/dynamic">更多</a></div>

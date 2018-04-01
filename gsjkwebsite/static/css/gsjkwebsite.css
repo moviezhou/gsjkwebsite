@@ -572,7 +572,10 @@ nav.fill ul li a:hover:after {
 .title-highlights {
   background: #0b2a6e;
   color: #ffffff;
-  padding: 8px 20px 4px 20px;
+  padding: 6px 16px;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .more {
@@ -625,13 +628,19 @@ nav.fill ul li a:hover:after {
 .title-company {
   background: #0061ac;
   color: #ffffff;
-  padding: 8px 20px 4px 20px;
+  padding: 6px 16px;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .title-party {
   background: #e60020;
   color: #ffffff;
-  padding: 8px 20px 4px 20px;
+  padding: 6px 16px;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .news-item {
@@ -858,7 +867,8 @@ select > option {
 	margin: 0 auto;
 	max-width: 100%;
 	list-style: none;
-	text-align: center;
+  text-align: center;
+  padding: 20px 0;
 }
 
 /* Common style */
@@ -991,98 +1001,135 @@ figure.effect-sadie:hover p {
 }
 
 
+/*---------------*/
+/***** Sarah *****/
+/*---------------*/
 
-
-
-
-.flip-container {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
-
-	border: 1px solid #ccc;
+figure.effect-sarah {
+	background: #42b078;
 }
 
-	.flip-container:hover .flipper,  
-  .flip-container.hover .flipper {
-		-webkit-transform: rotateY(180deg);
-		-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-	}
+figure.effect-sarah img {
+	max-width: none;
+	width: -webkit-calc(100% + 20px);
+	width: calc(100% + 20px);
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-10px,0,0);
+	transform: translate3d(-10px,0,0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
 
-.flip-container, .front, .back {
+figure.effect-sarah:hover img {
+	opacity: 0.4;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-sarah figcaption {
+	text-align: left;
+}
+
+figure.effect-sarah h2 {
+	position: relative;
+	overflow: hidden;
+	padding: 0.5em 0;
+}
+
+figure.effect-sarah h2::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	width: 100%;
-  height: 22vh;
-  margin-bottom: 2.4vh;
+	height: 3px;
+	background: #fff;
+	content: '';
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
 }
+
+figure.effect-sarah:hover h2::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-sarah p {
+	padding: 1em 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+
+figure.effect-sarah:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+
+/* End of style Sarah */
 
 .flipper {
-	-webkit-transition: 0.6s;
-	-webkit-transform-style: preserve-3d;
+  position: relative;
+  background: red;
+  padding: 16px 0;
+  opacity: 0.8;
+  transition: .6s ease-out;
+}
 
-	-moz-transition: 0.6s;
-	-moz-transform-style: preserve-3d;
-  
-  -o-transition: 0.6s;
-	-o-transform-style: preserve-3d;
+.flipper .busi-icon img {
+  width: 100px;
+  transition: .5s ease;
+}
 
-	transition: 0.6s;
-	transform-style: preserve-3d;
+.flipper:hover {
+  background: #0062a8;
+  opacity: 0.7;
+  transition: .6s ease-out;
+}
 
-	position: relative;
+.flipper:hover .busi-icon img {
+  width: 120px;
+  transition: .5s ease;
 }
 
 .flipper img {
-  width: 160px;
+  width: 100px;
 }
 
 .front, .back {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-	backface-visibility: hidden;
 
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
-.front {
+.business-wrapper a {
+  text-decoration: none;
+}
+
+.busi-icon {
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
-  opacity: 0.7
 }
-
-.back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;  
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-
-  background: #334b84;
-  opacity:  0.8;
-}
-
 
 .back-title {
-	font-weight: bold;
+  font-weight: 600;
 	color: #ffffff;
 	left: 0;
 	right: 0;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.8em;
 }
 
-.back p {
+.busi-title p {
 	left: 0;
 	right: 0;
   text-align: center;
@@ -1097,9 +1144,13 @@ figure.effect-sadie:hover p {
 /* New homepage style */
 
 .section-title {
-  padding: 40px 0;
+  padding: 20px 0;
   text-align: center;
   color: #0062a8;
+}
+
+.section-title h2 {
+  font-weight: 600;
 }
 
 .fund-container {
@@ -1122,4 +1173,139 @@ figure.effect-sadie:hover p {
 .fund-category {
   text-align: center;
   margin-top: 20px;
+}
+
+/* .fund-elem:hover .fund-icon img {
+  filter: invert(1);
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+} */
+
+
+.fund-icon:after {
+	display: none;
+}
+
+.fund-elem:hover .fund-icon {
+	/* background: rgba(255,255,255,1);
+  color: #702fa8; */
+
+}
+
+.fund-elem:hover .fund-category h4 {
+  -webkit-animation: zoom .5s ease-out;
+	-moz-animation: zoom .5s ease-out;
+	animation: zoom .5s ease-out;
+}
+
+
+@-webkit-keyframes zoom {
+	50% {
+		-webkit-transform: scale(0.5);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-moz-keyframes zoom {
+	50% {
+		-webkit-transform: scale(0.5);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@keyframes zoom {
+	50% {
+		-webkit-transform: scale(0.5);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+
+
+.fund-elem:hover .fund-icon {
+	-webkit-animation: toTopFromBottom 0.5s forwards;
+	-moz-animation: toTopFromBottom 0.5s forwards;
+  animation: toTopFromBottom 0.5s forwards;
+  /* filter: invert(1); */
+}
+
+@-webkit-keyframes toTopFromBottom {
+	49% {
+    -webkit-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+    -webkit-transform: translateY(100%);
+	}
+	51% {
+    opacity: 1;
+
+  }
+  100% {
+    filter: invert(1);
+  }
+}
+@-moz-keyframes toTopFromBottom {
+	49% {
+		-moz-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		-moz-transform: translateY(100%);
+	}
+	51% {
+		opacity: 1;
+  }
+  100% {
+    filter: invert(1);
+  }
+}
+@keyframes toTopFromBottom {
+	49% {
+		transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	51% {
+		opacity: 1;
+  }
+  100% {
+    filter: invert(1);
+  }
+}
+
+.invest-companys {
+  padding: 20px 0;
+}
+
+.invest-companys .col-md-3:hover {
+  background: gainsboro;
 }
