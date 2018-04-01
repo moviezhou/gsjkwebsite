@@ -147,8 +147,8 @@ function openNav() {
 
 function closeNav() {
     
-    colSideNav.style.width = "0";
+	colSideNav.style.width = "0";
 	newsList.style.transition="-webkit-transform 500ms ease-out";
 	newsList.style.transform = "translate(0px,0)";
-    status = 0;
+	status = 0;
 }
