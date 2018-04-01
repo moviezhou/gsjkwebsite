@@ -104,7 +104,7 @@
                         <div class="highlights-container">
                             <div class="news-list">
                                 <ul data-category="qydt">
-                                    {% for news in news_latest|slice:"0:5" %}
+                                    {% for news in news_latest|slice:"0:6" %}
                                         <li class="news-item">
                                             <div class="news-title">
                                                 <strong>
@@ -118,7 +118,7 @@
                                     {% endfor %}
                                 </ul>
                                 <ul data-category="hyzx" style="display:none">
-                                    {% for news in news_industry|slice:"0:5" %}
+                                    {% for news in news_industry|slice:"0:6" %}
                                         <li class="news-item">
                                             <div class="news-title">
                                                 <strong>
@@ -132,7 +132,7 @@
                                     {% endfor %}
                                 </ul>
                                 <ul data-category="zcfg" style="display:none">
-                                    {% for news in news_policy|slice:"0:5" %}
+                                    {% for news in news_policy|slice:"0:6" %}
                                         <li class="news-item">
                                             <div class="news-title">
                                                 <strong>
