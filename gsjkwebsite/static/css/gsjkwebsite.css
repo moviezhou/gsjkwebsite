@@ -444,9 +444,8 @@ nav.fill ul li a:hover:after {
       height: 100px;
   }
 
-  .company-news {
-    min-height: 300px;
-    margin-bottom: 40px;
+  .news-list {
+    min-height: 260px;
   }
 
   .business {
