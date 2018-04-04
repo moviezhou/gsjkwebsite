@@ -1,13 +1,9 @@
-{% load static %} 
-{% load wagtailcore_tags %}
-{% load wagtailimages_tags %}
-{% load bleach_tags %}
-{% block newscenter %}
+{% load static %} {% load wagtailcore_tags %} {% load wagtailimages_tags %} {% load bleach_tags %} {% block newscenter %}
 <div class="container news-container">
     <div class="row">
         <div class="col-md-6 news-col">
-            <div class="hightlights">
-                    {% with news_entries|first as news %}
+        <div class="hightlights">
+                {% with news_entries|first as news %}
                     <div class="grid">
                             <figure class="effect-sarah">
                                 {% if news.representative_image %}
@@ -28,58 +24,60 @@
             </div>
         </div>
         <div class="col-md-6 news-col">
-                <div class="highlights-container">
-                        <div class="title-wrapper">
-                                <div class="title-highlights">
-                                    集团要闻
-                                </div>
-                                <div class="more">
-                                    <div><a href="/news/highlights">更多</a></div>
-                                    <div class="css-circle plus-sign">
-                                        &#43;
-                                    </div>
-                                </div>
+            <div class="highlights-container">
+                <div class="title-wrapper">
+                    <div class="title-highlights">
+                        集团要闻
+                    </div>
+                    <div class="more">
+                        <div>
+                            <a href="/news/highlights">更多</a>
+                        </div>
+                        <div class="css-circle plus-sign">
+                            &#43;
                         </div>
                     </div>
-                    <hr>
-                    <div class="row content">
-                            {% with news_entries|first as news %}
-                            <div class="highlight-title">
-                                <h3>
-                                    <strong>
-                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>       
-                                    </strong>
-                                </h3>    
-                                </div>
-                                <div class="highlight-content">
-                                    <h5>
-                                        {{ news.body | richtext | bleach |truncatechars_html:66 }}
-                                    </h5>
-                                </div>
-                            {% endwith %}
-                        </div>
-                <div class="highlights-container">
-                    <ul>
-                        {% for news in news_entries|slice:"1:5" %}
-                            <li class="news-item">
-                                    <div class="news-title">
-                                        <strong>
-                                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                        </strong>
-                                    </div>
-                                    <div class="news-date">
-                                            {{ news.date | date:"Y-m-d" }}
-                                    </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
                 </div>
+            </div>
+            <hr>
+            <div class="row content">
+                {% with news_entries|first as news %}
+                <div class="highlight-title">
+                    <h3>
+                        <strong>
+                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>
+                        </strong>
+                    </h3>
+                </div>
+                <div class="highlight-content">
+                    <h5>
+                        {{ news.body | richtext | bleach |truncatechars_html:66 }}
+                    </h5>
+                </div>
+                {% endwith %}
+            </div>
+            <div class="highlights-container">
+                <ul>
+                    {% for news in news_entries|slice:"1:5" %}
+                    <li class="news-item">
+                        <div class="news-title">
+                            <strong>
+                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:28 }}</a>
+                            </strong>
+                        </div>
+                        <div class="news-date">
+                            {{ news.date | date:"Y-m-d" }}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-                <div class="company-news">
-                        <div class="title-wrapper">
+            <div class="company-news">
+                <!-- <div class="title-wrapper">
                             <div class="news-tabs">
                                 <div class="title-company focus" id="qydt">
                                         企业动态
@@ -146,36 +144,91 @@
                                     {% endfor %}
                                 </ul>
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+
+                <div class="hd">
+                    <div class="tab-indicator"></div>
+                    <ul>
+                        <li class="hk on">企业动态</li>
+                        <li class="hk">行业资讯</li>
+                        <li class="hk">政策法规</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul data-category="qydt">
+                        {% for news in news_latest|slice:"0:4" %}
+                        <li class="news-item">
+                            <div class="news-title">
+                                <strong>
+                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
+                                </strong>
+                            </div>
+                            <div class="news-date">
+                                {{ news.date | date:"Y-m-d" }}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <ul data-category="hyzx" style="display:none">
+                        {% for news in news_industry|slice:"0:4" %}
+                        <li class="news-item">
+                            <div class="news-title">
+                                <strong>
+                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
+                                </strong>
+                            </div>
+                            <div class="news-date">
+                                {{ news.date | date:"Y-m-d" }}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <ul data-category="zcfg" style="display:none">
+                        {% for news in news_policy|slice:"0:4" %}
+                        <li class="news-item">
+                            <div class="news-title">
+                                <strong>
+                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
+                                </strong>
+                            </div>
+                            <div class="news-date">
+                                {{ news.date | date:"Y-m-d" }}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
-                <div>
-                        <div class="title-wrapper">
-                            <div class="title-party">
-                                党建工作
-                            </div>
-                            <div class="more">
-                                <div><a href="/partybuilding/dynamic">更多</a></div>
-                                <div class="css-circle plus-sign">
-                                    &#43;
-                                </div>
-                            </div>
+            <div>
+                <div class="title-wrapper">
+                    <div class="title-party">
+                        党建工作
+                    </div>
+                    <div class="more">
+                        <div>
+                            <a href="/partybuilding/dynamic">更多</a>
                         </div>
-                        <hr>
-                        <div class="row topic">
-                            <div class="col-md-6 topic-left">
-                                <img class="topic-banner" src="{% static 'images/buwangchuxin.png' %}" alt="highlights">
-                            </div>
-                            <div class="col-md-6 topic-right">
-                                <img class="topic-banner" src="{% static 'images/zaichufa.png' %}" alt="highlights">
-                            </div>
+                        <div class="css-circle plus-sign">
+                            &#43;
                         </div>
-                        <div class="highlights-container">
-                            <ul>
-                                {% for news in partybuilding_news_entries|slice:"0:2" %}
-                                    <li class="news-item">
-                                        <!-- <div class="thumbnail">
+                    </div>
+                </div>
+                <hr>
+                <div class="row topic">
+                    <div class="col-md-6 topic-left">
+                        <img class="topic-banner" src="{% static 'images/buwangchuxin.png' %}" alt="highlights">
+                    </div>
+                    <div class="col-md-6 topic-right">
+                        <img class="topic-banner" src="{% static 'images/zaichufa.png' %}" alt="highlights">
+                    </div>
+                </div>
+                <div class="highlights-container">
+                    <ul>
+                        {% for news in partybuilding_news_entries|slice:"0:2" %}
+                        <li class="news-item">
+                            <!-- <div class="thumbnail">
                                             <a href="{% pageurl news %}">
                                                 {% if news.representative_image %}
                                                     {% image news.representative_image fill-160x100 %}
@@ -184,19 +237,19 @@
                                                 {% endif %}
                                             </a> 
                                             </div> -->
-                                            <div class="news-title">
-                                                    <strong>
-                                                        <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                                    </strong>
-                                                </div>
-                                                <div class="news-date">
-                                                        {{ news.date | date:"Y-m-d" }}
-                                                    </div>
-                                    </li>
-                                {% endfor %}
-                                </ul>
-                        </div>         
-                    </div>
+                            <div class="news-title">
+                                <strong>
+                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
+                                </strong>
+                            </div>
+                            <div class="news-date">
+                                {{ news.date | date:"Y-m-d" }}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
