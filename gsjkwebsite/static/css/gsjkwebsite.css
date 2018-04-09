@@ -172,6 +172,7 @@ nav.fill ul li a:hover:after {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   position: relative;
   bottom: 60px;
   background: #2d47ab;
@@ -183,8 +184,12 @@ nav.fill ul li a:hover:after {
 .notify-title {
   margin-left: 4%;
   color: #ffffff;
-  font-size: 1.8em;
-  font-weight: 500;
+  font-size: 1.2em;
+  word-break: keep-all;
+}
+
+.notify-icon img {
+  width: 80%;
 }
 
 .notify-item {
@@ -217,13 +222,13 @@ nav.fill ul li a:hover:after {
 
   .txtScroll-top .infoList li a{ 
     color:#ffffff;  
-    font-size: 20px;
+    font-size: 1.2em;
   }
 
   .txtScroll-top .infoList li .date{ 
     float:right; 
-    color:#999;  
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 1.2em;
   }
 
   .txtScroll-top .infoList li span{ 
@@ -1516,8 +1521,12 @@ figure.effect-sarah:hover p {
 
 .section-title {
   padding: 20px 0;
-  text-align: center;
-  color: #0062a8;
+  /* color: #0062a8; */
+}
+
+.section-title h4 {
+  border-left: 5px solid red;
+  padding-left: 20px;
 }
 
 .section-title h2 {
