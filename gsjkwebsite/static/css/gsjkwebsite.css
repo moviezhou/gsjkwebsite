@@ -169,27 +169,22 @@ nav.fill ul li a:hover:after {
 }
 
 .notification {
-  display: none;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   position: relative;
   bottom: 60px;
   background: #2d47ab;
   z-index: 100;
-  opacity: 0.8;
   min-height: 50px;
 }
 
-.notify-wrapper {
-  display: flex;
-  flex-direction: row;
-  color: #ffffff;
-  width: 70%;
-  padding-top: 10px;
-}
 
 .notify-title {
   margin-left: 4%;
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: 500;
 }
 
 .notify-item {
@@ -203,6 +198,39 @@ nav.fill ul li a:hover:after {
 
   /* transform: translateY(20px); */
 }
+
+
+
+
+  .txtScroll-top{ 
+    overflow:hidden; 
+    position:relative;  
+  }
+
+  .txtScroll-top .bd{ 
+    padding:15px;  
+  }
+  .txtScroll-top .infoList li{ 
+    height:24px; 
+    line-height:24px;   
+  }
+
+  .txtScroll-top .infoList li a{ 
+    color:#ffffff;  
+    font-size: 20px;
+  }
+
+  .txtScroll-top .infoList li .date{ 
+    float:right; 
+    color:#999;  
+    font-size: 20px;
+  }
+
+  .txtScroll-top .infoList li span{ 
+    margin-left: 100px;
+  }
+
+		
 
 @media only screen and (min-width: 768px) {
 
@@ -410,11 +438,13 @@ nav.fill ul li a:hover:after {
 
    .txMovie {
     position: relative;
-    height: 250px;
   }
+  .focus-gallery ul {
+    padding: 0;
+  }
+
   .focus_pic {
     width: 55%;
-    height: 250px;
     overflow: hidden
   }
   .focus_pic li {
@@ -431,11 +461,9 @@ nav.fill ul li a:hover:after {
     position: absolute;
     left: 0;
     bottom: 0;
-    filter:progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#7F000000', endColorstr='#7F000000');
-    width: 688px;
     height: 60px;
     *zoom:1;
-    padding-left: 20px;
+    padding-left: 18px;
   }
   .focus_nav ul {
     position: relative;
@@ -454,7 +482,6 @@ nav.fill ul li a:hover:after {
   .focus_nav .navPrev, .focus_nav .navNext {
     border: 1px solid #fff;
     background-color: rgba(0, 0,0,.6);
-    filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7F000000', endColorstr='#7F000000');
     display: inline-block;
     *zoom:1;
     width: 36px;
