@@ -871,6 +871,10 @@ nav.fill ul li a:hover:after {
   padding: 15px;
 }
 
+.second-row {
+  margin-top: 20px;
+}
+
 .title-wrapper {
   display: flex;
   align-items: center;
