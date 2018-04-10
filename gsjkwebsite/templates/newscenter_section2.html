@@ -4,79 +4,6 @@
             <h4>新闻中心</h4>
     </div>
     <div class="row">
-        <!-- <div class="col-md-6 news-col"> -->
-        <!-- <div class="hightlights">
-                {% with news_entries|first as news %}
-                    <div class="grid">
-                            <figure class="effect-sarah">
-                                {% if news.representative_image %}
-                                    {% image news.representative_image class="img-fluid" fill-510x306 %}
-                                {% else %}
-                                    <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
-                                {% endif %}
-                                <figcaption>
-                                    <h2>图片新闻</h2>
-                                    {% with news_entries|first as news %}
-                                        <p>{{ news.title | truncatechars_html:50 }}</p>
-                                    {% endwith %}
-                                    <a href="{% pageurl news %}">View more</a>
-                                </figcaption>			
-                            </figure>
-                        </div>
-                {% endwith %}
-            </div> -->
-        <!-- </div> -->
-        <!-- <div class="col-md-6 news-col">
-            <div class="highlights-container">
-                <div class="title-wrapper">
-                    <div class="title-highlights">
-                        集团要闻
-                    </div>
-                    <div class="more">
-                        <div>
-                            <a href="/news/highlights">更多</a>
-                        </div>
-                        <div class="css-circle plus-sign">
-                            &#43;
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row content">
-                {% with news_entries|first as news %}
-                <div class="highlight-title">
-                    <h3>
-                        <strong>
-                            <a href="{% pageurl news %}">{{ news.title | truncatechars_html:50 }}</a>
-                        </strong>
-                    </h3>
-                </div>
-                <div class="highlight-content">
-                    <h5>
-                        {{ news.body | richtext | bleach |truncatechars_html:66 }}
-                    </h5>
-                </div>
-                {% endwith %}
-            </div>
-            <div class="highlights-container">
-                <ul>
-                    {% for news in news_entries|slice:"1:5" %}
-                    <li class="news-item">
-                        <div class="news-title">
-                            <strong>
-                                <a href="{% pageurl news %}">{{ news.title | truncatechars_html:28 }}</a>
-                            </strong>
-                        </div>
-                        <div class="news-date">
-                            {{ news.date | date:"Y-m-d" }}
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div> -->
-
         <div class="txMovie col-md-12">
             <div class="focus-gallery">
                     <ul class="focus_pic" id="focus_pic_list">
@@ -146,7 +73,7 @@
                                             集团要闻
                                     </div>
                             </div>
-                            <h4>
+                            <h4 class="hl-title">
                                 <a href="{% pageurl news %}"> {{ news.title | truncatechars_html:32 }}</a>
                             </h4>
                             <hr style="margin-top: 20px;margin-bottom: 20px;border-top:1px dashed #ccc;">

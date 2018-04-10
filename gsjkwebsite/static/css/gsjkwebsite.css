@@ -327,7 +327,7 @@ nav.fill ul li a:hover:after {
 
   .carousel-caption {
     color: #ffffff;	
-    bottom: 50%;
+    bottom: 20vh;
   }
 
   .slide1 {
@@ -545,6 +545,10 @@ nav.fill ul li a:hover:after {
 
   .focus_text ul {
     min-height: 180px;
+  }
+
+  .hl-title {
+    margin-top: 20px;
   }
 
   .arrow_box {
