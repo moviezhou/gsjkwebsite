@@ -77,7 +77,9 @@
                                 <a href="{% pageurl news %}"> {{ news.title | truncatechars_html:32 }}</a>
                             </h4>
                             <hr style="margin-top: 20px;margin-bottom: 20px;border-top:1px dashed #ccc;">
-                            <p style="color:#6c6c6c;text-indent: 2em;">{{  news.body | richtext | bleach | truncatechars_html:86 }}</p>
+                            <div class="sum">
+                                <p style="color:#6c6c6c;text-indent: 2em;">{{  news.body | richtext | bleach | truncatechars_html:86 }}</p>
+                            </div>
                             <hr style="margin-top: 18px;margin-bottom: 10px;border-top:1px dashed #ccc;">
                             <!-- <p class="pull-left">
                                 <span class="rq">发布日期：{{ news.date | date:"Y-m-d" }}</span>
