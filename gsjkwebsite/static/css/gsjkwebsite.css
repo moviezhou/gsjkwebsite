@@ -1010,6 +1010,10 @@ nav.fill ul li a:hover:after {
   letter-spacing: 1px;
 }
 
+.pb-news ul {
+  padding-left: 0px;
+}
+
 .news-item {
   display: flex;
   align-items: center;
