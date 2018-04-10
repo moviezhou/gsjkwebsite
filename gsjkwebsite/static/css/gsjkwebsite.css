@@ -173,11 +173,11 @@ nav.fill ul li a:hover:after {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  position: relative;
-  bottom: 60px;
+  /* position: relative; */
+  /* bottom: 60px; */
   background: #2d47ab;
   z-index: 100;
-  min-height: 50px;
+  max-height: 30px;
 }
 
 
@@ -186,6 +186,11 @@ nav.fill ul li a:hover:after {
   color: #ffffff;
   font-size: 1.2em;
   word-break: keep-all;
+}
+
+.notify-title a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .notify-icon img {
@@ -537,6 +542,11 @@ nav.fill ul li a:hover:after {
     top: 0;
     background-color: #fff;
   }
+
+  .focus_text ul {
+    min-height: 180px;
+  }
+
   .arrow_box {
     background: #fff;
     border: 1px solid #ccc;
@@ -870,9 +880,8 @@ nav.fill ul li a:hover:after {
 .title-highlights {
   background: #0b2a6e;
   color: #ffffff;
-  padding: 6px 16px;
-  font-size: 1.4em;
-  font-weight: 600;
+  padding: 3px 10px;
+  font-size: 1.3em;
   letter-spacing: 1px;
 }
 
@@ -920,9 +929,8 @@ nav.fill ul li a:hover:after {
 
 .title-company {
   color: #000000;
-  padding: 6px 16px;
-  font-size: 1.4em;
-  font-weight: 600;
+  padding: 3px 13px;
+  font-size: 1.3em;
   letter-spacing: 1px;
 }
 
@@ -997,9 +1005,8 @@ nav.fill ul li a:hover:after {
 .title-party {
   background: #e60020;
   color: #ffffff;
-  padding: 6px 16px;
-  font-size: 1.4em;
-  font-weight: 600;
+  padding: 3px 10px;
+  font-size: 1.3em;
   letter-spacing: 1px;
 }
 
@@ -1010,8 +1017,7 @@ nav.fill ul li a:hover:after {
 }
 
 .news-item:hover .news-date {
-  color: #0b2a6e;
-  font-weight: 600;
+  color: rgb(59, 115, 218);
 }
 
 .news-title {
@@ -1025,16 +1031,16 @@ nav.fill ul li a:hover:after {
   color: black;
   text-decoration: none;
   opacity: 0.8;
+  font-size: 14px;
 }
 
 .news-item:hover  a{
   color: rgb(59, 115, 218);
-  font-weight: 600;
 }
 
 
-.highlights-container ul {
-  padding: 0;
+.highlights-container {
+  padding-left: 40px;
 }
 
 .topic-banner {
