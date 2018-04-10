@@ -91,7 +91,7 @@
                                     </a>
                                 </li>
                             {% endwith %}
-                            {% for news in news_latest|slice:"1:4" %}
+                            {% for news in news_entries|slice:"1:4" %}
                                 <li style="display: none;">
                                     <a href="{% pageurl news %}" target="_blank">
                                         {% if news.representative_image %}
@@ -105,7 +105,7 @@
                         </ul>
                         <div class="focus_nav">
                                 <ul id="focus_smaillPic_list" style="width: 370px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
-                                    {% for news in news_latest|slice:"0:5" %}
+                                    {% for news in news_entries|slice:"0:5" %}
                                         <li class="on" style="float: left; width: 64px;">
                                             <a>
                                                 {% if news.representative_image %}
@@ -138,7 +138,7 @@
             </div>
             <div class="focus_text">
                 <ul id="focus_content_list">
-                    {% with news_latest|first as news %}
+                    {% with news_entries|first as news %}
                     <li style="display: list-item;">
                             <!-- <h2 style="font-weight:bold;">集团要闻</h2> -->
                             <div class="title-wrapper">
@@ -160,7 +160,7 @@
                             </p> -->
                         </li>
                     {% endwith %}
-                    {% for news in news_latest|slice:"0:5" %}
+                    {% for news in news_entries|slice:"0:5" %}
                         <li style="display: none;">
                             <!-- <h2 style="font-weight:bold;">
                                 集团要闻</h2> -->
@@ -186,7 +186,7 @@
                 </ul>
                 <div class="highlights-container">
                         <!-- <ul> -->
-                            {% for news in news_latest|slice:"5:7" %}
+                            {% for news in news_entries|slice:"5:7" %}
                             <div class="news-item">
                                 <div class="news-title">
                                     <a href="{% pageurl news %}">{{ news.title | truncatechars_html:28 }}</a>
