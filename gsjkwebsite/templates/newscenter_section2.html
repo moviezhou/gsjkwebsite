@@ -138,7 +138,7 @@
             </div>
             <div class="focus_text">
                 <ul id="focus_content_list">
-                    {% with news_entries|first as news %}
+                    {% with news_latest|first as news %}
                     <li style="display: list-item;">
                             <!-- <h2 style="font-weight:bold;">集团要闻</h2> -->
                             <div class="title-wrapper">
@@ -186,7 +186,7 @@
                 </ul>
                 <div class="highlights-container">
                         <!-- <ul> -->
-                            {% for news in news_entries|slice:"5:7" %}
+                            {% for news in news_latest|slice:"5:7" %}
                             <div class="news-item">
                                 <div class="news-title">
                                     <a href="{% pageurl news %}">{{ news.title | truncatechars_html:28 }}</a>
