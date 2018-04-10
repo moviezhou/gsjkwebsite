@@ -105,7 +105,7 @@
                         </ul>
                         <div class="focus_nav">
                                 <ul id="focus_smaillPic_list" style="width: 370px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
-                                    {% for news in news_latest|slice:"0:4" %}
+                                    {% for news in news_latest|slice:"0:5" %}
                                         <li class="on" style="float: left; width: 64px;">
                                             <a>
                                                 {% if news.representative_image %}
@@ -160,7 +160,7 @@
                             </p> -->
                         </li>
                     {% endwith %}
-                    {% for news in news_latest|slice:"0:4" %}
+                    {% for news in news_latest|slice:"0:5" %}
                         <li style="display: none;">
                             <!-- <h2 style="font-weight:bold;">
                                 集团要闻</h2> -->
