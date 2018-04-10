@@ -91,7 +91,7 @@
                                     </a>
                                 </li>
                             {% endwith %}
-                            {% for news in news_entries|slice:"1:4" %}
+                            {% for news in news_entries|slice:"1:5" %}
                                 <li style="display: none;">
                                     <a href="{% pageurl news %}" target="_blank">
                                         {% if news.representative_image %}
