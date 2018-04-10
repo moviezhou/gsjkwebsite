@@ -283,7 +283,7 @@
                 </div>
                 <div class="bd">
                     <ul data-category="qydt">
-                        {% for news in news_latest|slice:"0:4" %}
+                        {% for news in news_latest|slice:"0:6" %}
                         <li class="news-item">
                             <div class="news-title">
                                 <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
@@ -295,7 +295,7 @@
                         {% endfor %}
                     </ul>
                     <ul data-category="hyzx" style="display:none">
-                        {% for news in news_industry|slice:"0:4" %}
+                        {% for news in news_industry|slice:"0:6" %}
                         <li class="news-item">
                             <div class="news-title">
                                 <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
@@ -307,7 +307,7 @@
                         {% endfor %}
                     </ul>
                     <ul data-category="zcfg" style="display:none">
-                        {% for news in news_policy|slice:"0:4" %}
+                        {% for news in news_policy|slice:"0:6" %}
                         <li class="news-item">
                             <div class="news-title">
                                 <a href="{% pageurl news %}">{{ news.title | truncatechars_html:29 }}</a>
@@ -339,7 +339,7 @@
                 </div>
                 <div class="pb-news">
                     <ul>
-                        {% for news in partybuilding_news_entries|slice:"0:2" %}
+                        {% for news in partybuilding_news_entries|slice:"0:3" %}
                         <li class="news-item">
                             <!-- <div class="thumbnail">
                                             <a href="{% pageurl news %}">
