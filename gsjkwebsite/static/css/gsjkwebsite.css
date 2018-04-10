@@ -547,6 +547,10 @@ nav.fill ul li a:hover:after {
     min-height: 180px;
   }
 
+  .sum p {
+    text-indent: 2em;
+  }
+
   .hl-title {
     margin-top: 20px;
   }
