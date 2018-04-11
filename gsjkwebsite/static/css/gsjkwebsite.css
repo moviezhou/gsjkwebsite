@@ -240,6 +240,10 @@ nav.fill ul li a:hover:after {
     margin-left: 100px;
   }
 
+  .hk {
+    word-break: keep-all;
+  }
+
 		
 
 @media only screen and (min-width: 768px) {
@@ -764,7 +768,11 @@ nav.fill ul li a:hover:after {
 
 @media (max-width: 720px) {
 
-  .carousel-caption {
+  .carousel {
+    display: none;
+  }
+
+  /* .carousel-caption {
     color: #ffffff;	
     bottom: 30%;
   }
@@ -812,12 +820,27 @@ nav.fill ul li a:hover:after {
     font-size: 1.4rem;
     line-height: 2em;
     letter-spacing: 3px;
+  } */
+
+
+  .notification {
+    display: none;
   }
 
-
+  .fund {
+    margin-top: 80px;
+  }
 
   .news-container {
     margin-top: 0;
+  }
+
+  .focus-gallery {
+    display: none;
+  }
+
+  .focus_text ul {
+    padding: 0;
   }
 
   img.thumbnail-img {
@@ -962,7 +985,7 @@ nav.fill ul li a:hover:after {
 .tab-indicator {
   margin-top: 6px;
   padding: 0;
-  width: 190px;
+  width: 36%;
   height: 30px;
   display: block;
   position: relative;

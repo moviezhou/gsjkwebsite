@@ -6,6 +6,7 @@
     <div class="row">
         <div class="txMovie col-md-12">
             <div class="focus-gallery">
+                <div class="focus-image">
                     <ul class="focus_pic" id="focus_pic_list">
                             {% with news_entries|first as news %}
                             <li style="display: list-item;">
@@ -30,38 +31,39 @@
                                 </li>
                             {% endfor %}
                         </ul>
-                        <div class="focus_nav">
-                                <ul id="focus_smaillPic_list" style="width: 370px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
-                                    {% for news in news_entries|slice:"0:5" %}
-                                        <li class="on" style="float: left; width: 64px;">
-                                            <a>
-                                                {% if news.representative_image %}
-                                                    {% image news.representative_image class="img-fluid" fill-64x34 %}
-                                                {% else %}
-                                                    <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
-                                                {% endif %}
-                                                <span class="cover"></span>
-                                            </a>
-                                            <b>▲</b>
-                                        </li>
-                                    {% endfor %}
-                                    
-                                        <!-- <li class="on" style="float: left; width: 64px;">
-                                            <a>
-                                                <img src="http://www.shanxifh.com/d/file/content/2018/04/5ac1aa94bd98f.jpg">
-                                                <span class="cover"></span>
-                                            </a>
-                                            <b>▲</b>
-                                        </li>
-                                        <li style="float: left; width: 64px;" class="">
-                                            <a>
-                                                <img src="http://www.shanxifh.com/d/file/content/2018/03/5abe056387f8f.jpg">
-                                                <span class="cover"></span>
-                                            </a>
-                                            <b>▲</b>
-                                        </li> -->
-                                    </ul>
-                        </div>
+                </div>
+                <div class="focus_nav">
+                        <ul id="focus_smaillPic_list" style="width: 370px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                            {% for news in news_entries|slice:"0:5" %}
+                                <li class="on" style="float: left; width: 64px;">
+                                    <a>
+                                        {% if news.representative_image %}
+                                            {% image news.representative_image class="img-fluid" fill-64x34 %}
+                                        {% else %}
+                                            <img class="banner-img" src="{% static 'images/img-default.png' %}" alt="news">
+                                        {% endif %}
+                                        <span class="cover"></span>
+                                    </a>
+                                    <b>▲</b>
+                                </li>
+                            {% endfor %}
+                            
+                                <!-- <li class="on" style="float: left; width: 64px;">
+                                    <a>
+                                        <img src="http://www.shanxifh.com/d/file/content/2018/04/5ac1aa94bd98f.jpg">
+                                        <span class="cover"></span>
+                                    </a>
+                                    <b>▲</b>
+                                </li>
+                                <li style="float: left; width: 64px;" class="">
+                                    <a>
+                                        <img src="http://www.shanxifh.com/d/file/content/2018/03/5abe056387f8f.jpg">
+                                        <span class="cover"></span>
+                                    </a>
+                                    <b>▲</b>
+                                </li> -->
+                            </ul>
+                </div>
             </div>
             <div class="focus_text">
                 <ul id="focus_content_list">
