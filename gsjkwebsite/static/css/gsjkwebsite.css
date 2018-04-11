@@ -1587,7 +1587,7 @@ figure.effect-sarah:hover p {
 .fund-elem {
   display: flex;
   flex-direction: column;
-  justify-content: inherit;
+  justify-content: space-around;
   align-items: center;
   width: 142px;
   height: 162px;
@@ -1734,4 +1734,44 @@ figure.effect-sarah:hover p {
 .invest-companys .col-md-3:hover {
   background: gainsboro;
   opacity: 0.8;
+}
+
+
+.seven-cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .fund-elem {
+    width: 100%;
+  }
+
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    /* background: palevioletred; */
+    margin: 4px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+  }
 }
