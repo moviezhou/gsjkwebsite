@@ -1808,6 +1808,15 @@ flip-container {
   justify-content: center;
 }
 
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+  /* IE10+ specific styles go here */  
+  .seven-cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
 
 
 @media (max-width: 768px) {
