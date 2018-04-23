@@ -91,15 +91,15 @@ $(document).ready(function () {
 	$('.sum').append(p);
 
 	// 大图和文字切换
-// jQuery(".txMovie").slide({ titCell:".focus_nav li", mainCell:".focus_pic", targetCell:".focus_text li", autoPlay:true,delayTime:100,startFun:function(i,p){
-// 	//控制小图自动翻页
-// 	if(i==0){ jQuery(".txMovie .navPrev").click() } else if( i%7==0 ){ jQuery(".txMovie .navNext").click()}
-// 	}
-// });
+jQuery(".txMovie").slide({ titCell:".focus_nav li", mainCell:".focus_pic", targetCell:".focus_text li", autoPlay:true,delayTime:100,startFun:function(i,p){
+	//控制小图自动翻页
+	if(i==0){ jQuery(".txMovie .navPrev").click() } else if( i%7==0 ){ jQuery(".txMovie .navNext").click()}
+	}
+});
 // 小图滚动
-// jQuery(".txMovie").slide({ mainCell:".focus_nav ul",prevCell:".navPrev",nextCell:".navNext",effect:"left",vis:7,scroll:7,delayTime:0,autoPage:true,pnLoop:false});
+jQuery(".txMovie").slide({ mainCell:".focus_nav ul",prevCell:".navPrev",nextCell:".navNext",effect:"left",vis:7,scroll:7,delayTime:0,autoPage:true,pnLoop:false});
 
-// jQuery(".txMovie").slide({ titCell: ".focus_nav li", mainCell: ".focus_pic", targetCell: ".focus_text li", autoPlay: true, delayTime: 100, startFun: function (i) { if (i == 0) { jQuery(".txMovie .navPrev").click() } else if (i % 7 == 0) { jQuery(".txMovie .navNext").click() } } }); jQuery(".txMovie").slide({ mainCell: ".focus_nav ul", prevCell: ".navPrev", nextCell: ".navNext", effect: "left", vis: 7, scroll: 7, delayTime: 0, autoPage: true, pnLoop: false });
+jQuery(".txMovie").slide({ titCell: ".focus_nav li", mainCell: ".focus_pic", targetCell: ".focus_text li", autoPlay: true, delayTime: 100, startFun: function (i) { if (i == 0) { jQuery(".txMovie .navPrev").click() } else if (i % 7 == 0) { jQuery(".txMovie .navNext").click() } } }); jQuery(".txMovie").slide({ mainCell: ".focus_nav ul", prevCell: ".navPrev", nextCell: ".navNext", effect: "left", vis: 7, scroll: 7, delayTime: 0, autoPage: true, pnLoop: false });
 
 
 // Closes the Responsive Menu on Menu Item Click
