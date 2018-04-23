@@ -117,7 +117,7 @@
                 </ul>
                 <div class="highlights-container">
                         <!-- <ul> -->
-                            {% for news in news_entries|slice:"5:7" %}
+                            {% for news in news_entries|slice:"5:8" %}
                             <div class="news-item">
                                 <div class="news-title">
                                     <a href="{% pageurl news %}">{{ news.title | truncatechars_html:28 }}</a>
