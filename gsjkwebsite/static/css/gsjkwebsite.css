@@ -532,7 +532,7 @@ nav.fill ul li a:hover:after {
   }
 
   .focus_text ul {
-    min-height: 180px;
+    min-height: 160px;
   }
 
   .sum p {
@@ -618,7 +618,7 @@ nav.fill ul li a:hover:after {
     height: 40px;
     line-height: 40px;
     line-height: 44px\9;
-    +line-height:44px;
+    line-height:44px;
     _line-height: 40px;
     padding-left: 50px;
     font-size: 14px;
