@@ -103,9 +103,9 @@
                             <h4 class="hl-title">
                                 <a href="{% pageurl news %}"> {{ news.title | truncatechars_html:32 }}</a>
                             </h4>
-                            <hr style="margin-top: 20px;margin-bottom: 20px;border-top:1px dashed #ccc;">
+                            <hr style="margin-top: 12px;margin-bottom: 12px;border-top:1px dashed #ccc;">
                             <p style="color:#6c6c6c;text-indent: 2em;">{{  news.body | richtext | bleach | truncatechars_html:100 }}</p>
-                            <hr style="margin-top: 18px;margin-bottom: 10px;border-top:1px dashed #ccc;">
+                            <hr style="margin-top: 6px;margin-bottom: 6px;border-top:1px dashed #ccc;">
                             <!-- <p class="pull-left">
                                 <span class="rq">发布日期：{{ news.date | date:"Y-m-d" }}</span>
                                 <span>
@@ -135,75 +135,6 @@
     <div class="row second-row">
         <div class="col-md-6">
             <div class="company-news">
-                <!-- <div class="title-wrapper">
-                            <div class="news-tabs">
-                                <div class="title-company focus" id="qydt">
-                                        企业动态
-                                    </div>
-                                    <div class="title-company" id="hyzx">
-                                        行业资讯
-                                    </div>
-                                    <div class="title-company" id="zcfg">
-                                        政策法规
-                                    </div>
-                            </div>
-                            <div class="more">
-                                <div>
-                                    <a href="/news/latest">更多</a>
-                                </div>
-                                <div class="css-circle plus-sign">
-                                    &#43;
-                                </div>
-                            </div>   
-                        </div>
-                        <hr>
-                        <div class="highlights-container">
-                            <div class="news-list">
-                                <ul data-category="qydt">
-                                    {% for news in news_latest|slice:"0:4" %}
-                                        <li class="news-item">
-                                            <div class="news-title">
-                                                <strong>
-                                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                                </strong>
-                                            </div>
-                                            <div class="news-date">
-                                                {{ news.date | date:"Y-m-d" }}
-                                            </div>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul data-category="hyzx" style="display:none">
-                                    {% for news in news_industry|slice:"0:4" %}
-                                        <li class="news-item">
-                                            <div class="news-title">
-                                                <strong>
-                                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                                </strong>
-                                            </div>
-                                            <div class="news-date">
-                                                {{ news.date | date:"Y-m-d" }}
-                                                </div>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul data-category="zcfg" style="display:none">
-                                    {% for news in news_policy|slice:"0:4" %}
-                                        <li class="news-item">
-                                            <div class="news-title">
-                                                <strong>
-                                                    <a href="{% pageurl news %}">{{ news.title | truncatechars_html:42 }}</a>
-                                                </strong>
-                                            </div>
-                                            <div class="news-date">
-                                                {{ news.date | date:"Y-m-d" }}
-                                            </div>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div> -->
-
                 <div class="hd">
                     <div class="tab-indicator"></div>
                     <ul>

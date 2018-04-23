@@ -108,21 +108,15 @@ nav.fill ul li a:hover:after {
 }
 
 .navbar-collapse li ul {
-  color: #ffffff;
-}
-
-.navbar-collapse li ul {
-  background: #00589E; 
-  opacity: 0.8;
-  color: #ffffff;
+  background: #ffffff; 
 }
 
 .navbar-collapse li ul a {
-  color: #ffffff;
+  color: #0e0c0c;
 }
 
 .navbar-collapse li ul a:hover {
-  background: #ffffff;
+  /* background: red; */
 }
 
 .navbar-collapse li ul li {
@@ -546,7 +540,7 @@ nav.fill ul li a:hover:after {
   }
 
   .hl-title {
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
   .arrow_box {
@@ -746,10 +740,10 @@ nav.fill ul li a:hover:after {
     min-height: 300px;
   }
 
-  .business {
+  /* .business {
     background: url('../images/businessbg.png') no-repeat center center;
     background-size: cover;
-  }
+  } */
 
   figure.effect-sadie h2 {
     font-size: 1.7rem;
@@ -1524,10 +1518,8 @@ flip-container {
 	position: relative;
 }
 
-.flipper img {
-  width: 80px;
-  height: 90px;
-  margin-top: 16px;
+.front p {
+  color: #ffffff;
 }
 
 .front, .back {
@@ -1620,6 +1612,7 @@ flip-container {
   height: 162px;
   background: #0062a8;
   color: #ffffff;
+  box-shadow:  0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
 .fund-category {
@@ -1632,6 +1625,7 @@ flip-container {
   position: absolute;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   bottom: 0;
   color: #ffffff;
   transition: height .5s ease-in-out;
@@ -1639,6 +1633,7 @@ flip-container {
   width: 142px;
   height: 0;
 }
+
 
 .intro-text {
   padding: 20px 12px;
@@ -1659,6 +1654,19 @@ flip-container {
   -webkit-animation: zoom .3s ease-out;
 	-moz-animation: zoom .3s ease-out;
 	animation: zoom .3s ease-out;
+}
+
+.fund-intro .detail {
+  background: #ffffff;
+  color: #236fae;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
 }
 
 
