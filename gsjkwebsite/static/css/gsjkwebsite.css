@@ -139,6 +139,10 @@ nav.fill ul li a:hover:after {
   left: auto;
 }
 
+#fullpage {
+  margin-top: 80px;
+}
+
 #carouselExampleIndicators {
   margin-top: 10px;
 }
