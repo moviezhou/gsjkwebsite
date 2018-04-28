@@ -899,6 +899,11 @@ nav.fill ul li a:hover:after {
   letter-spacing: 1px;
 }
 
+.title-highlights a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .more {
   display: flex;
   align-items: center;
@@ -980,7 +985,13 @@ nav.fill ul li a:hover:after {
   background-color: #FFFFFF;
 }
 
-.company-news .hd .on {
+.company-news .hd a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.company-news .hd .on a{
+  text-decoration: none;
   color: #ffffff;
 }
 
@@ -1022,6 +1033,11 @@ nav.fill ul li a:hover:after {
   padding: 3px 10px;
   font-size: 1.3em;
   letter-spacing: 1px;
+}
+
+.title-party a {
+  text-decoration: none;
+  color:#ffffff;
 }
 
 .pb-news ul {
