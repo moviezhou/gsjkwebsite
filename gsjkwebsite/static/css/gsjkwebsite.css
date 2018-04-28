@@ -1192,7 +1192,7 @@ nav.fill ul li a:hover:after {
 }
 
 .links ul>li .link-nav {
-  width: 160px;
+  width: 232px;
   border: 1px solid #cccccc;
   position: absolute;
   bottom: 38px;
@@ -1204,7 +1204,7 @@ nav.fill ul li a:hover:after {
 }
 
 .links ul>li .link-nav a{
-  width: 160px;
+  width: 232px;
   padding-left: 10px;
   height: 40px;
   line-height: 40px;
@@ -1238,7 +1238,6 @@ nav.fill ul li a:hover:after {
 
 .logo-footer img {
 	width: 90%;
-	height: 90%;
 	padding-top: 10px;
 	padding-bottom: 50px;
 }
@@ -1780,7 +1779,7 @@ flip-container {
 }
 
 .ani-content {
-  visibility: hidden;
+  /* visibility: hidden;
   text-align: center;
   padding-top: auto;
   vertical-align: middle;
@@ -1789,6 +1788,14 @@ flip-container {
   font-size: 1.6em;
   color: #ffffff;
   word-break: keep-all;
+  opacity: 0; */
+  padding: 8px 12px;
+  margin: 3px 6px;
+  visibility: hidden;
+  padding-top: auto;
+  position: relative;
+  font-size: 1.2em;
+  color: #ffffff;
   opacity: 0;
 }
 

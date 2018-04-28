@@ -24,7 +24,7 @@
                                         <ul class="infoList" style="top: -38.3531px; position: relative; padding: 0px; margin: 0px;">
                                                 {% for item in news_bulletin|slice:"0:6" %}
                                                     <li style="height: 24px;"><span class="date">{{ item.date | date:"Y-m-d"}}</span>
-                                                        <a href="#" target="_blank">{{ item.title }}</a></li>
+                                                        <a href="{% pageurl item %}" target="_blank">{{ item.title }}</a></li>
                                                 {% endfor %}
                                         </ul>
                                 </div>
