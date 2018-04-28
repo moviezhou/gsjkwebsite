@@ -20,9 +20,14 @@
                     <div class="notify-content">
                         <div class="txtScroll-top">
                                 <div class="bd">
-                                    <div class="tempWrap" style="overflow:hidden; position:relative; height:24px"><ul class="infoList" style="top: -38.3531px; position: relative; padding: 0px; margin: 0px;">
-                                        <li style="height: 24px;"><span class="date">2018/04/24</span><a href="#" target="_blank">暂无相关信息</a></li>
-                                    </ul></div>
+                                    <div class="tempWrap" style="overflow:hidden; position:relative; height:24px">
+                                        <ul class="infoList" style="top: -38.3531px; position: relative; padding: 0px; margin: 0px;">
+                                                {% for item in news_bulletin|slice:"0:6" %}
+                                                    <li style="height: 24px;"><span class="date">{{ item.date | date:"Y-m-d"}}</span>
+                                                        <a href="#" target="_blank">{{ item.title }}</a></li>
+                                                {% endfor %}
+                                        </ul>
+                                </div>
                                 </div>
                             </div>
                     </div>

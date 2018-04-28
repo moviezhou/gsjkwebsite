@@ -377,11 +377,6 @@ nav.fill ul li a:hover:after {
   }
 
 
-  .milestone {
-    background: url('../images/milestonebg.jpg') no-repeat center center;
-    background-size: cover; 
-  }
-
   .up-slogan h4 {
     letter-spacing: 4px;
   }
@@ -436,7 +431,15 @@ nav.fill ul li a:hover:after {
     /* color: rgb(59, 115, 218); */
   }
 
+  .fund {
+    margin-top: 36px;
+  }
+
    /* news center */
+   
+   .newscenter {
+    margin-top: 36px;
+  }
 
    .txMovie {
     position: relative;
@@ -680,6 +683,7 @@ nav.fill ul li a:hover:after {
     height: 0;
     line-height: 0
   }
+
   .news{
     margin-top:55px;
     }
@@ -703,10 +707,6 @@ nav.fill ul li a:hover:after {
     }
 
   /* end of full page2 style */
-
-  .news-container {
-    margin-top: 65px;
-  }
 
   .topic {
     margin-bottom: 20px;
@@ -744,10 +744,9 @@ nav.fill ul li a:hover:after {
     min-height: 300px;
   }
 
-  /* .business {
-    background: url('../images/businessbg.png') no-repeat center center;
-    background-size: cover;
-  } */
+  .business {
+    margin-top: 36px;
+  }
 
   figure.effect-sadie h2 {
     font-size: 1.7rem;
@@ -813,14 +812,6 @@ nav.fill ul li a:hover:after {
 
   .notification {
     display: none;
-  }
-
-  .fund {
-    margin-top: 80px;
-  }
-
-  .news-container {
-    margin-top: 0;
   }
 
   .focus-gallery {
@@ -1093,6 +1084,10 @@ nav.fill ul li a:hover:after {
 	height: 20vh;
 	padding-top: 10px;
 	margin-bottom: 2vh;
+}
+
+.invest {
+  margin-top: 36px;
 }
 
 .invest-category {
@@ -1641,7 +1636,7 @@ flip-container {
 
 .intro-text {
   padding: 20px 12px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .col-md-1:hover .fund-intro {
