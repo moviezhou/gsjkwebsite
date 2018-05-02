@@ -432,13 +432,13 @@ nav.fill ul li a:hover:after {
   }
 
   .fund {
-    margin-top: 36px;
+    margin-top: 16px;
   }
 
    /* news center */
    
    .newscenter {
-    margin-top: 36px;
+    margin-top: 16px;
   }
 
    .txMovie {
@@ -742,10 +742,6 @@ nav.fill ul li a:hover:after {
 
   .news-list {
     min-height: 300px;
-  }
-
-  .business {
-    margin-top: 36px;
   }
 
   figure.effect-sadie h2 {
@@ -1103,7 +1099,7 @@ nav.fill ul li a:hover:after {
 }
 
 .invest {
-  margin-top: 36px;
+  margin-top: 16px;
 }
 
 .invest-category {
@@ -1253,7 +1249,8 @@ nav.fill ul li a:hover:after {
 
 
 .logo-footer img {
-	width: 90%;
+  width: 90%;
+  height: 90%;
 	padding-top: 10px;
 	padding-bottom: 50px;
 }
