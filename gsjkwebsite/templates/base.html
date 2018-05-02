@@ -51,7 +51,7 @@
         {% block extra_js %}
          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
          <!-- jQuery 3 not work properly with SuperSlide.js -->
-         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+         <script src="{% static 'js/vender/jquery-2.2.4.min.js' %}"></script>
          <!-- <script src="{% static 'js/vender/jquery-3.3.1.min.js' %}" ></script> -->
          <script src="{% static 'js/vender/jquery.SuperSlide.2.1.2.js' %}" ></script>
          <script src="{% static 'js/vender/popper.js' %}" ></script>
