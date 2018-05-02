@@ -328,7 +328,7 @@ nav.fill ul li a:hover:after {
   }
 
   .slide2 {
-    background: url('../images/shenanqiao.png') no-repeat center center;
+    background: url('../images/shenanqiao.jpg') no-repeat center center;
     background-size: cover; 
   }
 
@@ -1778,6 +1778,7 @@ flip-container {
   text-decoration: none;
 }
 
+
 .ani-layer {
   display: flex;
   justify-content: center;
@@ -1789,19 +1790,11 @@ flip-container {
   height: 100%;
   -webkit-transition: width .5s ease;
   transition: width .5s ease;
+  text-decoration: none;
 }
 
 .ani-content {
-  /* visibility: hidden;
-  text-align: center;
-  padding-top: auto;
-  vertical-align: middle;
-  top: 30%;
-  position: relative;
-  font-size: 1.6em;
-  color: #ffffff;
-  word-break: keep-all;
-  opacity: 0; */
+  width: 260px;
   padding: 8px 12px;
   margin: 3px 6px;
   visibility: hidden;
