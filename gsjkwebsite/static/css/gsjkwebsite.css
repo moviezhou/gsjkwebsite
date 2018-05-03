@@ -747,6 +747,10 @@ nav.fill ul li a:hover:after {
   figure.effect-sadie h2 {
     font-size: 1.7rem;
   }
+
+  .theory-row {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 720px) {
