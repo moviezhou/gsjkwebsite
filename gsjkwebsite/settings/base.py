@@ -94,11 +94,10 @@ WSGI_APPLICATION = 'gsjkwebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-<<<<<<< HEAD
-=======
+
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3', 
+        # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gsjkwebsite',
@@ -111,28 +110,12 @@ DATABASES = {
 
 # Database for Mac 
 
->>>>>>> 8d40d638ef377646d71a29376b485263c60e0164
 # DATABASES = {
 #     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'gsjkwebsite',
-#         'USER': 'gsjkadmin',
-#         'PASSWORD': '00852',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
-# Database for Mac 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 
