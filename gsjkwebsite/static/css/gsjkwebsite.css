@@ -328,7 +328,7 @@ nav.fill ul li a:hover:after {
   }
 
   .slide2 {
-    background: url('../images/shenanqiao.png') no-repeat center center;
+    background: url('../images/shenanqiao.jpg') no-repeat center center;
     background-size: cover; 
   }
 
@@ -432,13 +432,13 @@ nav.fill ul li a:hover:after {
   }
 
   .fund {
-    margin-top: 36px;
+    margin-top: 16px;
   }
 
    /* news center */
    
    .newscenter {
-    margin-top: 36px;
+    margin-top: 16px;
   }
 
    .txMovie {
@@ -742,10 +742,6 @@ nav.fill ul li a:hover:after {
 
   .news-list {
     min-height: 300px;
-  }
-
-  .business {
-    margin-top: 36px;
   }
 
   figure.effect-sadie h2 {
@@ -1103,7 +1099,7 @@ nav.fill ul li a:hover:after {
 }
 
 .invest {
-  margin-top: 36px;
+  margin-top: 16px;
 }
 
 .invest-category {
@@ -1253,7 +1249,8 @@ nav.fill ul li a:hover:after {
 
 
 .logo-footer img {
-	width: 90%;
+  width: 90%;
+  height: 90%;
 	padding-top: 10px;
 	padding-bottom: 50px;
 }
@@ -1781,6 +1778,7 @@ flip-container {
   text-decoration: none;
 }
 
+
 .ani-layer {
   display: flex;
   justify-content: center;
@@ -1792,19 +1790,11 @@ flip-container {
   height: 100%;
   -webkit-transition: width .5s ease;
   transition: width .5s ease;
+  text-decoration: none;
 }
 
 .ani-content {
-  /* visibility: hidden;
-  text-align: center;
-  padding-top: auto;
-  vertical-align: middle;
-  top: 30%;
-  position: relative;
-  font-size: 1.6em;
-  color: #ffffff;
-  word-break: keep-all;
-  opacity: 0; */
+  width: 260px;
   padding: 8px 12px;
   margin: 3px 6px;
   visibility: hidden;
