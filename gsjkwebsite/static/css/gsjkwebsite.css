@@ -1810,11 +1810,6 @@ flip-container {
   text-decoration: none;
 }
 
-.invest-companys .col-md-3:hover .company-grid a {
-  visibility: hidden;
-  transition: visibility 1s ease;
-}
-
 .invest-companys .col-md-3:hover .ani-layer {
   display: block;
   width: 100%;
