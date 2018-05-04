@@ -98,7 +98,7 @@ class PartyBuildingIndexPage(Page):
     class Meta:
         verbose_name = "党建工作二级页面"
         
-    subpage_types = ['ColumnPage', 'FormPage']
+    subpage_types = ['ColumnPage', 'FormPage', 'PartybuildingTheories' ]
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -142,7 +142,7 @@ class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'WebsiteLinkPage', 'VideoPage', 'FormPage']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'WebsiteLinkPage', 'VideoPage', 'FormPage', 'PartybuildingTheories']
     intro = RichTextField(blank=True)
 
 
@@ -185,7 +185,7 @@ class NewsPage(Page):
         ("singlepage", "单页内容"),)
 
     
-    news_category = models.CharField(max_length=10, choices=NEWS_CATEGORY, default=1, verbose_name="内容类型")
+    news_category = models.CharField(max_length=30, choices=NEWS_CATEGORY, default=1, verbose_name="内容类型")
     date = models.DateField(verbose_name="日期")
     intro = models.CharField(max_length=250, verbose_name="简介")
     body = RichTextField(blank=True, verbose_name="内容")
@@ -332,6 +332,30 @@ class BusinessDomain(Page):
         FieldPanel('business_name'),
         ImageChooserPanel('business_icon'),
         FieldPanel('business_intro'),]
+
+class PartybuildingTheories(Page):
+    class Meta:
+        verbose_name = "理论苑地"
+    theory_name = models.CharField(max_length=60, verbose_name="名称")
+    theory_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="背景图片")
+    link_href = models.CharField(max_length=200, verbose_name="链接地址")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('theory_name'),
+        ImageChooserPanel('theory_image'),
+        FieldPanel('link_href'),]
+
+    def get_context(self, request):
+        context = super(PartybuildingTheories, self).get_context(request)
+        column_entries = self.get_children()
+        context['column_entries'] = column_entries
+        return context
 
 
 class WebsiteLinkPage(Page):
