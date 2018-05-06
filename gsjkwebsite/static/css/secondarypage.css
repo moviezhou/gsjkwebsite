@@ -318,6 +318,34 @@ nav ol {
     width: 40%;
 }
 
+.idfund-form-title {
+    font-size: 1.4em;
+    margin: 10px;
+}
+
+#idfund-btn {
+    font-size: 1.4em;
+    color: #ffffff;
+    background: #0062a8;
+    padding: 3px 12px;
+}
+
+.idfund-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.idfund-form form .row {
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.idfund-form form .row textarea {
+    margin-left: 50px;
+}
+
 .footer {
     /* position: relative; */
     position: relative;

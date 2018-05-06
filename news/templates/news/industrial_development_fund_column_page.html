@@ -66,36 +66,44 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="id-fund-form">
-                                <div>在线需求申报</div>
-                                <form action="">
+                            <div class="idfund-form">
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseExample">
+                                       在线需求申报
+                                </button>
 
-                                    <input name="csrfmiddlewaretoken" value="sGXFdCVaY3ehMolZSXTrePosXX19Ns5jouS8Z8uQSar27Wjiy0dJpJvDCkLc2ii9" type="hidden">
-                                    <p>
-                                        <label for="id_ni-de-xing-ming">投资方向</label> 
-                                        <input name="ni-de-xing-ming" maxlength="255" required="" id="id_ni-de-xing-ming" type="text">
-                                    </p>
-                                    <p>
-                                        <label for="id_shou-ji-hao-ma">公司名称</label> 
-                                        <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
-                                    </p>
-                                    <p>
-                                        <label for="id_shou-ji-hao-ma">联系人</label> 
-                                        <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
-                                    </p>
-                                    <p>
-                                        <label for="id_dian-zi-you-xiang">联系人电子邮箱</label>
-                                        <input name="dian-zi-you-xiang" id="id_dian-zi-you-xiang" type="email">
-                                    </p>
-                                    <p>
-                                        <label for="id_ju-bao-nei-rong">项目需求</label> <textarea name="ju-bao-nei-rong" cols="40" rows="10" required="" id="id_ju-bao-nei-rong"></textarea>
-                                    </p>
-                                    <p>
-                                        <label for="id_shou-ji-hao-ma">验证码</label> 
-                                        <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
-                                    </p>
-                                <input class="btn btn-primary" value="提交" type="submit">
-                                </form>
+                                <div class="collapse" id="collapse{{ forloop.counter }}">
+                                    <div class="card card-body">
+                                            <form action="">
+
+                                                    <input name="csrfmiddlewaretoken" value="sGXFdCVaY3ehMolZSXTrePosXX19Ns5jouS8Z8uQSar27Wjiy0dJpJvDCkLc2ii9" type="hidden">
+                                                    <div class="row">
+                                                            <label for="id_ni-de-xing-ming">投资方向</label> 
+                                                            <input name="ni-de-xing-ming" maxlength="255" required="" id="id_ni-de-xing-ming" type="text">
+                                                    </div>
+                                                    <div class="row">
+                                                            <label for="id_shou-ji-hao-ma">公司名称</label> 
+                                                            <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
+                                                    </div>
+                                                    <div class="row">
+                                                            <label for="id_shou-ji-hao-ma">联系人</label> 
+                                                            <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
+                                                    </div>
+                                                    <div class="row">
+                                                            <label for="id_dian-zi-you-xiang">联系人电子邮箱</label>
+                                                            <input name="dian-zi-you-xiang" id="id_dian-zi-you-xiang" type="email">
+                                                    </div>
+                                                    <div class="row">
+                                                            <label for="id_ju-bao-nei-rong">项目需求</label>
+                                                            <textarea name="ju-bao-nei-rong" cols="40" rows="10" required="" id="id_ju-bao-nei-rong"></textarea>
+                                                    </div>
+                                                    <div class="row">
+                                                            <label for="id_shou-ji-hao-ma">验证码</label> 
+                                                            <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
+                                                    </div>
+                                                    <input class="btn btn-primary" value="在线需求申报" type="submit">
+                                                </form>
+                                    </div>
+                                </div>
                             </div>
                             {% endfor %}
                         </div>
