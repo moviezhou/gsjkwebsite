@@ -287,6 +287,36 @@ nav ol {
     margin: 0px 10px;
 }
 
+.idfund {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0062a8;
+    background: #ededed;
+    padding: 20px 20px;
+    margin-top: 20px;
+}
+
+.idfund-title {
+    font-weight: 600;
+}
+
+.idfund-intro {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.intro-text {
+    width: 60%;
+    padding: 0px 6px;
+    font-size: 15px;
+}
+
+.idfund-img {
+    width: 40%;
+}
 
 .footer {
     /* position: relative; */

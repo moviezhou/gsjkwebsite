@@ -1,13 +1,16 @@
 {% extends "base.html" %} 
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load bleach_tags %}
 {% load static %}
-{% block content %}
+{% block body_class %}template-blogindexpage {% endblock%}
+{% block content %} 
 <link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
 {% include 'topnav3.html' %}
 <div class="main">
     <div class="container-fluid topbanner">
         <div class="banner">
-            <img class="banner-img" src="{% static 'images/partybanner.jpg' %}" alt="news">
+            <img class="banner-img" src="{% static 'images/fundbanner.png' %}" alt="news">
         </div>
     </div>
     <div class="container news-container">
@@ -47,43 +50,55 @@
                         </ul>
                         {% endif %}
                     </div>
-                    <div class="">         
-                        <!-- {% for news in page_entries.object_list %}
-                            {% if news.news_category == "singlepage" %}
-                                <div class="row">
-                                    {{ news.body | richtext }}
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">         
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">         
+                            {% for fund in fund_column_entries %}
+                            <div class="idfund">
+                                <div class="row idfund-title">
+                                    <h4>{{ fund.specific.fund_name }}</h4>
                                 </div>
-                            {% endif %}
-                        {% endfor %} -->
-                        <div class="row theory-row">
-                            <div class="col-md-6">
-                                    <a href="/partybuilding/theory/conference">
-                                        <img class="img-fluid" src="{% static 'images/jingsheng.png' %}" alt="">
-                                    </a>
+                                <div class="row idfund-intro">
+                                    <div class="intro-text">
+                                        {{ fund.specific.fund_intro | richtext }}
+                                    </div>
+                                    <div class="idfund-img">
+                                        {% image fund.specific.fund_intro_image fill-320x200 %}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">                        
-                                <a href="http://www.12371.cn/special/dnfg/">
-                                    <img class="img-fluid" src="{% static 'images/fagui.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row theory-row">
-                            <div class="col-md-6">       
-                                <a href="http://www.12371.cn/special/sxll/">
-                                    <img class="img-fluid" src="{% static 'images/lilun.png' %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="http://xuexi.12371.cn/kjjm/">
-                                    <img class="img-fluid" src="{% static 'images/kejian.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- {% for column in column_entries %}
-                            {{ column.specific.theory_name | richtext }}
-                            {{ column.specific.link_href }}
-                        {% endfor %} -->
+                            <div class="id-fund-form">
+                                <div>在线需求申报</div>
+                                <form action="">
 
+                                    <input name="csrfmiddlewaretoken" value="sGXFdCVaY3ehMolZSXTrePosXX19Ns5jouS8Z8uQSar27Wjiy0dJpJvDCkLc2ii9" type="hidden">
+                                    <p>
+                                        <label for="id_ni-de-xing-ming">投资方向</label> 
+                                        <input name="ni-de-xing-ming" maxlength="255" required="" id="id_ni-de-xing-ming" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="id_shou-ji-hao-ma">公司名称</label> 
+                                        <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="id_shou-ji-hao-ma">联系人</label> 
+                                        <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="id_dian-zi-you-xiang">联系人电子邮箱</label>
+                                        <input name="dian-zi-you-xiang" id="id_dian-zi-you-xiang" type="email">
+                                    </p>
+                                    <p>
+                                        <label for="id_ju-bao-nei-rong">项目需求</label> <textarea name="ju-bao-nei-rong" cols="40" rows="10" required="" id="id_ju-bao-nei-rong"></textarea>
+                                    </p>
+                                    <p>
+                                        <label for="id_shou-ji-hao-ma">验证码</label> 
+                                        <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
+                                    </p>
+                                <input class="btn btn-primary" value="提交" type="submit">
+                                </form>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
                 <div class="row page-nav-wrapper">
@@ -114,5 +129,5 @@
             </div>
         </div>
     </div>
-{% include 'footer_section.html' %} 
-{% endblock %}
+    {% include 'footer_section.html' %} {% endblock %}
+</div>
