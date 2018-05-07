@@ -1159,13 +1159,21 @@ nav.fill ul li a:hover:after {
 }
 
 /* footer */
-.footer {
-	background: #f3f4f8;
+.main .footer {
+	background: #e8ebf8;
 	color: #0058A2;
 	padding: 30px;
 	bottom: 0px;
 	width: 100%;
-	/* position: absolute; */
+	position: absolute;
+}
+
+#fullpage .footer {
+  background: #e8ebf8;
+	color: #0058A2;
+	padding: 30px;
+	bottom: 0px;
+	width: 100%;
 }
 
 .footer-wrap {

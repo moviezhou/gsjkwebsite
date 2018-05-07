@@ -396,10 +396,3 @@ input.qhee-form-code, input.qhee-form-input, select.qhee-form-select {
     border: 2px solid #eee;
     color: #333;
 }
-
-
-.footer {
-    /* position: relative; */
-    position: relative;
-    /* background: #cbcfe0; */
-}
