@@ -346,6 +346,58 @@ nav ol {
     margin-left: 50px;
 }
 
+
+
+.qhee-form-title h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.binder-form-submit {
+    padding-top: 30px;
+}
+
+.qhee-form-control label {
+    font-size: 14px;
+    line-height: 38px;
+    color: #666;
+    text-align: right;
+    width: 100px;
+    padding-right: 24px;
+}
+
+input.qhee-form-input {
+    width: 266px;
+}
+
+input.qhee-form-code, input.qhee-form-input {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    line-height: 20px;
+}
+
+
+select.qhee-form-select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    height: 38px;
+    padding-right: 50px;
+    background-image: url(../images/select.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+input.qhee-form-code, input.qhee-form-input, select.qhee-form-select {
+    border: 2px solid #eee;
+    color: #333;
+}
+
+
 .footer {
     /* position: relative; */
     position: relative;

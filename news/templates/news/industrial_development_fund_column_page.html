@@ -67,11 +67,84 @@
                                 </div>
                             </div>
                             <div class="idfund-form">
-                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseExample">
+                                {% comment %} <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseExample">
                                        在线需求申报
-                                </button>
+                                </button> {% endcomment %}
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                    在线需求申报
+                                  </button>
 
-                                <div class="collapse" id="collapse{{ forloop.counter }}">
+                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalCenterTitle">在线需求申报</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            
+                                        <div class="qhee-dialog-form center-block">
+                                                <div class="qhee-form-title">
+                                                    <h3>在线需求申报</h3>
+                                                </div>
+                                                <form class="binder-form-submit" action="/qhee-webapp/action/stock/stockA/StockAAction/submitDemondApply">
+                                                    <input name="demand_source" value="1" type="hidden">
+                                                    <div class="qhee-form-control clearfix">
+                                                        <label class="pull-left">服务类型</label>
+                                                        <select name="stock_service_type" class="qhee-form-select">
+                                                            <option selected="'selected'" value="13">挂牌展示</option>
+                                                            <option value="1">股权融资</option>
+                                                            <option value="14">登记托管</option>
+                                                            <option value="29">债权融资</option>
+                                                            <option value="30">场外投行</option>
+                                                            <option value="31">微型市场</option>
+                                                            <option value="32">企业创设</option>
+                                                            <option value="33">商事服务</option>
+                                                            <option value="34">并购重组</option>
+                                                            <option value="35">非标投行</option>
+                                                            <option value="36">培训咨询</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="qhee-form-control clearfix">
+                                                            <label class="pull-left">投资方向</label>
+                                                            <input valid-name="投资方向" name="ent_name" class="qhee-form-input pull-left validator_fail" validator="required max_length:20" placeholder="投资方向" type="text">
+                                                        </div>
+                                                    <div class="qhee-form-control clearfix">
+                                                        <label class="pull-left">公司名称</label>
+                                                        <input valid-name="公司名称" name="ent_name" class="qhee-form-input pull-left validator_fail" validator="required max_length:20" placeholder="公司名称" type="text">
+                                                    </div>
+                                                    <div class="qhee-form-control clearfix">
+                                                        <label class="pull-left">联系人</label>
+                                                        <input valid-name="联系人" name="contact_person" class="qhee-form-input pull-left validator_fail" validator="required" placeholder="联系人" type="text">
+                                                    </div>
+                                                    <div class="qhee-form-control clearfix">
+                                                        <label class="pull-left">联系人电话</label>
+                                                        <input valid-name="联系人电话" name="contact_mobile" class="qhee-form-input pull-left validator_fail" validator="required mobile" placeholder="联系人电话" type="text">
+                                                    </div>
+                                                    <div class="qhee-form-control clearfix">
+                                                            <label class="pull-left">联系人邮箱</label>
+                                                            <input valid-name="联系人邮箱" name="contact_mobile" class="qhee-form-input pull-left validator_fail" validator="required mobile" placeholder="联系人邮箱" type="email">
+                                                        </div>
+                                                    <div class="qhee-form-control clearfix">
+                                                        <label class="pull-left qhee-code-label">验证码</label>
+                                                        <input valid-name="验证码" name="verifyCode" class="qhee-form-code pull-left validator_fail" validator="required" placeholder="验证码" type="text">
+                                                        <img id="img_vcode" class="qhee-form-img pull-left" src="/qhee-webapp/action/web/UserAction/captcha?t=0.21173985208183543" alt="点击刷新">
+                                                        <span class="pull-left qhee-form-changecode">看不清，换一张</span>
+                                                    </div>
+                                                </form>
+                                            </div>
+    
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                          <button type="button" class="btn btn-primary">确定</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                {% comment %} <div class="collapse" id="collapse{{ forloop.counter }}">
                                     <div class="card card-body">
                                             <form action="">
 
@@ -103,7 +176,7 @@
                                                     <input class="btn btn-primary" value="在线需求申报" type="submit">
                                                 </form>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                             {% endfor %}
                         </div>
