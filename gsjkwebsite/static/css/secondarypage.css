@@ -287,6 +287,64 @@ nav ol {
     margin: 0px 10px;
 }
 
+.idfund {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0062a8;
+    background: #ededed;
+    padding: 20px 20px;
+    margin-top: 20px;
+}
+
+.idfund-title {
+    font-weight: 600;
+}
+
+.idfund-intro {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.intro-text {
+    width: 60%;
+    padding: 0px 6px;
+    font-size: 15px;
+}
+
+.idfund-img {
+    width: 40%;
+}
+
+.idfund-form-title {
+    font-size: 1.4em;
+    margin: 10px;
+}
+
+#idfund-btn {
+    font-size: 1.4em;
+    color: #ffffff;
+    background: #0062a8;
+    padding: 3px 12px;
+}
+
+.idfund-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.idfund-form form .row {
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.idfund-form form .row textarea {
+    margin-left: 50px;
+}
 
 .footer {
     /* position: relative; */

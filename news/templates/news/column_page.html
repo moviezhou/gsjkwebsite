@@ -14,6 +14,8 @@
                 <img class="banner-img" src="{% static 'images/culturebanner.jpg' %}" alt="news">
             {% elif self.get_parent.slug == "news" %}
                 <img class="banner-img" src="{% static 'images/newsbanner.jpg' %}" alt="news">
+            {% elif self.get_parent.slug == "developmentfund" %}
+                <img class="banner-img" src="{% static 'images/fundbanner.png' %}" alt="news">
             {% elif self.get_parent.slug == "business" %}
                 <img class="banner-img" src="{% static 'images/businessbanner.jpg' %}" alt="news">
             {% elif self.get_parent.slug == "partybuilding" %}
@@ -99,7 +101,7 @@
                                     </li>
                                 </ul>
                             {% else %}
-                            <ul>
+                                <ul>
                                     <li>
                                         <div class="row">
                                             <div class="col-sm-3 hidden-xs news-thumbnail">
@@ -139,8 +141,8 @@
                                     </div>
                                 </li>
                             </ul>
-                        {% elif news_news_category == "partybuildtheory" %}
-                        <div class="">         
+                        {% elif news.news_category == "partybuildtheory" %}
+                            <div class="">         
                                 <div class="row theory-row">
                                     <div class="col-md-6">
                                             <a href="">
@@ -166,7 +168,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         {% elif news.news_category == "video" %}
                            <div class="row">
                                <div class="video-wrapper">

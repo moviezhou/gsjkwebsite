@@ -138,11 +138,20 @@ class ContactUsIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+class IndustrialDevelopmentFundIndexPage(Page):
+    class Meta:
+        verbose_name = "产业发展基金二级页面"
+    subpage_types = ['IndustrialDevelopmentFundColumnPage']
+    intro = RichTextField(blank=True)
+    content_panels = Page.content_panels + [
+        FieldPanel('intro', classname="full")
+    ]
+
 class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'WebsiteLinkPage', 'VideoPage', 'FormPage', 'PartybuildingTheories']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'IndustrialDevelopmentFund' ,'WebsiteLinkPage', 'VideoPage', 'FormPage', 'PartybuildingTheories']
     intro = RichTextField(blank=True)
 
 
@@ -161,7 +170,6 @@ class ColumnPage(Page):
             column_entries = self.get_children()
             context['column_entries'] = column_entries
         return context
-
     
     def serve(self, request):
         if request.path == '/business/domain':
@@ -172,7 +180,19 @@ class ColumnPage(Page):
             return render(request, 'news/fund_page.html', self.get_context(request))
         else:
             return render(request, 'news/column_page.html', self.get_context(request))
-    
+
+class IndustrialDevelopmentFundColumnPage(Page):
+    class Meta:
+        verbose_name = "产业发展投资基金专栏"
+        
+    subpage_types = ['IndustrialDevelopmentFund']
+    intro = RichTextField(blank=True)
+
+    def get_context(self, request):
+        context = super(IndustrialDevelopmentFundColumnPage, self).get_context(request)
+        fund_column_entries = self.get_children()
+        context['fund_column_entries'] = fund_column_entries
+        return context
 
 class NewsPage(Page):
     class Meta:
@@ -298,6 +318,25 @@ class FundPage(Page):
         column_entries = self.get_children()
         context['column_entries'] = column_entries
         return context
+
+class IndustrialDevelopmentFund(Page):
+    class Meta:
+        verbose_name = "产业发展投资基金"
+    fund_name = models.CharField(max_length=60, verbose_name="产业发展投资基金名称")
+    fund_intro = RichTextField(blank=True, verbose_name="产业发展投资基金简介")
+    fund_intro_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="产业发展基金图片")
+
+    content_panels = Page.content_panels + [
+        FieldPanel('fund_name'),
+        FieldPanel('fund_intro'),
+        ImageChooserPanel('fund_intro_image'),]   
+
 
 class BusinessDomain(Page):
     class Meta:
