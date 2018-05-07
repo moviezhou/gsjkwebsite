@@ -6,6 +6,7 @@
 {% block body_class %}template-blogindexpage {% endblock%}
 {% block content %} 
 <link rel="stylesheet" href="{% static 'css/secondarypage.css' %}">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Dwj0vqyhFALfOozZkVZZa75S8FzsfuQq	"></script>
 {% include 'topnav3.html' %}
 <div class="main">
     <div class="container-fluid topbanner">
@@ -70,9 +71,14 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">         
                         {% for news in page_entries.object_list %}
                         {% if news.news_category == "singlepage" %}
-                            <div class="row">
-                                {{ news.body | richtext }}
-                            </div>
+                            {% if news.slug == "map" %}
+                                <div style="width:700px;height:500px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+                                <script src="{% static 'js/navmaps.js' %}"></script>
+                            {% else %}
+                                <div class="row">
+                                    {{ news.body | richtext }}
+                                </div>
+                            {% endif %}
                         {% elif news.news_category == "thumbnail" %}
                             {% if news.representative_image %}
                                 <ul>
