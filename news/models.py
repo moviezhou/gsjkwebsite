@@ -138,6 +138,11 @@ class ContactUsIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+class ContactUs(Page):
+    class Meta:
+        verbose_name = "联系我们地图"
+    
+
 class IndustrialDevelopmentFundIndexPage(Page):
     class Meta:
         verbose_name = "产业发展基金二级页面"
@@ -151,7 +156,7 @@ class ColumnPage(Page):
     class Meta:
         verbose_name = "专栏"
         
-    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'IndustrialDevelopmentFund' ,'WebsiteLinkPage', 'VideoPage', 'FormPage', 'PartybuildingTheories']
+    subpage_types = ['NewsPage', 'BusinessDomain', 'EnterprisePage', 'FundPage', 'IndustrialDevelopmentFund' ,'WebsiteLinkPage', 'VideoPage', 'FormPage', 'ContactUs' , 'PartybuildingTheories']
     intro = RichTextField(blank=True)
 
 
