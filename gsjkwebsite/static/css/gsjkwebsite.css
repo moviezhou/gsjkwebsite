@@ -1159,16 +1159,16 @@ nav.fill ul li a:hover:after {
 }
 
 /* footer */
-.main .footer {
+/* .main .footer {
 	background: #e8ebf8;
 	color: #0058A2;
 	padding: 30px;
 	bottom: 0px;
 	width: 100%;
-	position: absolute;
 }
 
-#fullpage .footer {
+#fullpage  */
+.footer {
   background: #e8ebf8;
 	color: #0058A2;
 	padding: 30px;
