@@ -15,8 +15,8 @@ def idfund_form_commit(request):
             send_mail(
                 'Subject here',
                 message,
-                'moviezhou@gmail.com',
-                ['moviezhou@gmail.com'],
+                '',
+                ['xyz@gmail.com'],
                 fail_silently=False,
                 )
         except SMTPException as e:
