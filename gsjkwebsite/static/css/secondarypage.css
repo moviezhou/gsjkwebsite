@@ -200,6 +200,10 @@ nav ol {
     justify-content: center;
 }
 
+.title-wrapper h3 {
+    text-align: center;
+}
+
 .rich-text p {
     text-indent: 2em;
     line-height: 2em;
@@ -316,6 +320,8 @@ nav ol {
 
 .idfund-img {
     width: 40%;
+    display: flex;
+    align-items: center;
 }
 
 .idfund-form-title {
@@ -327,7 +333,8 @@ nav ol {
     font-size: 1.4em;
     color: #ffffff;
     background: #0062a8;
-    padding: 3px 12px;
+    padding: 6px 12px;
+    width: 26%;
 }
 
 .idfund-form {
@@ -335,6 +342,7 @@ nav ol {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 
 .idfund-form form .row {
@@ -348,7 +356,7 @@ nav ol {
 
 
 
-.qhee-form-title h3 {
+.idfund-form-title h3 {
     text-align: center;
     font-size: 24px;
     color: #333;
@@ -360,7 +368,7 @@ nav ol {
     padding-top: 30px;
 }
 
-.qhee-form-control label {
+.idfund-form-control label {
     font-size: 14px;
     line-height: 38px;
     color: #666;
@@ -369,18 +377,23 @@ nav ol {
     padding-right: 24px;
 }
 
-input.qhee-form-input {
+.idfund-form-control textarea {
+    border: 2px solid #eee;
+    color: #333;
+}
+
+input.idfund-form-input {
     width: 266px;
 }
 
-input.qhee-form-code, input.qhee-form-input {
+input.idfund-form-code, input.idfund-form-input {
     padding-top: 7px;
     padding-bottom: 7px;
     line-height: 20px;
 }
 
 
-select.qhee-form-select {
+select.idfund-form-select {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -392,7 +405,11 @@ select.qhee-form-select {
     background-position: right center;
 }
 
-input.qhee-form-code, input.qhee-form-input, select.qhee-form-select {
+input.idfund-form-code, input.idfund-form-input, select.idfund-form-select {
     border: 2px solid #eee;
     color: #333;
+}
+
+.modal-dialog {
+    max-width: 50%;;
 }

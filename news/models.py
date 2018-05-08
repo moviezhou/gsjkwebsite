@@ -20,6 +20,7 @@ from django.contrib import messages
 from wagtail.search import index
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+
 class CompanyIndexPage(Page):
     class Meta:
         verbose_name = "走进金控二级页面"
