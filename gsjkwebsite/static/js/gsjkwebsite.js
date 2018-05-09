@@ -47,25 +47,6 @@ jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true
 
 jQuery(".txtMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",interTime:30,trigger:"click"});
 
-// news-tab mouse over effect
-// $('.title-company').mouseover(function(e){
-// 	$(this).addClass('focus');
-// 	$(this).siblings().each(function(){
-// 		$(this).removeClass('focus');
-// 	});
-
-// 	// e.target.id
-// 	$('.news-list').children().each(function(){
-// 		if($(this)[0].dataset.category === e.target.id) {
-// 			$(this)[0].style.display = 'block'; 
-// 			$(this).siblings().each(function(){
-// 				// console.log($(this));
-// 				$(this)[0].style.display = 'none';
-// 			});
-// 		}
-// 	});
-
-// });
 
 jQuery(".company-news").slide({ trigger: "mouseover", easing: "easeOutCirc", pnLoop: false });
 
