@@ -185,3 +185,52 @@ function closeNav() {
 }
 });
 
+
+$(function() {
+
+	$('#id_captcha_1').prop('required', true);
+	$('#id_captcha_1').prop('placeholder', '输入计算结果');
+    
+	// Click-handler for the refresh-link
+	$('.captcha-refresh').click(function(){
+		var $form = $(this).parents('form');
+		var url = location.protocol + "//" + window.location.hostname + ":"
+				  + location.port + "/captcha/refresh/";
+
+		// Make the AJAX-call
+		$.getJSON(url, {}, function(json) {
+			console.log(json.image_url)
+			$form.find('input[name="captcha_0"]').val(json.key);
+			// $form.find('img.captcha').attr('src', json.image_url);
+			$('.captcha')[0].src = json.image_url;
+		});
+
+		return false;
+	});
+
+	var form = $('#idform');
+    form.submit(function () {
+        $.ajax({
+            type: 'POST',
+            url: location.pathname,
+            data: form.serialize(),
+            success: function (data) {
+				if(data.result) {
+					$('.idfund-echo').first().addClass('idfund-success').removeClass('idfund-error');
+					$("#idfund-message").html("需求申报成功");
+				}
+				else{
+					$('.idfund-echo').first().addClass('idfund-error').removeClass('idfund-success');
+					$("#idfund-message").html("验证码错误，请重新提交！");
+					$('.captcha-refresh').click();
+				}
+            },
+            error: function(request, status, error) {
+				$("#idfund-message").html(request.responseText);
+            }
+        });
+        return false;
+	});
+	
+});
+

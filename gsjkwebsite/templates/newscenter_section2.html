@@ -80,7 +80,13 @@
                             </h4>
                             <hr style="margin-top: 12px;margin-bottom: 12px;border-top:1px dashed #ccc;">
                             <div class="sum">
-                                {{  news.body | richtext | bleach | truncatechars_html:100 }}
+                                <p style="color:#6c6c6c;text-indent: 2em;">
+                                    {% if news.intro %}
+                                        {{  news.intro | bleach | truncatechars_html:100 }}
+                                    {% else %}
+                                        {{  news.body | richtext | bleach | truncatechars_html:100 }}
+                                    {% endif %}
+                                </p>
                             </div>
                             <hr style="margin-top: 6px;margin-bottom: 6px;border-top:1px dashed #ccc;">
                             <!-- <p class="pull-left">
@@ -104,7 +110,14 @@
                                 <a href="{% pageurl news %}"> {{ news.title | truncatechars_html:32 }}</a>
                             </h4>
                             <hr style="margin-top: 12px;margin-bottom: 12px;border-top:1px dashed #ccc;">
-                            <p style="color:#6c6c6c;text-indent: 2em;">{{  news.body | richtext | bleach | truncatechars_html:100 }}</p>
+                            <p style="color:#6c6c6c;text-indent: 2em;">
+                                <!-- {{  news.body | richtext | bleach | truncatechars_html:100 }} -->
+                                {% if news.intro %}
+                                    {{  news.intro | bleach | truncatechars_html:100 }}
+                                {% else %}
+                                    {{  news.body | richtext | bleach | truncatechars_html:100 }}
+                                {% endif %}
+                            </p>
                             <hr style="margin-top: 6px;margin-bottom: 6px;border-top:1px dashed #ccc;">
                             <!-- <p class="pull-left">
                                 <span class="rq">发布日期：{{ news.date | date:"Y-m-d" }}</span>

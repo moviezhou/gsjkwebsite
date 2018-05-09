@@ -89,7 +89,21 @@
                                                 <div class="idfund-form-title">
                                                     <h3>在线需求申报</h3>
                                                 </div>
-                                                <form class="binder-form-submit" action="/idfund/" method="POST">
+
+                                                <form id="idform" class="binder-form-submit">
+                                                    {% csrf_token %}
+                                                    {% for field in form %}
+                                                    <div class="idfund-form-control clearfix">
+                                                        <label class="pull-left">{{ field.label }}</label>
+                                                        {{ field }}
+                                                    </div>
+                                                    {% endfor %}
+                                                    <div class="idfund-btn-wrap">
+                                                        <button class='captcha-refresh idfund-btn'>刷新</button>
+                                                        <input class="idfund-btn idfund-commit" type="submit" value="提交" />
+                                                    </div>
+                                                </form>
+                                                <!-- <form class="binder-form-submit" action="/idfund/" method="POST">
                                                     {% csrf_token %}
                                                     <input name="demand_source" value="1" type="hidden">
                                                     <div class="idfund-form-control clearfix">
@@ -123,50 +137,16 @@
                                                         <span class="pull-left idfund-form-changecode">看不清，换一张</span>
                                                     </div>
                                                     <input class="qhee-form-blue pull-left" value="确定" type="submit">
-                                                </form>
+                                                </form> -->
                                             </div>
     
                                         </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                                          <button type="button" class="btn btn-primary">确定</button>
+                                        <div class="modal-footer idfund-echo">
+                                            <div id="idfund-message"></div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                {% comment %} <div class="collapse" id="collapse{{ forloop.counter }}">
-                                    <div class="card card-body">
-                                            <form action="">
-
-                                                    <input name="csrfmiddlewaretoken" value="sGXFdCVaY3ehMolZSXTrePosXX19Ns5jouS8Z8uQSar27Wjiy0dJpJvDCkLc2ii9" type="hidden">
-                                                    <div class="row">
-                                                            <label for="id_ni-de-xing-ming">投资方向</label> 
-                                                            <input name="ni-de-xing-ming" maxlength="255" required="" id="id_ni-de-xing-ming" type="text">
-                                                    </div>
-                                                    <div class="row">
-                                                            <label for="id_shou-ji-hao-ma">公司名称</label> 
-                                                            <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
-                                                    </div>
-                                                    <div class="row">
-                                                            <label for="id_shou-ji-hao-ma">联系人</label> 
-                                                            <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
-                                                    </div>
-                                                    <div class="row">
-                                                            <label for="id_dian-zi-you-xiang">联系人电子邮箱</label>
-                                                            <input name="dian-zi-you-xiang" id="id_dian-zi-you-xiang" type="email">
-                                                    </div>
-                                                    <div class="row">
-                                                            <label for="id_ju-bao-nei-rong">项目需求</label>
-                                                            <textarea name="ju-bao-nei-rong" cols="40" rows="10" required="" id="id_ju-bao-nei-rong"></textarea>
-                                                    </div>
-                                                    <div class="row">
-                                                            <label for="id_shou-ji-hao-ma">验证码</label> 
-                                                            <input name="shou-ji-hao-ma" maxlength="255" required="" id="id_shou-ji-hao-ma" type="text">
-                                                    </div>
-                                                    <input class="btn btn-primary" value="在线需求申报" type="submit">
-                                                </form>
-                                    </div>
-                                </div> {% endcomment %}
                             </div>
                             {% endfor %}
                         </div>
@@ -202,3 +182,14 @@
     </div>
     {% include 'footer_section.html' %} {% endblock %}
 </div>
+<!-- <script>
+    $('.js-captcha-refresh').click(function(){
+        $form = $(this).parents('form');
+    
+        $.getJSON($(this).data('url'), {}, function(json) {
+            // This should update your captcha image src and captcha hidden input
+        });
+    
+        return false;
+    });
+</script> -->

@@ -13,6 +13,18 @@ from wagtail.contrib.forms.models import AbstractForm, AbstractFormField
 from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 from django.contrib import messages
 
+from django import forms
+from captcha.fields import CaptchaField
+from django.views.generic.edit import CreateView
+from captcha.models import CaptchaStore
+from captcha.helpers import captcha_image_url
+import json
+
+# from django.core.mail import send_mail
+from smtplib import SMTPException
+from mail_templated import send_mail
+
+
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
 # from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
@@ -199,7 +211,34 @@ class IndustrialDevelopmentFundColumnPage(Page):
         context = super(IndustrialDevelopmentFundColumnPage, self).get_context(request)
         fund_column_entries = self.get_children()
         context['fund_column_entries'] = fund_column_entries
+        context['form'] = IndustrialDevelopmentFundForm()
         return context
+    
+    def serve(self, request):
+        if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+            form = IndustrialDevelopmentFundForm(request.POST)
+            
+            idfund = {}
+            # check whether it's valid:
+            if form.is_valid():
+                idfund['idfund_invest_doamin'] = form.cleaned_data['idfund_invest_doamin']
+                idfund['idfund_company_name'] = form.cleaned_data['idfund_company_name']
+                idfund['idfund_contact_name'] = form.cleaned_data['idfund_contact_name']
+                idfund['idfund_contact_phone'] = form.cleaned_data['idfund_contact_phone']
+                idfund['idfund_contact_email'] = form.cleaned_data['idfund_contact_email']
+                idfund['idfund_project_demand'] = form.cleaned_data['idfund_project_demand']
+                send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['gelinlandev@qq.com'])
+                result = True 
+            else:
+                result = False
+
+        # if a GET (or any other method) we'll create a blank form
+        else:
+            form = IndustrialDevelopmentFundForm()
+            return render(request, 'news/industrial_development_fund_column_page.html', self.get_context(request))
+        return  HttpResponse(json.dumps({'result': result}), content_type='application/json')  
+        # return render(request, 'news/industrial_development_fund_column_page.html', self.get_context(request))
 
 class NewsPage(Page):
     class Meta:
@@ -455,3 +494,14 @@ class FormPage(AbstractForm):
                 self.process_form_submission(form)
                 messages.success(request, '您的信函投递成功!')
             return render(request, 'news/column_page.html', self.get_context(request))
+
+
+
+class IndustrialDevelopmentFundForm(forms.Form):
+    idfund_invest_doamin = forms.CharField(widget=forms.TextInput(attrs={'class' : 'idfund-form-input'}), label='投资方向', max_length=80)
+    idfund_company_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'idfund-form-input'}), label='公司名称', max_length=50)
+    idfund_contact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'idfund-form-input'}), label='联系人', max_length=20)
+    idfund_contact_phone = forms.CharField(widget=forms.TextInput(attrs={'class' : 'idfund-form-input'}), label='联系人电话', max_length=20)
+    idfund_contact_email = forms.EmailField(widget=forms.TextInput(attrs={'class' : 'idfund-form-input'}), label='联系人邮箱', max_length=30)
+    idfund_project_demand = forms.CharField(widget=forms.Textarea(attrs={'class': 'pull-left', 'cols': "60", 'rows': "12", 'validator': 'required'}), label='项目需求', max_length=600)
+    captcha = CaptchaField(label='验证码')

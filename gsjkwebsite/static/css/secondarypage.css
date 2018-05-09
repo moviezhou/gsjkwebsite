@@ -334,7 +334,6 @@ nav ol {
     color: #ffffff;
     background: #0062a8;
     padding: 6px 12px;
-    width: 26%;
 }
 
 .idfund-form {
@@ -383,7 +382,7 @@ nav ol {
 }
 
 input.idfund-form-input {
-    width: 266px;
+    width: 300px;
 }
 
 input.idfund-form-code, input.idfund-form-input {
@@ -392,24 +391,47 @@ input.idfund-form-code, input.idfund-form-input {
     line-height: 20px;
 }
 
-
-select.idfund-form-select {
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    height: 38px;
-    padding-right: 50px;
-    background-image: url(../images/select.png);
-    background-repeat: no-repeat;
-    background-position: right center;
-}
-
 input.idfund-form-code, input.idfund-form-input, select.idfund-form-select {
     border: 2px solid #eee;
     color: #333;
 }
 
-.modal-dialog {
-    max-width: 50%;;
+.idfund-echo {
+    justify-content: center;
+    font-size: 1.2em;
 }
+
+.idfund-error {
+    color: red;
+}
+
+.idfund-success {
+    color: limegreen;
+}
+
+
+.idfund-btn-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.captcha-refresh {
+    background: aliceblue;
+}
+
+.idfund-btn {
+    padding: 3px 10px;
+    font-size: 1.2em;
+    width: 27%;
+    letter-spacing: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 4px;
+}
+
+.idfund-commit {
+    background: #cdecc0;
+}
+

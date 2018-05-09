@@ -1,0 +1,59 @@
+{% extends "mail_templated/base.tpl" %}
+
+{% block subject %}
+来自{{ idfund.idfund_company_name }}
+{% endblock %}
+
+{% block body %}
+    <p>
+        投资方向
+        {{ idfund.idfund_invest_doamin }}
+    </p>
+    <p>
+        公司名称
+        {{ idfund.idfund_company_name }}
+    </p>
+    <p>
+        联系人
+        {{ idfund.idfund_contact_name }}
+    </p>
+    <p>
+        联系电话
+        {{ idfund.idfund_contact_phone }}
+    </p>
+    <p>
+        联系人邮箱
+        {{ idfund.idfund_contact_email }}
+    </p>
+    <p>
+        项目需求
+        {{ idfund.idfund_project_demand }}
+    </p>
+{% endblock %}
+
+{% block html %}
+    <p>
+        投资方向
+        {{ idfund.idfund_invest_doamin }}
+    </p>
+    <p>
+        公司名称
+        {{ idfund.idfund_company_name }}
+    </p>
+    <p>
+        联系人
+        {{ idfund.idfund_contact_name }}
+    </p>
+    <p>
+        联系电话
+        {{ idfund.idfund_contact_phone }}
+    </p>
+    <p>
+        联系人邮箱
+        {{ idfund.idfund_contact_email }}
+    </p>
+    <p>
+        项目需求
+        {{ idfund.idfund_project_demand }}
+    </p>
+{% endblock %}

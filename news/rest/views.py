@@ -10,7 +10,7 @@ from smtplib import SMTPException
 def idfund_form_commit(request):
     if request.method == 'POST':
         # print(request.data['project_requirments'])
-        message = request.data['project_requirments']
+        message = request.data['idfund_invest_demand']
         try:
             send_mail(
                 'Subject here',

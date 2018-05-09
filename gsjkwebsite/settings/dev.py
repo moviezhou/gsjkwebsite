@@ -20,6 +20,10 @@ EMAIL_HOST_USER = 'web@gsjkjt.com'
 EMAIL_HOST_PASSWORD = 'gsjkjt123'
 DEFAULT_FROM_EMAIL = 'web@gsjkjt.com'
 
+# Simple captcha settings
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+CAPTCHA_FOREGROUND_COLOR = '#00589E'
+
 
 try:
     from .local import *
