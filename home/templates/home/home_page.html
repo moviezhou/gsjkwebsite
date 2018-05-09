@@ -25,9 +25,22 @@
                                                         <a href="{% pageurl item %}" target="_blank">{{ item.title }}</a></li>
                                                 {% endfor %}
                                         </ul>
+                                    </div>
                                 </div>
+                        </div>
+                        <div class="txtMarquee-left">
+                                <div class="bd">
+                                    {% comment %} <div class="tempWrap" style="overflow:hidden; position:relative; width:654px"> {% endcomment %}
+                                        <ul class="infoList" style="width: 600px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                                                {% for item in news_bulletin|slice:"0:6" %}
+                                                    <li  style="width: 600px;">
+                                                        <a href="{% pageurl item %}" target="_blank">{{ item.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                        </ul>
+                                    {% comment %} </div> {% endcomment %}
                                 </div>
-                            </div>
+                        </div>
                     </div>
                     <div class="notify-title">
                             <a href="/news/bulletin">更多</a> 

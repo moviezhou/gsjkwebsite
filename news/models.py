@@ -12,6 +12,7 @@ from wagtail.admin.edit_handlers import (
 from wagtail.contrib.forms.models import AbstractForm, AbstractFormField
 from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 from django.contrib import messages
+
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
 # from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel

@@ -39,8 +39,13 @@ $(function () {
 });
 
 
+
+// Notifications scrolling
 jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true});
 
+// Mobile notifications scrolling 
+
+jQuery(".txtMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",interTime:30,trigger:"click"});
 
 // news-tab mouse over effect
 // $('.title-company').mouseover(function(e){

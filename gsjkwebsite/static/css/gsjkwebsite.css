@@ -214,7 +214,7 @@ nav.fill ul li a:hover:after {
   }
 
   .txtScroll-top .infoList li a{ 
-    color:#ffffff;  
+    color:#ffffff;
     font-size: 1.2em;
   }
 
@@ -224,12 +224,16 @@ nav.fill ul li a:hover:after {
     font-size: 1.2em;
   }
 
-  .txtScroll-top .infoList li span{ 
+  .txtScroll-top .infoList li span{
     margin-left: 100px;
   }
 
   .hk {
     word-break: keep-all;
+  }
+
+  .txtMarquee-left {
+    position: relative;
   }
 
 		
@@ -384,6 +388,10 @@ nav.fill ul li a:hover:after {
   .up-slogan h1 {
     letter-spacing: 10px;
     font-size: 3em;
+  }
+
+  .txtMarquee-left {
+    display: none;
   }
 
     /* full page2 style */
@@ -809,9 +817,25 @@ nav.fill ul li a:hover:after {
     letter-spacing: 3px;
   } */
 
-
-  .notification {
+  .txtScroll-top {
     display: none;
+  }
+
+  .txtMarquee-left {
+    display: block;
+  }
+
+  .notify-content {
+    width: 80%;
+  }
+
+  .notify-title {
+    display: none;
+  }
+
+  .txtMarquee-left .infoList li a {
+    color: #ffffff;
+    font-size: 1.2em;
   }
 
   .focus-gallery {
@@ -1653,7 +1677,7 @@ flip-container {
   color: #ffffff;
   transition: height .5s ease-in-out;
   background: #0062a8;
-  width: 142px;
+  width: auto;
   height: 0;
 }
 
