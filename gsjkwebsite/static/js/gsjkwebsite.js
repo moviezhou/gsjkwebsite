@@ -189,7 +189,7 @@ function closeNav() {
 $(function() {
 
 	$('#id_captcha_1').prop('required', true);
-	$('#id_captcha_1').prop('placeholder', '输入计算结果');
+	$('#id_captcha_1').prop('required', '输入计算结果');
     
 	// Click-handler for the refresh-link
 	$('.captcha-refresh').click(function(){

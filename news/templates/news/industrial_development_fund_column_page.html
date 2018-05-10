@@ -66,89 +66,52 @@
                                     </div> -->
                                 </div>
                             </div>
+                            {% endfor %}
+                            <div id="idfund-btn" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <div>            
+                                        <img class="" src="{% static 'images/demand-feedback.png' %}" alt="news">
+                                    </div>
+                                    <div>在线需求申报</div>
+                            </div>
                             <div class="idfund-form">
-                                {% comment %} <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseExample">
-                                       在线需求申报
-                                </button> {% endcomment %}
-                                <button type="button" id="idfund-btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                    在线需求申报
-                                  </button>
-
-                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalCenterTitle">在线需求申报</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            
-                                        <div class="idfund-dialog-form center-block">
-                                                <div class="idfund-form-title">
-                                                    <h3>在线需求申报</h3>
-                                                </div>
-
-                                                <form id="idform" class="binder-form-submit">
-                                                    {% csrf_token %}
-                                                    {% for field in form %}
-                                                    <div class="idfund-form-control clearfix">
-                                                        <label class="pull-left">{{ field.label }}</label>
-                                                        {{ field }}
-                                                    </div>
-                                                    {% endfor %}
-                                                    <div class="idfund-btn-wrap">
-                                                        <button class='captcha-refresh idfund-btn'>刷新</button>
-                                                        <input class="idfund-btn idfund-commit" type="submit" value="提交" />
-                                                    </div>
-                                                </form>
-                                                <!-- <form class="binder-form-submit" action="/idfund/" method="POST">
-                                                    {% csrf_token %}
-                                                    <input name="demand_source" value="1" type="hidden">
-                                                    <div class="idfund-form-control clearfix">
-                                                            <label class="pull-left">投资方向</label>
-                                                            <input valid-name="投资方向" name="ent_name" class="idfund-form-input pull-left validator_fail" validator="required max_length:40" placeholder="投资方向" type="text">
-                                                        </div>
-                                                    <div class="idfund-form-control clearfix">
-                                                        <label class="pull-left">公司名称</label>
-                                                        <input valid-name="公司名称" name="ent_name" class="idfund-form-input pull-left validator_fail" validator="required max_length:50" placeholder="公司名称" type="text">
-                                                    </div>
-                                                    <div class="idfund-form-control clearfix">
-                                                        <label class="pull-left">联系人</label>
-                                                        <input valid-name="联系人" name="contact_person" class="idfund-form-input pull-left validator_fail" validator="required" placeholder="联系人" type="text">
-                                                    </div>
-                                                    <div class="idfund-form-control clearfix">
-                                                        <label class="pull-left">联系人电话</label>
-                                                        <input valid-name="联系人电话" name="contact_mobile" class="idfund-form-input pull-left validator_fail" validator="required mobile" placeholder="联系人电话" type="text">
-                                                    </div>
-                                                    <div class="idfund-form-control clearfix">
-                                                            <label class="pull-left">联系人邮箱</label>
-                                                            <input valid-name="联系人邮箱" name="contact_mobile" class="idfund-form-input pull-left validator_fail" validator="required email" placeholder="联系人邮箱" type="email">
-                                                    </div>
-                                                    <div class="idfund-form-control clearfix">
-                                                            <label class="pull-left">项目需求</label>
-                                                            <textarea valid-name="项目需求" name="project_requirments" id="" class="pull-left validator_fail"  cols="60" rows="12" validator="required" placeholder="项目需求"></textarea>
-                                                    </div>
-                                                    <div class="idfund-form-control clearfix">
-                                                        <label class="pull-left idfund-code-label">验证码</label>
-                                                        <input valid-name="验证码" name="verifyCode" class="idfund-form-code pull-left validator_fail" validator="required" placeholder="验证码" type="text">
-                                                        <img id="img_vcode" class="idfund-form-img pull-left" src="/idfund-webapp/action/web/UserAction/captcha?t=0.21173985208183543" alt="点击刷新">
-                                                        <span class="pull-left idfund-form-changecode">看不清，换一张</span>
-                                                    </div>
-                                                    <input class="qhee-form-blue pull-left" value="确定" type="submit">
-                                                </form> -->
+                                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalCenterTitle">在线需求申报</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
                                             </div>
+                                            <div class="modal-body">
+                                                
+                                            <div class="idfund-dialog-form center-block">
+                                                    <div class="idfund-form-title">
+                                                        <h3>在线需求申报</h3>
+                                                    </div>
     
-                                        </div>
-                                        <div class="modal-footer idfund-echo">
-                                            <div id="idfund-message"></div>
+                                                    <form id="idform" class="binder-form-submit">
+                                                        {% csrf_token %}
+                                                        {% for field in form %}
+                                                        <div class="idfund-form-control clearfix">
+                                                            <label class="pull-left">{{ field.label }}</label>
+                                                            {{ field }}
+                                                        </div>
+                                                        {% endfor %}
+                                                        <div class="idfund-btn-wrap">
+                                                            <button class='captcha-refresh idfund-btn'>刷新</button>
+                                                            <input class="idfund-btn idfund-commit" type="submit" value="提交" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer idfund-echo">
+                                                <div id="idfund-message"></div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                  </div>
-                            </div>
-                            {% endfor %}
+                                </div>
                         </div>
                     </div>
                 </div>

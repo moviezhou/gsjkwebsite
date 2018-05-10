@@ -329,9 +329,11 @@ nav ol {
 }
 
 #idfund-btn {
+    position: fixed;
+    top: 50%;
+    right: 20px;
     font-size: 1.4em;
-    color: #ffffff;
-    background: #0062a8;
+    color: #0076bf;
     padding: 6px 12px;
 }
 
