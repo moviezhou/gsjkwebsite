@@ -25,9 +25,9 @@ from smtplib import SMTPException
 from mail_templated import send_mail
 
 
-# from wagtail.wagtailcore.fields import StreamField
-# from wagtail.wagtailcore import blocks
-# from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.core.fields import StreamField
+from wagtail.core import blocks
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 # from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 from wagtail.search import index
@@ -255,6 +255,10 @@ class NewsPage(Page):
     date = models.DateField(verbose_name="日期")
     intro = models.CharField(max_length=250, verbose_name="简介")
     body = RichTextField(blank=True, verbose_name="内容")
+    extro = StreamField([
+        ('heading', blocks.CharBlock(classname="full title")),
+        ('paragraph', blocks.RawHTMLBlock()),
+    ], blank=True)
     representative_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -278,6 +282,7 @@ class NewsPage(Page):
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
+        StreamFieldPanel('extro'),
     ]
 
 class VideoPage(Page):
