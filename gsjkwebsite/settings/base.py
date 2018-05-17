@@ -15,6 +15,8 @@ from __future__ import absolute_import, unicode_literals
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from ueditor.ueditor_widget import UEditorWidget
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -56,6 +58,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'captcha',
     'mail_templated',
+    'ueditor',
 ]
 
 MIDDLEWARE = [

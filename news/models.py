@@ -33,6 +33,7 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.search import index
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+from .ueditor_block import UEditorBlock
 
 class CompanyIndexPage(Page):
     class Meta:
@@ -257,7 +258,7 @@ class NewsPage(Page):
     body = RichTextField(blank=True, verbose_name="内容")
     extro = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
-        ('paragraph', blocks.RawHTMLBlock()),
+        ('paragraph', UEditorBlock()),
     ], blank=True)
     representative_image = models.ForeignKey(
         'wagtailimages.Image',
