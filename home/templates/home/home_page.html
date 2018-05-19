@@ -46,6 +46,19 @@
                             <a href="/news/bulletin">更多</a> 
                     </div>
             </div>
+            {% for subpage in self.get_children %}
+                {% if subpage.slug == "ad" %}
+                    <div class="">
+                       {% if subpage.specific.link_href %}
+                        <a href="{{ subpage.specific.link_href }}">
+                            {% image subpage.specific.banner_img class="img-fluid" fill-1108x140 alt="宣传广告" %}
+                        </a>
+                       {% else %}
+                            {% image subpage.specific.banner_img class="img-fluid" fill-1108x140 alt="宣传广告" %}
+                       {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
     <section class="fund">
