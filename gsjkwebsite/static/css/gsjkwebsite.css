@@ -197,7 +197,9 @@ nav.fill ul li a:hover:after {
   /* transform: translateY(20px); */
 }
 
-
+  .ad {
+    margin-top: 10px;
+  }
 
 
   .txtScroll-top{ 
