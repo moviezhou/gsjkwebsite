@@ -910,6 +910,7 @@ nav.fill ul li a:hover:after {
 }
 
 .title-wrapper {
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;

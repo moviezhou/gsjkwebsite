@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'captcha',
     'mail_templated',
+    'wagtailueditor',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,15 @@ MIDDLEWARE = [
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
+
+#  Editor settings UEditor
+
+# WAGTAILADMIN_RICH_TEXT_EDITORS = {
+#     'default': {
+#         'WIDGET': 'wagtailueditor.rich_text.UEditorRichTextArea'
+#     },
+# }
+
 
 ROOT_URLCONF = 'gsjkwebsite.urls'
 

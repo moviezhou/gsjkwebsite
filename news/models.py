@@ -24,6 +24,7 @@ import json
 from smtplib import SMTPException
 from mail_templated import send_mail
 
+from .ueditor_richtext_field import UEditorRichTextField
 
 # from wagtail.wagtailcore.fields import StreamField
 # from wagtail.wagtailcore import blocks
@@ -255,6 +256,7 @@ class NewsPage(Page):
     date = models.DateField(verbose_name="日期")
     intro = models.CharField(max_length=250, verbose_name="简介")
     body = RichTextField(blank=True, verbose_name="内容")
+    extro = UEditorRichTextField(blank=True)
     representative_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -278,6 +280,7 @@ class NewsPage(Page):
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
+        FieldPanel('extro'),
     ]
 
 class VideoPage(Page):
@@ -381,7 +384,7 @@ class IndustrialDevelopmentFund(Page):
     content_panels = Page.content_panels + [
         FieldPanel('fund_name'),
         FieldPanel('fund_intro'),
-        ImageChooserPanel('fund_intro_image'),]   
+        ImageChooserPanel('fund_intro_image'),]
 
 
 class BusinessDomain(Page):
