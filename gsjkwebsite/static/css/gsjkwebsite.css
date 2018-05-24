@@ -917,6 +917,10 @@ nav.fill ul li a:hover:after {
   justify-content: space-between;
 }
 
+.title-wrapper h3 {
+  width: 70%;
+}
+
 .title-highlights {
   background: #0b2a6e;
   color: #ffffff;

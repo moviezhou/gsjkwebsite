@@ -171,7 +171,7 @@ class ContactUsIndexPage(Page):
     class Meta:
         verbose_name = "联系我们二级页面"
 
-    subpage_types = ['ColumnPage']
+    subpage_types = ['ColumnPage', 'FormPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
