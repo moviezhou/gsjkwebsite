@@ -1678,7 +1678,7 @@ flip-container {
   color: #ffffff;
   transition: height .5s ease-in-out;
   background: #0062a8;
-  width: auto;
+  width: 142px;
   height: 0;
 }
 
