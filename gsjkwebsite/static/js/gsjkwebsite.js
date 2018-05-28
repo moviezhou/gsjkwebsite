@@ -186,6 +186,8 @@ function closeNav() {
 });
 
 
+$.ajaxSetup({ cache: false });
+
 $(function() {
 
 	$('#id_captcha_1').prop('required', true);
@@ -196,6 +198,8 @@ $(function() {
 		var $form = $(this).parents('form');
 		var url = location.protocol + "//" + window.location.hostname + ":"
 				  + location.port + "/captcha/refresh/";
+
+		//var url = "/captcha/refresh/";
 
 		// Make the AJAX-call
 		$.getJSON(url, {}, function(json) {
@@ -211,7 +215,7 @@ $(function() {
 	var form = $('#idform');
     form.submit(function () {
         $.ajax({
-            type: 'POST',
+			type: 'POST',
             url: location.pathname,
             data: form.serialize(),
             success: function (data) {

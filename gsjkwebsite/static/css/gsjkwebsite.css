@@ -445,6 +445,21 @@ nav.fill ul li a:hover:after {
     margin-top: 16px;
   }
 
+  .fund-intro {
+    /* visibility: hidden; */
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    color: #ffffff;
+    transition: height .5s ease-in-out;
+    background: #0062a8;
+    width: 142px;
+    height: 0;
+  }
+  
+
    /* news center */
    
    .newscenter {
@@ -835,6 +850,21 @@ nav.fill ul li a:hover:after {
     display: none;
   }
 
+  .fund-intro {
+    /* visibility: hidden; */
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    color: #ffffff;
+    transition: height .5s ease-in-out;
+    background: #0062a8;
+    width: auto;
+    height: 0;
+  }
+  
+
   .txtMarquee-left .infoList li a {
     color: #ffffff;
     font-size: 1.2em;
@@ -912,6 +942,7 @@ nav.fill ul li a:hover:after {
 }
 
 .title-wrapper {
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1671,20 +1702,6 @@ flip-container {
 .fund-category {
   text-align: center;
   margin-top: 20px;
-}
-
-.fund-intro {
-  /* visibility: hidden; */
-  position: absolute;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  color: #ffffff;
-  transition: height .5s ease-in-out;
-  background: #0062a8;
-  width: auto;
-  height: 0;
 }
 
 
