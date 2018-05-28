@@ -35,6 +35,32 @@ from wagtail.search import index
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 
+class SubAdBanner(Page):
+    class Meta:
+        verbose_name = "宣传banner"
+    
+    link_href = models.CharField(blank=True, max_length=500, verbose_name="链接地址")
+    banner_img = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="宣传广告图片 1108*140"
+    )
+
+    content_panels = Page.content_panels + [
+        ImageChooserPanel('banner_img'),
+        FieldPanel('link_href'),
+    ]
+
+    def get_context(self, request):
+        context = super(SubAdBanner, self).get_context(request)
+        sub_ad_entries = self.specific()
+        context['sub_ad_entries'] = sub_ad_entries
+        return context
+
+
 class CompanyIndexPage(Page):
     class Meta:
         verbose_name = "走进金控二级页面"
@@ -146,7 +172,7 @@ class ContactUsIndexPage(Page):
     class Meta:
         verbose_name = "联系我们二级页面"
 
-    subpage_types = ['ColumnPage']
+    subpage_types = ['ColumnPage', 'FormPage']
     intro = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [

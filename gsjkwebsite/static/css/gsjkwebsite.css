@@ -197,7 +197,9 @@ nav.fill ul li a:hover:after {
   /* transform: translateY(20px); */
 }
 
-
+  .ad {
+    margin-top: 10px;
+  }
 
 
   .txtScroll-top{ 
@@ -914,6 +916,10 @@ nav.fill ul li a:hover:after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.title-wrapper h3 {
+  width: 70%;
 }
 
 .title-highlights {
