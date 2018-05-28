@@ -255,7 +255,8 @@ class IndustrialDevelopmentFundColumnPage(Page):
                 idfund['idfund_contact_phone'] = form.cleaned_data['idfund_contact_phone']
                 idfund['idfund_contact_email'] = form.cleaned_data['idfund_contact_email']
                 idfund['idfund_project_demand'] = form.cleaned_data['idfund_project_demand']
-                send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['jjglb@gsjkjt.com'])
+                # send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['jjglb@gsjkjt.com'])
+                send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['gelinlandev@qq.com'])
                 result = True 
             else:
                 result = False
