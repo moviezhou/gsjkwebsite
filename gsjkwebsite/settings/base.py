@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_bleach',
     'rest_framework',
     'captcha',
+    'djcelery_email',
     'mail_templated',
     'wagtailueditor',
 ]
@@ -102,7 +103,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gsjkwebsite.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -189,3 +189,9 @@ BLEACH_ALLOWED_TAGS = ['p', 'h3', 'h4', 'em', 'strong', 'a', 'ul', 'ol', 'li', '
 # Which HTML attributes are allowed
 BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'name']
 BLEACH_STRIP_TAGS = True
+
+
+# Celery message broker url
+# CELERY_BROKER_URL  = 'amqp://localhost'
+#CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+
