@@ -73,6 +73,8 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
+
+
 #  Editor settings UEditor
 
 # WAGTAILADMIN_RICH_TEXT_EDITORS = {
