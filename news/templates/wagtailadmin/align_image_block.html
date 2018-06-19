@@ -1,0 +1,9 @@
+{% load wagtailcore_tags  %}
+{% load wagtailimages_tags %}
+{% for block in value %}
+    {% if block == 'image' %}
+        {% image value.image width-900 class="img-responsive" %}
+    {% elif block == "image_caption"  %}
+        <h5>{{ value.image_caption }}</h5>
+    {% endif %}
+{% endfor %}

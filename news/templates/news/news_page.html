@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% block body_class %}template-newspage{% endblock %}
 
@@ -53,7 +54,12 @@
                             {% comment %} <div class="intro">{{ page.intro }}</div> {% endcomment %}
                         
                             {{ page.body | richtext }}
-                        
+                            
+
+                            <article>
+                                {{ page.image_streamfield }}
+                            </article>
+
                             <p class="back2news-list"><a href="{{ page.get_parent.url }}">&larr; 返回新闻列表</a></p>
                     </div>
             </div>
