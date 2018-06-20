@@ -258,13 +258,7 @@ class IndustrialDevelopmentFundColumnPage(Page):
                 idfund['idfund_contact_phone'] = form.cleaned_data['idfund_contact_phone']
                 idfund['idfund_contact_email'] = form.cleaned_data['idfund_contact_email']
                 idfund['idfund_project_demand'] = form.cleaned_data['idfund_project_demand']
-                #send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['jjglb@gsjkjt.com'])
-                send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['1728696602@qq.com'])
-                # mail = Mailer()
-                # print('&&&&&&&&&&&&&&')
-                # mail.send_messages(subject='My App account verification', template='news/mail_template.html', context={'idfund': idfund}, to_emails=['1728696602@qq.com'])
-                
-                print(idfund)
+                send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['jjglb@gsjkjt.com'])                
                 result = True 
             else:
                 result = False
@@ -302,8 +296,8 @@ class NewsPage(Page):
     )
 
     image_streamfield = StreamField([
-        ('paragraph', blocks.RichTextBlock()),
-        ('image', AlignImageBlock())], verbose_name="插入图片", blank=False)
+        ('paragraph', blocks.RichTextBlock(label="段落")),
+        ('image', AlignImageBlock(label="图片"))], verbose_name="文章", blank=False)
 
     promote_panels = Page.promote_panels + [
         ImageChooserPanel('representative_image'),
