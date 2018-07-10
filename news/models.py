@@ -258,12 +258,7 @@ class IndustrialDevelopmentFundColumnPage(Page):
                 idfund['idfund_contact_phone'] = form.cleaned_data['idfund_contact_phone']
                 idfund['idfund_contact_email'] = form.cleaned_data['idfund_contact_email']
                 idfund['idfund_project_demand'] = form.cleaned_data['idfund_project_demand']
-<<<<<<< HEAD
                 send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['jjglb@gsjkjt.com'])                
-=======
-                # send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['jjglb@gsjkjt.com'])
-                send_mail('news/mail_template.html', {'idfund': idfund}, 'web@gsjkjt.com', ['1728696602@qq.com'])
->>>>>>> 481764af14fa43d3cdaff753780fd995ec83567d
                 result = True 
             else:
                 result = False
@@ -450,13 +445,14 @@ class BusinessDomain(Page):
     #     ('heading', blocks.CharBlock(classname="full title")),
     #     ('paragraph', blocks.RichTextBlock()),
     #     ('image', ImageChooserBlock()),])
-
+    dis_intro = RichTextField(blank=True, verbose_name="二级页面显示简介")
     business_intro = RichTextField(blank=True, verbose_name="领域简介")
 
     content_panels = Page.content_panels + [
         FieldPanel('business_category'),
         FieldPanel('business_name'),
         ImageChooserPanel('business_icon'),
+        FieldPanel('dis_intro'),
         FieldPanel('business_intro'),]
 
 class PartybuildingTheories(Page):

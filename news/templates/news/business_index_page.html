@@ -75,7 +75,7 @@
                                                                 {% image busi.business_icon fill-140x140 %}
                                                             </a>
                                                             <h5 class="busi-name"><strong>{{ busi.business_name }}</strong></h5>
-                                                            <h6 class="busi-desc">{{ busi.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                                                            <h6 class="busi-desc">{{ busi.dis_intro | richtext | bleach | truncatechars_html:30 }}</h6>
                                                     </div>
                                                 {% endfor %}
                                             </div>
@@ -87,7 +87,7 @@
                                                         {% image busi.business_icon fill-140x140 %}
                                                     </a>
                                                     <h5 class="busi-name"><strong>{{ busi.business_name }}</strong></h5>
-                                                    <h6 class="busi-desc">{{ busi.business_intro | richtext | bleach | truncatechars_html:30 }}</h6>
+                                                    <h6 class="busi-desc">{{ busi.dis_intro | richtext | bleach | truncatechars_html:30 }}</h6>
                                                 </div>
                                             {% endfor %}
                                         </div>

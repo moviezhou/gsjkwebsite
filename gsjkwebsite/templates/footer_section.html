@@ -11,7 +11,7 @@
                             <span>友情链接</span>
                             <span class="arrowdown"> <img src="{% static 'images/arrowdown.png' %}"></span>
                             <div class="link-nav">
-                                    {% with self.get_ancestors.1 as home %}{{ home }}
+                                    {% with self.get_ancestors.1 as home %}
                                     {% if self.slug == 'home' %}
                                         {% for i in self.get_children %}
                                         {% if i.slug == "links" %}
@@ -41,7 +41,7 @@
                             <span class="arrowdown"> <img src="{% static 'images/arrowdown.png' %}"></span>
                         </span>
                             <div class="link-nav">
-                                    {% with self.get_ancestors.1 as home %}{{ home }}
+                                    {% with self.get_ancestors.1 as home %}
                                     {% if self.slug == 'home' %}
                                          {% for i in self.get_children %}
                                          {% if i.slug == "links" %}
